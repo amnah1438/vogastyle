@@ -67,7 +67,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
 
-                # مهم لقراءة ملفات media
+                # دعم media
                 'django.template.context_processors.media',
             ],
         },
@@ -111,15 +111,15 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR.parent / "static",
+    BASE_DIR.parent / "vogastyle" / "static",  # ← المسار الصحيح الآن
 ]
 
-STATIC_ROOT = BASE_DIR.parent / "staticfiles"   # إنتاج فقط (تجهيزه لاحقاً)
+STATIC_ROOT = BASE_DIR.parent / "staticfiles"
 
 # ============================
 # ملفات الوسائط Media
 # ============================
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR.parent / "media"
+MEDIA_ROOT = BASE_DIR.parent / "vogastyle" / "media"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
