@@ -57,9 +57,10 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
 
-        # ⭐⭐ جميع مسارات القوالب بناءً على مجلداتك ⭐⭐
+        # ⭐⭐ جميع مسارات القوالب حسب مجلداتك ⭐⭐
         'DIRS': [
             BASE_DIR / 'templates',
+            BASE_DIR / 'templates/base-templates',
             BASE_DIR / 'templates/core-templates',
             BASE_DIR / 'templates/accounts-templates',
             BASE_DIR / 'templates/cart-templates',
@@ -69,7 +70,7 @@ TEMPLATES = [
             BASE_DIR / 'templates/marketing-templates',
         ],
 
-        # نستخدم APP_DIRS = False لأننا نحدد المسارات يدويًا
+        # لا نستخدم APP_DIRS لأننا نحدد المسارات يدويًا
         'APP_DIRS': False,
 
         'OPTIONS': {
@@ -78,7 +79,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
 
-                # دعم media في القوالب
+                # دعم media
                 'django.template.context_processors.media',
             ],
         },
@@ -122,10 +123,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",      # المجلد الصحيح داخل vogastyle
+    BASE_DIR / "static",
 ]
 
-STATIC_ROOT = BASE_DIR.parent / "staticfiles"  # تجميع الإنتاج
+STATIC_ROOT = BASE_DIR.parent / "staticfiles"
 
 # ============================
 # ملفات الوسائط Media
