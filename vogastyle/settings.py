@@ -50,12 +50,17 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'vogastyle.urls'
 
 # ============================
-# القوالب
+# القوالب (Templates)
 # ============================
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],  # دعم مجلد templates في المشروع
+
+        # المسار الصحيح للقوالب في مجلد vogastyle/templates
+        'DIRS': [
+            BASE_DIR.parent / 'templates',
+        ],
+
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -92,18 +97,19 @@ AUTH_PASSWORD_VALIDATORS = [
 # ============================
 # اللغة والمنطقة الزمنية
 # ============================
-LANGUAGE_CODE = 'ar'          # اللغة العربية
-TIME_ZONE = 'Asia/Riyadh'     # توقيت الرياض
+LANGUAGE_CODE = 'ar'
+TIME_ZONE = 'Asia/Riyadh'
 
 USE_I18N = True
 USE_TZ = True
 
 # ============================
-# الملفات الثابتة
+# الملفات الثابتة (Static)
 # ============================
 STATIC_URL = 'static/'
+
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    BASE_DIR.parent / "static",   # لأن static غالباً سيكون جنب templates
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
