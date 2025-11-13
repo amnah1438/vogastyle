@@ -1,5 +1,8 @@
 from pathlib import Path
 
+# ============================
+# مسار المشروع BASE_DIR
+# ============================
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-oks87q08h9ccv0khri6m^yx0mi+fd4!4rq$cpfo6ejans_egj%'
@@ -56,6 +59,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
 
+        # القوالب خارج مجلد المشروع
         'DIRS': [
             BASE_DIR.parent / 'templates',
         ],
@@ -67,7 +71,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
 
-                # دعم media
+                # لدعم media في الصفحات
                 'django.template.context_processors.media',
             ],
         },
@@ -110,10 +114,12 @@ USE_TZ = True
 # ============================
 STATIC_URL = '/static/'
 
+# مجلد static الصحيح داخل vogastyle/
 STATICFILES_DIRS = [
-    BASE_DIR.parent / "vogastyle" / "static",  # ← المسار الصحيح الآن
+    BASE_DIR.parent / "vogastyle" / "static",
 ]
 
+# مجلد التجميع (للإنتاج)
 STATIC_ROOT = BASE_DIR.parent / "staticfiles"
 
 # ============================
@@ -122,4 +128,7 @@ STATIC_ROOT = BASE_DIR.parent / "staticfiles"
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR.parent / "vogastyle" / "media"
 
+# ============================
+# الإعداد الافتراضي
+# ============================
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
