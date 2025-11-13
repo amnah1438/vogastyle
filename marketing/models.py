@@ -1,12 +1,36 @@
 from django.db import models
 
 class Banner(models.Model):
-    title = models.CharField(max_length=200)
-    subtitle = models.CharField(max_length=300, blank=True, null=True)
-    image = models.ImageField(upload_to="banners/")
-    button_text = models.CharField(max_length=50, blank=True, null=True)
-    button_link = models.CharField(max_length=255, blank=True, null=True)
-    is_active = models.BooleanField(default=True)
+    title = models.CharField(
+        max_length=200,
+        verbose_name="عنوان البانر"
+    )
+    subtitle = models.CharField(
+        max_length=300,
+        blank=True,
+        null=True,
+        verbose_name="العنوان الفرعي"
+    )
+    image = models.ImageField(
+        upload_to="banners/",
+        verbose_name="صورة البانر"
+    )
+    button_text = models.CharField(
+        max_length=50,
+        blank=True,
+        null=True,
+        verbose_name="نص الزر"
+    )
+    button_link = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        verbose_name="رابط الزر"
+    )
+    is_active = models.BooleanField(
+        default=True,
+        verbose_name="نشط؟"
+    )
 
     class Meta:
         verbose_name = "بانر"
@@ -17,9 +41,20 @@ class Banner(models.Model):
 
 
 class FeaturedCollection(models.Model):
-    title = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='collections/')
-    link = models.CharField(max_length=255, blank=True, null=True)
+    title = models.CharField(
+        max_length=200,
+        verbose_name="عنوان الكولكشن"
+    )
+    image = models.ImageField(
+        upload_to='collections/',
+        verbose_name="صورة الكولكشن"
+    )
+    link = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        verbose_name="الرابط"
+    )
 
     class Meta:
         verbose_name = "كولكشن مميز"
