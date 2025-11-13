@@ -1,4 +1,5 @@
 from django.shortcuts import render
 
 def home(request):
-    return render(request, "core/home.html")
+    # عرض الصفحة الرئيسية من داخل مجلد core-templates
+    return render(request, "home.html")
