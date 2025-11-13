@@ -31,7 +31,7 @@ INSTALLED_APPS = [
 ]
 
 # ============================
-# ميدلويرات
+# الميدلويرات
 # ============================
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -50,13 +50,12 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'vogastyle.urls'
 
 # ============================
-# القوالب (Templates)
+# القوالب Templates
 # ============================
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
 
-        # المسار الصحيح للقوالب في مجلد vogastyle/templates
         'DIRS': [
             BASE_DIR.parent / 'templates',
         ],
@@ -67,6 +66,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                # مهم لقراءة ملفات media
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -104,12 +106,20 @@ USE_I18N = True
 USE_TZ = True
 
 # ============================
-# الملفات الثابتة (Static)
+# الملفات الثابتة Static
 # ============================
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR.parent / "static",   # لأن static غالباً سيكون جنب templates
+    BASE_DIR.parent / "static",
 ]
+
+STATIC_ROOT = BASE_DIR.parent / "staticfiles"   # إنتاج فقط (تجهيزه لاحقاً)
+
+# ============================
+# ملفات الوسائط Media
+# ============================
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR.parent / "media"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
