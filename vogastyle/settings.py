@@ -1,0 +1,109 @@
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+SECRET_KEY = 'django-insecure-oks87q08h9ccv0khri6m^yx0mi+fd4!4rq$cpfo6ejans_egj%'
+DEBUG = True
+
+ALLOWED_HOSTS = []
+
+# ============================
+# التطبيقات المثبّتة
+# ============================
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+
+    # ============================
+    # تطبيقات المشروع
+    # ============================
+    'core',
+    'accounts',
+    'catalog',
+    'cart',
+    'orders',
+    'payments',
+    'marketing',
+]
+
+# ============================
+# ميدلويرات
+# ============================
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+
+    # دعم اللغة العربية
+    'django.middleware.locale.LocaleMiddleware',
+
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+ROOT_URLCONF = 'vogastyle.urls'
+
+# ============================
+# القوالب
+# ============================
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR / 'templates'],  # دعم مجلد templates في المشروع
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
+WSGI_APPLICATION = 'vogastyle.wsgi.application'
+
+# ============================
+# قاعدة البيانات (SQLite)
+# ============================
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+# ============================
+# التحقق من كلمات المرور
+# ============================
+AUTH_PASSWORD_VALIDATORS = [
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
+]
+
+# ============================
+# اللغة والمنطقة الزمنية
+# ============================
+LANGUAGE_CODE = 'ar'          # اللغة العربية
+TIME_ZONE = 'Asia/Riyadh'     # توقيت الرياض
+
+USE_I18N = True
+USE_TZ = True
+
+# ============================
+# الملفات الثابتة
+# ============================
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
