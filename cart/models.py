@@ -2,9 +2,19 @@ from django.db import models
 from catalog.models import Product
 
 class CartItem(models.Model):
-    session_key = models.CharField(max_length=255)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    quantity = models.PositiveIntegerField(default=1)
+    session_key = models.CharField(
+        max_length=255,
+        verbose_name="مُعرّف الجلسة"
+    )
+    product = models.ForeignKey(
+        Product,
+        on_delete=models.CASCADE,
+        verbose_name="المنتج"
+    )
+    quantity = models.PositiveIntegerField(
+        default=1,
+        verbose_name="الكمية"
+    )
 
     class Meta:
         verbose_name = "عنصر في السلة"
