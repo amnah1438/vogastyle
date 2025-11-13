@@ -21,9 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # ============================
     # تطبيقات المشروع
-    # ============================
     'core',
     'accounts',
     'catalog',
@@ -59,19 +57,28 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
 
-        # القوالب خارج مجلد المشروع
+        # ⭐⭐ جميع مسارات القوالب بناءً على مجلداتك ⭐⭐
         'DIRS': [
-            BASE_DIR.parent / 'templates',
+            BASE_DIR / 'templates',
+            BASE_DIR / 'templates/core-templates',
+            BASE_DIR / 'templates/accounts-templates',
+            BASE_DIR / 'templates/cart-templates',
+            BASE_DIR / 'templates/catalog-templates',
+            BASE_DIR / 'templates/orders-templates',
+            BASE_DIR / 'templates/payments-templates',
+            BASE_DIR / 'templates/marketing-templates',
         ],
 
-        'APP_DIRS': True,
+        # نستخدم APP_DIRS = False لأننا نحدد المسارات يدويًا
+        'APP_DIRS': False,
+
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
 
-                # لدعم media في الصفحات
+                # دعم media في القوالب
                 'django.template.context_processors.media',
             ],
         },
@@ -114,19 +121,17 @@ USE_TZ = True
 # ============================
 STATIC_URL = '/static/'
 
-# مجلد static الصحيح داخل vogastyle/
 STATICFILES_DIRS = [
-    BASE_DIR.parent / "vogastyle" / "static",
+    BASE_DIR / "static",      # المجلد الصحيح داخل vogastyle
 ]
 
-# مجلد التجميع (للإنتاج)
-STATIC_ROOT = BASE_DIR.parent / "staticfiles"
+STATIC_ROOT = BASE_DIR.parent / "staticfiles"  # تجميع الإنتاج
 
 # ============================
 # ملفات الوسائط Media
 # ============================
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR.parent / "vogastyle" / "media"
+MEDIA_ROOT = BASE_DIR / "media"
 
 # ============================
 # الإعداد الافتراضي
