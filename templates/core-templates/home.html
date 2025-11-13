@@ -1,0 +1,109 @@
+{% include "base/header.html" %}
+
+<!-- ===========================
+     البانر الرئيسي
+=========================== -->
+<section style="
+    background:#F7F1E4;
+    padding:80px 20px;
+    font-family:'Cairo', sans-serif;
+">
+    <div style="
+        max-width:1300px;
+        margin:auto;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        flex-wrap:wrap;
+    ">
+        
+        <!-- النص -->
+        <div style="flex:1; min-width:300px;">
+            <h1 style="font-size:48px; font-weight:700; color:#C9A77A; margin-bottom:16px;">
+                أناقتك تبدأ من هنا
+            </h1>
+            <p style="font-size:18px; color:#111111; margin-bottom:24px;">
+                اكتشفي أحدث صيحات الموضة المختارة بعناية.
+            </p>
+            <a href="#" style="
+                background:#C9A77A;
+                color:#1A1A1A;
+                padding:14px 28px;
+                border-radius:4px;
+                font-size:18px;
+                text-decoration:none;
+            ">تسوقي الآن</a>
+        </div>
+
+        <!-- الصورة -->
+        <div style="flex:1; min-width:300px; text-align:center;">
+            <img src="https://via.placeholder.com/450x600" 
+            alt="VogaStyle Banner"
+            style="max-width:100%; border-radius:8px;">
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ===========================
+     المنتجات المميزة
+=========================== -->
+<section style="
+    padding:60px 20px;
+    background:#FFFFFF;
+    font-family:'Cairo', sans-serif;
+">
+    <div style="max-width:1300px; margin:auto;">
+
+        <h2 style="
+            font-size:32px;
+            font-weight:600;
+            color:#111111;
+            margin-bottom:40px;
+            text-align:center;
+        ">منتجات مميزة</h2>
+
+        <div style="
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+            gap:32px;
+        ">
+            
+            <!-- كرت منتج -->
+            <div style="
+                background:#FFF;
+                border-radius:10px;
+                padding:16px;
+                box-shadow:0 4px 12px rgba(0,0,0,0.05);
+                text-align:center;
+            ">
+                <img src="https://via.placeholder.com/300x400"
+                     style="width:100%; border-radius:8px;">
+                <h3 style="margin:12px 0; font-size:18px; font-weight:600; color:#111111;">
+                    فستان سهرة فاخر
+                </h3>
+                <p style="font-size:16px; font-weight:700; color:#C9A77A;">499 ر.س</p>
+            </div>
+
+            <div style="
+                background:#FFF;
+                border-radius:10px;
+                padding:16px;
+                box-shadow:0 4px 12px rgba(0,0,0,0.05);
+                text-align:center;
+            ">
+                <img src="https://via.placeholder.com/300x400"
+                     style="width:100%; border-radius:8px;">
+                <h3 style="margin:12px 0; font-size:18px; font-weight:600; color:#111111;">
+                    طقم أنيق
+                </h3>
+                <p style="font-size:16px; font-weight:700; color:#C9A77A;">349 ر.س</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{% include "base/footer.html" %}
