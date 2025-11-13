@@ -1,7 +1,8 @@
 from django.urls import path
+from . import views
 
 app_name = 'core'
 
 urlpatterns = [
-    # سيتم إضافة المسارات هنا لاحقاً
+    path('', views.home, name='home'),   # الصفحة الرئيسية
 ]
