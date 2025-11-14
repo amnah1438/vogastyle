@@ -105,4 +105,3 @@ def update_profile_view(request):
     return render(request, "accounts-templates/update_profile.html", {
         "profile": profile
     })
-
