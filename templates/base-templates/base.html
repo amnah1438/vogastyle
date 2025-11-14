@@ -13,73 +13,84 @@
 
 <body>
 
-    <!-- ============================
-          Header (VogaStyle)
-    ============================ -->
+<!-- ============================================
+     Header - نسخة فوغا كلوسيت بالحرف
+=============================================== -->
+<header class="vg-header">
 
-    <header class="header">
-
-        <!-- الشريط العلوي -->
-        <div class="top-bar">
-            <div class="left">
-                <button class="menu-btn">
-                    <img src="{% static 'images/menu.png' %}" alt="menu" />
-                </button>
-            </div>
-
-            <div class="center">
-                <a href="/" class="brand">VogaStyle</a>
-            </div>
-
-            <div class="right">
-
-                <!-- أيقونة المستخدم -->
-                <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="7" r="4" stroke="black" stroke-width="2"/>
-                    <path d="M4 21c0-4 4-7 8-7s8 3 8 7" stroke="black" stroke-width="2"/>
-                </svg>
-
-                <!-- أيقونة السلة -->
-                <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M6 6h15l-2 12H5L3 6h3" stroke="black" stroke-width="2"/>
-                    <circle cx="9" cy="20" r="1.5" fill="black"/>
-                    <circle cx="17" cy="20" r="1.5" fill="black"/>
-                </svg>
-
-                <!-- أيقونة الجرس -->
-                <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M12 22a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2z" fill="black"/>
-                    <path d="M18 16V11a6 6 0 1 0-12 0v5l-2 2h16l-2-2z" stroke="black" stroke-width="2"/>
-                </svg>
-
-                <!-- أيقونة الكاميرا -->
-                <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <rect x="3" y="7" width="18" height="14" rx="2" stroke="black" stroke-width="2"/>
-                    <circle cx="12" cy="14" r="4" stroke="black" stroke-width="2"/>
-                    <path d="M8 7l2-3h4l2 3" stroke="black" stroke-width="2"/>
-                </svg>
-
-            </div>
+    <!-- ================================
+         1) الشريط العلوي (Top Bar)
+    ================================= -->
+    <div class="vg-topbar">
+        <div class="vg-left">
+            <span class="vg-lang">English</span>
+            <span class="vg-flag">🇸🇦</span>
         </div>
 
-        <!-- القائمة السفلية -->
-        <nav class="nav-bar">
-            <ul>
-                <li><a href="#">النساء</a></li>
-                <li><a href="#">الرجال</a></li>
-                <li><a href="#">الأطفال</a></li>
-                <li><a href="#">المنزل</a></li>
-                <li><a href="#">التجميل</a></li>
-            </ul>
-        </nav>
+        <div class="vg-right">
 
-    </header>
+            <!-- بحث -->
+            <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <circle cx="11" cy="11" r="7" stroke="black" stroke-width="2"/>
+                <path d="M20 20l-4-4" stroke="black" stroke-width="2"/>
+            </svg>
 
-    <!-- ============================
-          محتوى كل صفحة
-    ============================ -->
-    {% block content %}
-    {% endblock %}
+            <!-- الكاميرا -->
+            <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="7" width="18" height="14" rx="2" stroke="black" stroke-width="2"/>
+                <circle cx="12" cy="14" r="4" stroke="black" stroke-width="2"/>
+                <path d="M8 7l2-3h4l2 3" stroke="black" stroke-width="2"/>
+            </svg>
+
+            <!-- المفضلة -->
+            <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M12 21l-1.5-1.3C5 15 2 12 2 8.5 2 6 4 4 6.5 4c1.7 0 3.4 1 4.3 2.4C11.1 5 12.9 4 14.6 4 17 4 19 6 19 8.5c0 3.5-3 6.5-8.5 11.2L12 21z"
+                      stroke="black" stroke-width="2" fill="none"/>
+            </svg>
+
+            <!-- الحساب -->
+            <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="7" r="4" stroke="black" stroke-width="2"/>
+                <path d="M4 21c0-4 4-7 8-7s8 3 8 7" stroke="black" stroke-width="2"/>
+            </svg>
+
+            <!-- السلة -->
+            <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M6 6h15l-2 12H5L3 6h3" stroke="black" stroke-width="2"/>
+                <circle cx="9" cy="20" r="1.5" fill="black"/>
+                <circle cx="17" cy="20" r="1.5" fill="black"/>
+            </svg>
+
+        </div>
+    </div>
+
+    <!-- ================================
+         2) الشعار (Brand Section)
+    ================================= -->
+    <div class="vg-logo">
+        <a href="/" class="vg-brand">VogaStyle</a>
+    </div>
+
+    <!-- ================================
+         3) القائمة الرئيسية (Navigation)
+    ================================= -->
+    <nav class="vg-nav">
+        <ul>
+            <li><a href="#">النساء</a></li>
+            <li><a href="#">الرجال</a></li>
+            <li><a href="#">الأطفال</a></li>
+            <li><a href="#">المنزل</a></li>
+            <li><a href="#">التجميل</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<!-- ============================================
+     بلوك المحتوى
+=============================================== -->
+{% block content %}
+{% endblock %}
 
 </body>
 </html>
