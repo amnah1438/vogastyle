@@ -1,4 +1,8 @@
 from pathlib import Path
+import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # ============================
 # مسار المشروع BASE_DIR
@@ -29,6 +33,10 @@ INSTALLED_APPS = [
     'orders',
     'payments',
     'marketing',
+
+    # Cloudinary
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 # ============================
@@ -57,7 +65,6 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
 
-        # ⭐⭐ جميع مسارات القوالب حسب مجلداتك ⭐⭐
         'DIRS': [
             BASE_DIR / 'templates',
             BASE_DIR / 'templates/base-templates',
@@ -70,7 +77,6 @@ TEMPLATES = [
             BASE_DIR / 'templates/marketing-templates',
         ],
 
-        # لا نستخدم APP_DIRS لأننا نحدد المسارات يدويًا
         'APP_DIRS': False,
 
         'OPTIONS': {
@@ -78,8 +84,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-
-                # دعم media
                 'django.template.context_processors.media',
             ],
         },
@@ -133,6 +137,17 @@ STATIC_ROOT = BASE_DIR.parent / "staticfiles"
 # ============================
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
+
+# ============================
+# Cloudinary إعدادات
+# ============================
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dyg4401o9',
+    'API_KEY': '293858138167552',
+    'API_SECRET': '-BNiHzI1HAVjD0bBY00zAb0yPNo',
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # ============================
 # الإعداد الافتراضي
