@@ -37,14 +37,14 @@
 }
 
 /* ============================
-   Dropdown اللغة
+   Dropdown اللغة + الدول
 ============================ */
 .vg-language-dropdown {
     position: relative;
     display: inline-block;
 }
 
-/* زر English */
+/* زر اللغة + العلم */
 .vg-lang-btn {
     display: flex;
     align-items: center;
@@ -55,24 +55,37 @@
     user-select: none;
 }
 
-.vg-lang-btn:hover {
-    background: #f5f5f5;
-}
-
-.vg-lang-btn span {
+/* نص اللغة (English / العربية) */
+.vg-lang-text {
     font-size: 14px;
     color: #444;
+    cursor: pointer;
 }
 
-.vg-lang-btn .vg-flag {
-    font-size: 16px;
+/* العلم الموجود بجانب اللغة */
+.vg-flag-btn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.vg-flag-icon {
+    width: 22px;
+    height: 15px;
+    border-radius: 3px;
+    object-fit: cover;
+}
+
+/* Hover */
+.vg-lang-btn:hover {
+    background: #f5f5f5;
 }
 
 /* القائمة المنسدلة */
 .vg-lang-menu {
     position: absolute;
-    top: 42px;       
-    right: 0;        
+    top: 42px;
+    right: 0;
     min-width: 220px;
 
     background: #ffffff;
@@ -86,6 +99,7 @@
     display: none;
 }
 
+/* عناصر الدول */
 .vg-item {
     padding: 10px 14px;
     font-size: 15px;
@@ -94,10 +108,16 @@
     align-items: center;
     gap: 10px;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 .vg-item:hover {
     background: #f7f7f7;
+}
+
+/* إظهار القائمة */
+.vg-language-dropdown.show .vg-lang-menu {
+    display: block;
 }
 
 /* ============================
@@ -196,13 +216,11 @@
     transition: 0.25s ease;
 }
 
-/* اللون الأساسي أسود ناعم */
 .old-icon * {
     stroke: #222 !important;
     transition: 0.3s ease;
 }
 
-/* الهوفر سماوي فاخر */
 .old-icon:hover * {
     stroke: #00A6E0 !important;
 }
@@ -214,6 +232,7 @@
 .old-icon:hover circle[fill] {
     fill: #00A6E0 !important;
 }
+
 .old-icon {
     width: 26px;
     height: 26px;
