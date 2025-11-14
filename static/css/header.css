@@ -214,3 +214,16 @@
 .old-icon:hover circle[fill] {
     fill: #00A6E0 !important;
 }
+.old-icon {
+    width: 26px;
+    height: 26px;
+    stroke: #222;
+    fill: none;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.old-icon:hover {
+    stroke: #C9A77A;
+    opacity: 0.8;
+}
