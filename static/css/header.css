@@ -55,6 +55,10 @@
     user-select: none;
 }
 
+.vg-lang-btn:hover {
+    background: #f5f5f5;
+}
+
 /* نص اللغة */
 .vg-lang-text {
     font-size: 14px;
@@ -69,16 +73,11 @@
     align-items: center;
 }
 
-/* العلم — إصلاح SVG */
-.vg-flag-icon {
-    width: 22px !important;
-    height: 16px !important;
-    display: inline-block !important;
-}
-
-/* Hover */
-.vg-lang-btn:hover {
-    background: #f5f5f5;
+/* العلم يظهر بالحجم الصحيح */
+.vg-flag-svg {
+    width: 22px;
+    height: 16px;
+    display: block;
 }
 
 /* القائمة */
@@ -99,7 +98,11 @@
     display: none;
 }
 
-/* عنصر دولة */
+.vg-language-dropdown.show .vg-lang-menu {
+    display: block;
+}
+
+/* عناصر الدول */
 .vg-item {
     padding: 10px 14px;
     font-size: 15px;
@@ -108,34 +111,54 @@
     align-items: center;
     gap: 10px;
     cursor: pointer;
-    transition: 0.2s;
 }
 
 .vg-item:hover {
     background: #f7f7f7;
 }
 
-/* عند الفتح */
-.vg-language-dropdown.show .vg-lang-menu {
-    display: block;
-}
-
 /* ============================
-   أيقونات SVG
+   إصلاح نهائي لظهور الأعلام SVG
 ============================ */
-.vg-icon {
-    width: 22px;
-    height: 22px;
-    cursor: pointer;
-    transition: 0.2s;
+.vg-lang-btn svg,
+.vg-lang-menu svg {
+    fill: none !important;
+    stroke: none !important;
 }
 
-.vg-icon:hover {
-    opacity: 0.5;
+/* داخل العناصر */
+.vg-lang-btn svg *,
+.vg-lang-menu svg * {
+    fill: inherit !important;
+    stroke: inherit !important;
+}
+
+/* منع أي override من ملفات أخرى */
+svg.vg-flag-svg * {
+    fill: inherit !important;
+    stroke: inherit !important;
 }
 
 /* ============================
-   2) الشعار — Logo
+   أيقونات SVG الأخرى
+============================ */
+.old-icon {
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.old-icon * {
+    stroke: #222 !important;
+}
+
+.old-icon:hover * {
+    stroke: #C9A77A !important;
+}
+
+/* ============================
+   الشعار — Logo
 ============================ */
 .vg-logo {
     text-align: center;
@@ -147,11 +170,10 @@
     font-weight: 800;
     text-decoration: none;
     color: #000;
-    letter-spacing: 1px;
 }
 
 /* ============================
-   3) القائمة — Navigation
+   القائمة
 ============================ */
 .vg-nav {
     width: 100%;
@@ -173,7 +195,6 @@
     color: #000;
     font-size: 18px;
     font-weight: 500;
-    transition: 0.2s;
 }
 
 .vg-nav a:hover {
@@ -203,97 +224,4 @@
     .vg-brand {
         font-size: 28px;
     }
-}
-
-/* ============================
-   🔥 الأيقونات القديمة — فوغا
-============================ */
-.old-icon {
-    width: 22px;
-    height: 22px;
-    cursor: pointer;
-    transition: 0.25s ease;
-}
-
-.old-icon * {
-    stroke: #222 !important;
-    transition: 0.3s ease;
-}
-
-.old-icon:hover * {
-    stroke: #00A6E0 !important;
-}
-
-.old-icon circle[fill] {
-    fill: #222 !important;
-}
-
-.old-icon:hover circle[fill] {
-    fill: #00A6E0 !important;
-}
-
-.old-icon {
-    width: 26px;
-    height: 26px;
-    stroke: #222;
-    fill: none;
-    transition: 0.2s;
-    cursor: pointer;
-}
-
-.old-icon:hover {
-    stroke: #C9A77A;
-    opacity: 0.8;
-}
-
-/* ============================
-   🔧 إصلاح كامل لظهور الأعلام SVG
-============================ */
-.vg-lang-btn svg,
-.vg-lang-menu svg {
-    all: unset !important;
-    width: 22px !important;
-    height: 16px !important;
-    display: inline-block !important;
-    stroke: none !important;
-    fill: initial !important;
-}
-/* إصلاح نهائي يمنع أي CSS آخر من إزالة fill الخاص بالأعلام */
-.vg-lang-btn svg *,
-.vg-lang-menu svg * {
-    fill: currentColor !important;
-}
-
-.vg-lang-btn svg,
-.vg-lang-menu svg {
-    color: initial !important;
-    fill: initial !important;
-    stroke: none !important;
-}
-/* إصلاح نهائي يمنع أي CSS آخر من إزالة fill الخاص بالأعلام */
-.vg-lang-btn svg *,
-.vg-lang-menu svg * {
-    fill: currentColor !important;
-}
-
-.vg-lang-btn svg,
-.vg-lang-menu svg {
-    color: initial !important;
-    fill: initial !important;
-    stroke: none !important;
-}
-/* إصلاح نهائي لضبط الأعلام ومنع تغيير الألوان */
-.vg-flag-icon svg,
-.vg-flag-btn svg,
-.vg-lang-menu svg {
-    color: initial !important;
-    fill: initial !important;
-    stroke: initial !important;
-}
-
-/* إصلاح لكل العناصر داخل SVG */
-.vg-flag-btn svg *,
-.vg-lang-menu svg * {
-    fill: unset !important;
-    stroke: unset !important;
 }
