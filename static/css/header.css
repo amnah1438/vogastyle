@@ -1,0 +1,76 @@
+/* ============================
+   Header - VogaStyle
+============================ */
+
+.header {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+/* الشريط العلوي */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+}
+
+/* زر القائمة */
+.menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* الشعار */
+.brand {
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+}
+
+/* الأيقونات اليمينية */
+.right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* تنسيق أيقونات SVG */
+.icon {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.icon:hover {
+    opacity: 0.7;
+}
+
+/* القائمة السفلية */
+.nav-bar {
+    border-top: 1px solid #e7e7e7;
+}
+
+.nav-bar ul {
+    margin: 0;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: #333;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.nav-bar a:hover {
+    color: #000;
+}
