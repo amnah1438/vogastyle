@@ -19,11 +19,10 @@
                 <!-- زر اللغة + زر العلم -->
                 <div class="vg-lang-btn">
 
-                    <!-- زر تبديل اللغة -->
+                    <!-- زر تغيير اللغة -->
                     <form action="{% url 'set_language' %}" method="post" class="lang-form">
                         {% csrf_token %}
                         {% get_current_language as CURRENT_LANG %}
-
                         {% if CURRENT_LANG == 'ar' %}
                             <input type="hidden" name="language" value="en">
                             <span class="vg-lang-text">English</span>
@@ -33,27 +32,91 @@
                         {% endif %}
                     </form>
 
-                    <!-- زر فتح قائمة الدول -->
+                    <!-- زر فتح قائمة الدول (SVG العلم) -->
                     <span class="vg-flag-btn">
-                        <img src="{% static 'images/sa.png' %}" class="vg-flag-icon">
+                        <!-- علم السعودية SVG -->
+                        <svg width="22" height="16" viewBox="0 0 640 480" class="vg-flag-icon">
+                            <rect width="640" height="480" fill="#006c35"></rect>
+                            <rect x="160" y="200" width="320" height="80" fill="#ffffff"></rect>
+                        </svg>
                     </span>
 
                 </div>
 
                 <!-- ============================
-                     قائمة الدول المنسدلة
+                     قائمة الدول المنسدلة (SVG)
                 ============================= -->
                 <div class="vg-lang-menu">
 
-                    <div class="vg-item"><img src="{% static 'images/sa.png' %}" class="vg-flag-icon"> السعودية</div>
-                    <div class="vg-item"><img src="{% static 'images/bh.png' %}" class="vg-flag-icon"> البحرين</div>
-                    <div class="vg-item"><img src="{% static 'images/qa.png' %}" class="vg-flag-icon"> قطر</div>
-                    <div class="vg-item"><img src="{% static 'images/kw.png' %}" class="vg-flag-icon"> الكويت</div>
-                    <div class="vg-item"><img src="{% static 'images/om.png' %}" class="vg-flag-icon"> عُمان</div>
-                    <div class="vg-item"><img src="{% static 'images/ae.png' %}" class="vg-flag-icon"> الإمارات</div>
-                    <div class="vg-item"><img src="{% static 'images/jo.png' %}" class="vg-flag-icon"> الأردن</div>
-                    <div class="vg-item"><img src="{% static 'images/iq.png' %}" class="vg-flag-icon"> العراق</div>
-                    <div class="vg-item"><img src="{% static 'images/eg.png' %}" class="vg-flag-icon"> مصر</div>
+                    <!-- السعودية -->
+                    <div class="vg-item">
+                        <svg width="22" height="16" viewBox="0 0 640 480">
+                            <rect width="640" height="480" fill="#006c35"></rect>
+                            <rect x="160" y="200" width="320" height="80" fill="#ffffff"></rect>
+                        </svg>
+                        السعودية
+                    </div>
+
+                    <!-- البحرين -->
+                    <div class="vg-item">
+                        <svg width="22" height="16" viewBox="0 0 640 480">
+                            <rect width="640" height="480" fill="#fff"/>
+                            <path fill="#ce1126" d="M0 0h240l80 40-80 40 80 40-80 40 80 40-80 40 80 40-80 40 80 40V0z"/>
+                        </svg>
+                        البحرين
+                    </div>
+
+                    <!-- قطر -->
+                    <div class="vg-item">
+                        <svg width="22" height="16" viewBox="0 0 640 480">
+                            <rect width="640" height="480" fill="#fff"/>
+                            <path fill="#8d1b3d" d="M0 0h200l70 40-70 40 70 40-70 40 70 40-70 40 70 40-70 40 70 40V0z"/>
+                        </svg>
+                        قطر
+                    </div>
+
+                    <!-- الكويت -->
+                    <div class="vg-item">
+                        <svg width="22" height="16" viewBox="0 0 640 480">
+                            <path fill="#ce1126" d="M0 0h640v160H0z"/>
+                            <path fill="#fff" d="M0 160h640v160H0z"/>
+                            <path fill="#007a3d" d="M0 320h640v160H0z"/>
+                            <path fill="#000" d="M0 0l200 160v160L0 480z"/>
+                        </svg>
+                        الكويت
+                    </div>
+
+                    <!-- الإمارات -->
+                    <div class="vg-item">
+                        <svg width="22" height="16" viewBox="0 0 640 480">
+                            <path fill="#00732f" d="M0 0h640v160H0z"/>
+                            <path fill="#fff" d="M0 160h640v160H0z"/>
+                            <path fill="#000" d="M0 320h640v160H0z"/>
+                            <path fill="#ce1126" d="M0 0h200v480H0z"/>
+                        </svg>
+                        الإمارات
+                    </div>
+
+                    <!-- مصر -->
+                    <div class="vg-item">
+                        <svg width="22" height="16" viewBox="0 0 640 480">
+                            <path fill="#ce1126" d="M0 0h640v160H0z"/>
+                            <path fill="#fff" d="M0 160h640v160H0z"/>
+                            <path fill="#000" d="M0 320h640v160H0z"/>
+                        </svg>
+                        مصر
+                    </div>
+
+                    <!-- الأردن -->
+                    <div class="vg-item">
+                        <svg width="22" height="16" viewBox="0 0 640 480">
+                            <path fill="#007a3d" d="M0 0h640v160H0z"/>
+                            <path fill="#fff" d="M0 160h640v160H0z"/>
+                            <path fill="#000" d="M0 320h640v160H0z"/>
+                            <path fill="#ce1126" d="M0 0l240 240L0 480z"/>
+                        </svg>
+                        الأردن
+                    </div>
 
                 </div>
 
@@ -109,7 +172,7 @@
     </div>
 
     <!-- ============================
-         القائمة
+         القائمة الرئيسية
     ============================= -->
     <nav class="vg-nav">
         <ul>
