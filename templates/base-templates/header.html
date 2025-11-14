@@ -1,109 +1,182 @@
 {% load static %}
 
-<header class="vg-header">
+<header style="
+    background-color:#1A1A1A;
+    color:#C9A77A;
+    padding:16px 0;
+    font-family:'Cairo', sans-serif;
+">
+    <div style="
+        max-width:1300px;
+        margin:auto;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        padding:0 20px;
+    ">
 
-    <div class="vg-container">
-
-        <!-- ============================
-             الشريط العلوي - Top Bar
-        ============================= -->
-        <div class="vg-topbar">
-
-            <!-- يسار -->
-            <div class="vg-left">
-
-                <!-- Dropdown اللغة -->
-                <div class="vg-language-dropdown">
-                    <div class="vg-lang-btn">
-                        <span>English</span>
-                        <span class="vg-flag">🇸🇦</span>
-                    </div>
-
-                    <div class="vg-lang-menu">
-                        <div class="vg-item"><span>🇸🇦</span> السعودية</div>
-                        <div class="vg-item"><span>🇬🇧</span> English</div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- يمين (أيقونات) -->
-            <div class="vg-right">
-
-                <!-- بحث -->
-                <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24">
-                    <circle cx="11" cy="11" r="7" stroke="black" stroke-width="2"/>
-                    <path d="M20 20l-4-4" stroke="black" stroke-width="2"/>
-                </svg>
-
-                <!-- كاميرا -->
-                <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24">
-                    <rect x="3" y="7" width="18" height="14" rx="2" stroke="black" stroke-width="2"/>
-                    <circle cx="12" cy="14" r="4" stroke="black" stroke-width="2"/>
-                    <path d="M8 7l2-3h4l2 3" stroke="black" stroke-width="2"/>
-                </svg>
-
-                <!-- المفضلة -->
-                <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24">
-                    <path d="M12 21l-1.5-1.3C5 15 2 12 2 8.5 2 6 4 4 6.5 4c1.7 0 3.4 1 4.3 2.4C11.1 5 12.9 4 14.6 4 17 4 19 6 19 8.5c0 3.5-3 6.5-8.5 11.2L12 21z"
-                          stroke="black" stroke-width="2" fill="none"/>
-                </svg>
-
-                <!-- الحساب -->
-                <div class="vg-dropdown">
-                    <span id="accountIcon" class="vg-icon-btn">
-                        <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24">
-                            <circle cx="12" cy="7" r="4" stroke="black" stroke-width="2"/>
-                            <path d="M4 21c0-4 4-7 8-7s8 3 8 7" stroke="black" stroke-width="2"/>
-                        </svg>
-                    </span>
-
-                    <ul id="accountMenu" class="vg-dropdown-menu">
-                        {% if user.is_authenticated %}
-                            <li class="vg-user-welcome">مرحباً، {{ user.username }}</li>
-                            <li><a href="{% url 'accounts:profile' %}">الملف الشخصي</a></li>
-                            <li><a href="{% url 'accounts:update_profile' %}">تعديل الملف</a></li>
-                            <li><a href="{% url 'accounts:logout' %}">تسجيل الخروج</a></li>
-                        {% else %}
-                            <li><a href="{% url 'accounts:login' %}">تسجيل الدخول</a></li>
-                            <li><a href="{% url 'accounts:register' %}">إنشاء حساب</a></li>
-                        {% endif %}
-                    </ul>
-                </div>
-
-                <!-- السلة -->
-                <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24">
-                    <path d="M6 6h15l-2 12H5L3 6h3" stroke="black" stroke-width="2"/>
-                    <circle cx="9" cy="20" r="1.5" fill="black"/>
-                    <circle cx="17" cy="20" r="1.5" fill="black"/>
-                </svg>
-
-            </div>
-
+        <!-- الشعار -->
+        <div style="font-size:28px; font-weight:700; color:#C9A77A;">
+            VogaStyle
         </div>
 
-        <!-- ============================
-             الشعار
-        ============================= -->
-        <div class="vg-logo">
-            <a href="/" class="vg-brand">VogaStyle</a>
-        </div>
-
-        <!-- ============================
-             القائمة الرئيسية
-        ============================= -->
-        <nav class="vg-nav">
-            <ul>
-                <li><a href="#">النساء</a></li>
-                <li><a href="#">الرجال</a></li>
-                <li><a href="#">الأطفال</a></li>
-                <li><a href="#">المنزل</a></li>
-                <li><a href="#">التجميل</a></li>
+        <!-- القائمة -->
+        <nav>
+            <ul style="
+                list-style:none;
+                display:flex;
+                gap:32px;
+                margin:0;
+                padding:0;
+            ">
+                <li><a href="/" style="color:#FFFFFF; text-decoration:none;">الرئيسية</a></li>
+                <li><a href="#" style="color:#FFFFFF; text-decoration:none;">المنتجات</a></li>
+                <li><a href="#" style="color:#FFFFFF; text-decoration:none;">الأقسام</a></li>
+                <li><a href="#" style="color:#FFFFFF; text-decoration:none;">تخفيضات</a></li>
             </ul>
         </nav>
 
-    </div>
+        <!-- يمين الهيدر -->
+        <div style="display:flex; align-items:center; gap:25px; font-size:18px; color:#C9A77A;">
 
+            <!-- زر اللغة -->
+            <div style="position:relative;">
+                <span id="langIcon" style="cursor:pointer; font-size:22px;">🌐</span>
+
+                <ul id="langMenu" style="
+                    position:absolute;
+                    right:0;
+                    margin-top:10px;
+                    background:#1A1A1A;
+                    border:1px solid #C9A77A;
+                    border-radius:8px;
+                    padding:10px 0;
+                    width:160px;
+                    display:none;
+                    list-style:none;
+                    z-index:999;
+                ">
+                    <li>
+                        <a href="/?lang=ar"
+                           style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">
+                            🇸🇦 العربية
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/?lang=en"
+                           style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">
+                            🇬🇧 English
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- تسجيل الدخول / إنشاء حساب -->
+            {% if not user.is_authenticated %}
+            <div style="display:flex; align-items:center; gap:15px;">
+
+                <a href="{% url 'accounts:login' %}"
+                   style="
+                        padding:8px 18px;
+                        border:1px solid #C9A77A;
+                        color:#C9A77A;
+                        text-decoration:none;
+                        border-radius:6px;
+                        font-size:15px;
+                        transition:0.3s;
+                   "
+                   onmouseover="this.style.backgroundColor='#C9A77A'; this.style.color='#1A1A1A';"
+                   onmouseout="this.style.backgroundColor='transparent'; this.style.color='#C9A77A';">
+                    تسجيل الدخول
+                </a>
+
+                <a href="{% url 'accounts:register' %}"
+                   style="
+                        padding:8px 18px;
+                        background-color:#C9A77A;
+                        color:#1A1A1A;
+                        text-decoration:none;
+                        border-radius:6px;
+                        font-size:15px;
+                        font-weight:600;
+                        transition:0.3s;
+                   "
+                   onmouseover="this.style.opacity='0.8';"
+                   onmouseout="this.style.opacity='1';">
+                    إنشاء حساب
+                </a>
+            </div>
+            {% endif %}
+
+            <!-- أيقونات -->
+            <span style="cursor:pointer; font-size:20px;">&#128269;</span>
+            <span style="cursor:pointer; font-size:20px;">&#9829;</span>
+            <span style="cursor:pointer; font-size:20px;">&#128722;</span>
+
+            <!-- قائمة الحساب -->
+            <div style="position:relative;">
+                <span id="accountIcon" style="cursor:pointer; font-size:22px;">&#128100;</span>
+
+                <ul id="accountMenu" style="
+                    position:absolute;
+                    right:0;
+                    margin-top:10px;
+                    background:#1A1A1A;
+                    border:1px solid #C9A77A;
+                    border-radius:8px;
+                    padding:10px 0;
+                    width:180px;
+                    display:none;
+                    list-style:none;
+                    z-index:999;
+                ">
+
+                    {% if user.is_authenticated %}
+                        <li style="padding:8px 16px; color:#C9A77A;">مرحباً، {{ user.username }}</li>
+                        <li><a href="{% url 'accounts:profile' %}" style="color:#FFF; padding:8px 16px; display:block;">الملف الشخصي</a></li>
+                        <li><a href="{% url 'accounts:update_profile' %}" style="color:#FFF; padding:8px 16px; display:block;">تعديل الملف</a></li>
+                        <li><a href="{% url 'accounts:logout' %}" style="color:#FFF; padding:8px 16px; display:block;">تسجيل الخروج</a></li>
+                    {% else %}
+                        <li><a href="{% url 'accounts:login' %}" style="color:#FFF; padding:8px 16px; display:block;">تسجيل الدخول</a></li>
+                        <li><a href="{% url 'accounts:register' %}" style="color:#FFF; padding:8px 16px; display:block;">إنشاء حساب</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
 </header>
 
-<script src="{% static 'js/header.js' %}"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const accountIcon = document.getElementById("accountIcon");
+    const accountMenu = document.getElementById("accountMenu");
+
+    accountIcon.addEventListener("click", () => {
+        accountMenu.style.display =
+            accountMenu.style.display === "block" ? "none" : "block";
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!accountIcon.contains(e.target) && !accountMenu.contains(e.target)) {
+            accountMenu.style.display = "none";
+        }
+    });
+
+    const langIcon = document.getElementById("langIcon");
+    const langMenu = document.getElementById("langMenu");
+
+    langIcon.addEventListener("click", () => {
+        langMenu.style.display =
+            langMenu.style.display === "block" ? "none" : "block";
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!langIcon.contains(e.target) && !langMenu.contains(e.target)) {
+            langMenu.style.display = "none";
+        }
+    });
+});
+</script>
