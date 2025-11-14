@@ -8,90 +8,74 @@
     ============================= -->
     <div class="vg-topbar">
 
-        <!-- يسار -->
-        <div class="vg-left">
+        <!-- يمين: اختيار الدولة -->
+        <div class="vg-top-right">
 
-            <!-- ========== Dropdown الدولة ========== -->
-            <div class="vg-country-lang-box">
+            <div class="vg-country-box" id="countryTrigger">
+                <img src="{% static 'images/flags/' %}{{ request.session.country|default:'sa' }}.svg"
+                     class="vg-flag-current">
 
-                <!-- زر الفتح -->
-                <div class="vg-country-trigger" id="countryTrigger">
+                <span class="vg-country-name">
+                    {% if request.session.country == 'ae' %} الإمارات
+                    {% elif request.session.country == 'kw' %} الكويت
+                    {% elif request.session.country == 'bh' %} البحرين
+                    {% elif request.session.country == 'qa' %} قطر
+                    {% else %} السعودية
+                    {% endif %}
+                </span>
 
-                    <!-- العلم المختار -->
-                    <img src="{% static 'images/flags/' %}{{ request.session.country|default:'sa' }}.svg"
-                         class="vg-flag-current">
+                <span class="vg-arrow">▾</span>
+            </div>
 
-                    <!-- اسم الدولة -->
-                    <span class="vg-country-name">
-                        {% if request.session.country == 'ae' %} الإمارات
-                        {% elif request.session.country == 'kw' %} الكويت
-                        {% elif request.session.country == 'bh' %} البحرين
-                        {% elif request.session.country == 'qa' %} قطر
-                        {% else %} السعودية
-                        {% endif %}
-                    </span>
+            <!-- قائمة الدول -->
+            <div class="vg-country-menu" id="countryMenu">
 
-                    <!-- سهم -->
-                    <span class="vg-arrow">▾</span>
-                </div>
+                <form method="post" action="{% url 'core:set_country' %}">
+                    {% csrf_token %}
+                    <button name="country" value="sa" class="vg-country-item">
+                        <img src="{% static 'images/flags/sa.svg' %}" class="vg-flag"> السعودية
+                    </button>
+                </form>
 
-                <!-- قائمة الدول -->
-                <div class="vg-country-menu" id="countryMenu">
+                <form method="post" action="{% url 'core:set_country' %}">
+                    {% csrf_token %}
+                    <button name="country" value="ae" class="vg-country-item">
+                        <img src="{% static 'images/flags/ae.svg' %}" class="vg-flag"> الإمارات
+                    </button>
+                </form>
 
-                    <!-- السعودية -->
-                    <form method="post" action="{% url 'core:set_country' %}">
-                        {% csrf_token %}
-                        <button name="country" value="sa" class="vg-country-item">
-                            <img src="{% static 'images/flags/sa.svg' %}" class="vg-flag"> السعودية
-                        </button>
-                    </form>
+                <form method="post" action="{% url 'core:set_country' %}">
+                    {% csrf_token %}
+                    <button name="country" value="kw" class="vg-country-item">
+                        <img src="{% static 'images/flags/kw.svg' %}" class="vg-flag"> الكويت
+                    </button>
+                </form>
 
-                    <!-- الإمارات -->
-                    <form method="post" action="{% url 'core:set_country' %}">
-                        {% csrf_token %}
-                        <button name="country" value="ae" class="vg-country-item">
-                            <img src="{% static 'images/flags/ae.svg' %}" class="vg-flag"> الإمارات
-                        </button>
-                    </form>
+                <form method="post" action="{% url 'core:set_country' %}">
+                    {% csrf_token %}
+                    <button name="country" value="bh" class="vg-country-item">
+                        <img src="{% static 'images/flags/bh.svg' %}" class="vg-flag"> البحرين
+                    </button>
+                </form>
 
-                    <!-- الكويت -->
-                    <form method="post" action="{% url 'core:set_country' %}">
-                        {% csrf_token %}
-                        <button name="country" value="kw" class="vg-country-item">
-                            <img src="{% static 'images/flags/kw.svg' %}" class="vg-flag"> الكويت
-                        </button>
-                    </form>
-
-                    <!-- البحرين -->
-                    <form method="post" action="{% url 'core:set_country' %}">
-                        {% csrf_token %}
-                        <button name="country" value="bh" class="vg-country-item">
-                            <img src="{% static 'images/flags/bh.svg' %}" class="vg-flag"> البحرين
-                        </button>
-                    </form>
-
-                    <!-- قطر -->
-                    <form method="post" action="{% url 'core:set_country' %}">
-                        {% csrf_token %}
-                        <button name="country" value="qa" class="vg-country-item">
-                            <img src="{% static 'images/flags/qa.svg' %}" class="vg-flag"> قطر
-                        </button>
-                    </form>
-
-                </div>
+                <form method="post" action="{% url 'core:set_country' %}">
+                    {% csrf_token %}
+                    <button name="country" value="qa" class="vg-country-item">
+                        <img src="{% static 'images/flags/qa.svg' %}" class="vg-flag"> قطر
+                    </button>
+                </form>
 
             </div>
 
         </div>
 
-        <!-- يمين — أيقونات -->
-       <div class="vg-right">
-    <img src="{% static 'icons/search.svg' %}" class="old-icon">
-    <img src="{% static 'icons/user.svg' %}" class="old-icon">
-    <img src="{% static 'icons/cart.svg' %}" class="old-icon">
-    <img src="{% static 'icons/bell.svg' %}" class="old-icon"> <!-- الجرس -->
-</div>
-
+        <!-- يسار: أيقونات -->
+        <div class="vg-top-left">
+            <button class="vg-icon-btn"><img src="{% static 'icons/search.svg' %}" alt="search"></button>
+            <button class="vg-icon-btn"><img src="{% static 'icons/user.svg' %}" alt="user"></button>
+            <button class="vg-icon-btn"><img src="{% static 'icons/cart.svg' %}" alt="cart"></button>
+            <button class="vg-icon-btn"><img src="{% static 'icons/bell.svg' %}" alt="notification"></button>
+        </div>
 
     </div>
 
