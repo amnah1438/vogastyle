@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <header class="vg-header">
 
@@ -10,22 +11,58 @@
         <!-- يسار -->
         <div class="vg-left">
 
-            <!-- Dropdown اللغة -->
+            <!-- ============================
+                 Dropdown اللغة + الدولة
+            ============================= -->
             <div class="vg-language-dropdown">
+                
+                <!-- زر اللغة + العلم -->
                 <div class="vg-lang-btn">
-                    <span>English</span>
-                    <span class="vg-flag">🇸🇦</span>
+
+                    <!-- زر تبديل اللغة -->
+                    <form action="{% url 'set_language' %}" method="post" class="lang-form">
+                        {% csrf_token %}
+                        {% get_current_language as CURRENT_LANG %}
+
+                        {% if CURRENT_LANG == 'ar' %}
+                            <input type="hidden" name="language" value="en">
+                            <span class="vg-lang-text">English</span>
+                        {% else %}
+                            <input type="hidden" name="language" value="ar">
+                            <span class="vg-lang-text">العربية</span>
+                        {% endif %}
+                    </form>
+
+                    <!-- زر فتح قائمة الدول -->
+                    <span class="vg-flag-btn">
+                        <img src="{% static 'images/sa.png' %}" class="vg-flag-icon">
+                    </span>
                 </div>
 
+                <!-- ============================
+                     قائمة الدول المنسدلة
+                ============================= -->
                 <div class="vg-lang-menu">
-                    <div class="vg-item"><span>🇸🇦</span> السعودية</div>
-                    <div class="vg-item"><span>🇬🇧</span> English</div>
+
+                    <div class="vg-item"><img src="{% static 'images/sa.png' %}" class="vg-flag-icon"> السعودية</div>
+                    <div class="vg-item"><img src="{% static 'images/bh.png' %}" class="vg-flag-icon"> البحرين</div>
+                    <div class="vg-item"><img src="{% static 'images/qa.png' %}" class="vg-flag-icon"> قطر</div>
+                    <div class="vg-item"><img src="{% static 'images/kw.png' %}" class="vg-flag-icon"> الكويت</div>
+                    <div class="vg-item"><img src="{% static 'images/om.png' %}" class="vg-flag-icon"> عُمان</div>
+                    <div class="vg-item"><img src="{% static 'images/ae.png' %}" class="vg-flag-icon"> الإمارات</div>
+                    <div class="vg-item"><img src="{% static 'images/jo.png' %}" class="vg-flag-icon"> الأردن</div>
+                    <div class="vg-item"><img src="{% static 'images/iq.png' %}" class="vg-flag-icon"> العراق</div>
+                    <div class="vg-item"><img src="{% static 'images/eg.png' %}" class="vg-flag-icon"> مصر</div>
+
                 </div>
+
             </div>
 
         </div>
 
-        <!-- أيقونات -->
+        <!-- ============================
+             الأيقونات يمين
+        ============================= -->
         <div class="vg-right">
 
             <!-- بحث -->
@@ -71,7 +108,7 @@
     </div>
 
     <!-- ============================
-         القائمة الرئيسية
+         القائمة
     ============================= -->
     <nav class="vg-nav">
         <ul>
