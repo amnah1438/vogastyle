@@ -1,0 +1,69 @@
+{% include "base/header.html" %}
+
+<section style="padding:50px; max-width:700px; margin:auto; font-family:'Cairo';">
+    <h2 style="
+        color:#C9A77A;
+        text-align:center;
+        margin-bottom:30px;
+        font-weight:700;
+    ">
+        تعديل الملف الشخصي
+    </h2>
+
+    <form method="POST" style="
+        background:#F7F1E4;
+        padding:30px;
+        border-radius:15px;
+        box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    ">
+        {% csrf_token %}
+
+        <!-- البريد الإلكتروني -->
+        <label style="color:#111;">البريد الإلكتروني:</label>
+        <input type="email" name="email" value="{{ profile.user.email }}" required
+               style="width:100%; margin-bottom:15px; padding:10px; border-radius:8px; border:1px solid #ddd;">
+
+        <!-- رقم الجوال -->
+        <label style="color:#111;">رقم الجوال:</label>
+        <input type="text" name="phone" value="{{ profile.phone }}"
+               style="width:100%; margin-bottom:15px; padding:10px; border-radius:8px; border:1px solid #ddd;">
+
+        <!-- المدينة -->
+        <label style="color:#111;">المدينة:</label>
+        <input type="text" name="city" value="{{ profile.city }}"
+               style="width:100%; margin-bottom:15px; padding:10px; border-radius:8px; border:1px solid #ddd;">
+
+        <!-- الدولة -->
+        <label style="color:#111;">الدولة:</label>
+        <input type="text" name="country" value="{{ profile.country }}"
+               style="width:100%; margin-bottom:15px; padding:10px; border-radius:8px; border:1px solid #ddd;">
+
+        <!-- العنوان -->
+        <label style="color:#111;">العنوان:</label>
+        <input type="text" name="address" value="{{ profile.address }}"
+               style="width:100%; margin-bottom:20px; padding:10px; border-radius:8px; border:1px solid #ddd;">
+
+        <button type="submit" style="
+            width:100%;
+            padding:12px;
+            background:#C9A77A;
+            color:#1A1A1A;
+            border:none;
+            border-radius:10px;
+            font-size:18px;
+            cursor:pointer;
+            font-weight:600;
+        ">
+            حفظ التعديلات
+        </button>
+    </form>
+
+    <div style="text-align:center; margin-top:20px;">
+        <a href="{% url 'accounts:profile' %}" style="color:#C9A77A; font-size:16px;">
+            العودة للملف الشخصي
+        </a>
+    </div>
+
+</section>
+
+{% include "base/footer.html" %}
