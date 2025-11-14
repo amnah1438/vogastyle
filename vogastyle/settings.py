@@ -3,9 +3,10 @@ import os
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+from django.utils.translation import gettext_lazy as _  # <-- مهم للغات
 
 # ============================
-# مسار المشروع BASE_DIR
+# BASE_DIR
 # ============================
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -13,6 +14,7 @@ SECRET_KEY = 'django-insecure-oks87q08h9ccv0khri6m^yx0mi+fd4!4rq$cpfo6ejans_egj%
 DEBUG = True
 
 ALLOWED_HOSTS = []
+
 
 # ============================
 # التطبيقات المثبّتة
@@ -39,6 +41,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
 ]
 
+
 # ============================
 # الميدلويرات
 # ============================
@@ -46,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
 
-    # دعم اللغة العربية
+    # دعم تغيير اللغة
     'django.middleware.locale.LocaleMiddleware',
 
     'django.middleware.common.CommonMiddleware',
@@ -56,10 +59,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
 ROOT_URLCONF = 'vogastyle.urls'
 
+
 # ============================
-# القوالب Templates
+# Templates
 # ============================
 TEMPLATES = [
     {
@@ -90,7 +95,9 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'vogastyle.wsgi.application'
+
 
 # ============================
 # قاعدة البيانات (SQLite)
@@ -102,6 +109,7 @@ DATABASES = {
     }
 }
 
+
 # ============================
 # التحقق من كلمات المرور
 # ============================
@@ -112,14 +120,27 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
+
 # ============================
 # اللغة والمنطقة الزمنية
 # ============================
-LANGUAGE_CODE = 'ar'
+LANGUAGE_CODE = 'ar'   # اللغة الافتراضية عربية
 TIME_ZONE = 'Asia/Riyadh'
 
 USE_I18N = True
 USE_TZ = True
+
+# اللغات المدعومة
+LANGUAGES = [
+    ('ar', _('Arabic')),
+    ('en', _('English')),
+]
+
+# مجلد ملفات الترجمة
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
+
 
 # ============================
 # الملفات الثابتة Static
@@ -130,15 +151,15 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-# ❗ تعديل مهم وصحيح لبيئة التطوير
-# لا نستخدم parent هنا، نخليه داخل المشروع
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR / "staticfiles"   # صحيح
+
 
 # ============================
 # ملفات الوسائط Media
 # ============================
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
+
 
 # ============================
 # Cloudinary إعدادات
@@ -156,6 +177,7 @@ cloudinary.config(
     api_key="293858138167552",
     api_secret="-BNiHzI1HAVjD0bBY00zAb0yPNo"
 )
+
 
 # ============================
 # الإعداد الافتراضي
