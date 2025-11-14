@@ -282,3 +282,18 @@
     fill: initial !important;
     stroke: none !important;
 }
+/* إصلاح نهائي لضبط الأعلام ومنع تغيير الألوان */
+.vg-flag-icon svg,
+.vg-flag-btn svg,
+.vg-lang-menu svg {
+    color: initial !important;
+    fill: initial !important;
+    stroke: initial !important;
+}
+
+/* إصلاح لكل العناصر داخل SVG */
+.vg-flag-btn svg *,
+.vg-lang-menu svg * {
+    fill: unset !important;
+    stroke: unset !important;
+}
