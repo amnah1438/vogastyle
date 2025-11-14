@@ -2,6 +2,9 @@ from django.db import models
 from cloudinary.models import CloudinaryField
 
 
+# ============================
+# نموذج التصنيفات
+# ============================
 class Category(models.Model):
     name = models.CharField(
         max_length=100,
@@ -26,6 +29,9 @@ class Category(models.Model):
         return self.name
 
 
+# ============================
+# نموذج المنتجات
+# ============================
 class Product(models.Model):
     category = models.ForeignKey(
         Category,
@@ -60,7 +66,7 @@ class Product(models.Model):
         verbose_name="تاريخ الإضافة"
     )
 
-    # الصورة الرئيسية للمنتج من Cloudinary
+    # الصورة الرئيسية من Cloudinary
     main_image = CloudinaryField(
         folder="products/",
         verbose_name="الصورة الرئيسية"
@@ -74,6 +80,9 @@ class Product(models.Model):
         return self.name
 
 
+# ============================
+# نموذج الصور الإضافية للمنتج
+# ============================
 class ProductImage(models.Model):
     product = models.ForeignKey(
         Product,
@@ -81,8 +90,6 @@ class ProductImage(models.Model):
         related_name="images",
         verbose_name="المنتج"
     )
-
-    # الصور الإضافية للمنتج من Cloudinary
     image = CloudinaryField(
         folder="products/extra/",
         verbose_name="الصورة"
