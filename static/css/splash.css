@@ -4,16 +4,30 @@ body {
     overflow: hidden;
 }
 
+/* الحاوية */
 .splash {
     width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    /* حركة الاختفاء */
+    animation: fadeOut 1s ease forwards;
+    animation-delay: 2s; /* تبقى 2 ثانية ثم تختفي */
 }
 
+/* صورة السلاش */
 .splash-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* يجعل الصورة مثل فوغا */
+    object-fit: cover;
+}
+
+/* تعريف الحركة */
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
