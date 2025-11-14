@@ -2,82 +2,107 @@
 
 <header class="vg-header">
 
-    <!-- ============================
-         الشريط العلوي - Top Bar
-    ============================= -->
-    <div class="vg-topbar">
-        <div class="vg-left">
+    <div class="vg-container">
 
-            <!-- Dropdown اللغة -->
-            <div class="vg-language-dropdown">
-                <div class="vg-lang-btn">
-                    <span>English</span>
-                    <span class="vg-flag">🇸🇦</span>
+        <!-- ============================
+             الشريط العلوي - Top Bar
+        ============================= -->
+        <div class="vg-topbar">
+
+            <!-- يسار -->
+            <div class="vg-left">
+
+                <!-- Dropdown اللغة -->
+                <div class="vg-language-dropdown">
+                    <div class="vg-lang-btn">
+                        <span>English</span>
+                        <span class="vg-flag">🇸🇦</span>
+                    </div>
+
+                    <div class="vg-lang-menu">
+                        <div class="vg-item"><span>🇸🇦</span> السعودية</div>
+                        <div class="vg-item"><span>🇬🇧</span> English</div>
+                    </div>
                 </div>
 
-                <div class="vg-lang-menu">
-                    <div class="vg-item"><span>🇸🇦</span> السعودية</div>
-                    <div class="vg-item"><span>🇬🇧</span> English</div>
-                </div>
             </div>
+
+            <!-- يمين (أيقونات) -->
+            <div class="vg-right">
+
+                <!-- بحث -->
+                <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="7" stroke="black" stroke-width="2"/>
+                    <path d="M20 20l-4-4" stroke="black" stroke-width="2"/>
+                </svg>
+
+                <!-- كاميرا -->
+                <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24">
+                    <rect x="3" y="7" width="18" height="14" rx="2" stroke="black" stroke-width="2"/>
+                    <circle cx="12" cy="14" r="4" stroke="black" stroke-width="2"/>
+                    <path d="M8 7l2-3h4l2 3" stroke="black" stroke-width="2"/>
+                </svg>
+
+                <!-- المفضلة -->
+                <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24">
+                    <path d="M12 21l-1.5-1.3C5 15 2 12 2 8.5 2 6 4 4 6.5 4c1.7 0 3.4 1 4.3 2.4C11.1 5 12.9 4 14.6 4 17 4 19 6 19 8.5c0 3.5-3 6.5-8.5 11.2L12 21z"
+                          stroke="black" stroke-width="2" fill="none"/>
+                </svg>
+
+                <!-- الحساب -->
+                <div class="vg-dropdown">
+                    <span id="accountIcon" class="vg-icon-btn">
+                        <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24">
+                            <circle cx="12" cy="7" r="4" stroke="black" stroke-width="2"/>
+                            <path d="M4 21c0-4 4-7 8-7s8 3 8 7" stroke="black" stroke-width="2"/>
+                        </svg>
+                    </span>
+
+                    <ul id="accountMenu" class="vg-dropdown-menu">
+                        {% if user.is_authenticated %}
+                            <li class="vg-user-welcome">مرحباً، {{ user.username }}</li>
+                            <li><a href="{% url 'accounts:profile' %}">الملف الشخصي</a></li>
+                            <li><a href="{% url 'accounts:update_profile' %}">تعديل الملف</a></li>
+                            <li><a href="{% url 'accounts:logout' %}">تسجيل الخروج</a></li>
+                        {% else %}
+                            <li><a href="{% url 'accounts:login' %}">تسجيل الدخول</a></li>
+                            <li><a href="{% url 'accounts:register' %}">إنشاء حساب</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+
+                <!-- السلة -->
+                <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24">
+                    <path d="M6 6h15l-2 12H5L3 6h3" stroke="black" stroke-width="2"/>
+                    <circle cx="9" cy="20" r="1.5" fill="black"/>
+                    <circle cx="17" cy="20" r="1.5" fill="black"/>
+                </svg>
+
+            </div>
+
         </div>
 
-        <!-- أيقونات فوغا -->
-        <div class="vg-right">
-
-            <!-- بحث -->
-            <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24">
-                <circle cx="11" cy="11" r="7" stroke="black" stroke-width="2"/>
-                <path d="M20 20l-4-4" stroke="black" stroke-width="2"/>
-            </svg>
-
-            <!-- كاميرا -->
-            <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24">
-                <rect x="3" y="7" width="18" height="14" rx="2" stroke="black" stroke-width="2"/>
-                <circle cx="12" cy="14" r="4" stroke="black" stroke-width="2"/>
-                <path d="M8 7l2-3h4l2 3" stroke="black" stroke-width="2"/>
-            </svg>
-
-            <!-- المفضلة -->
-            <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24">
-                <path d="M12 21l-1.5-1.3C5 15 2 12 2 8.5 2 6 4 4 6.5 4c1.7 0 3.4 1 4.3 2.4C11.1 5 12.9 4 14.6 4 17 4 19 6 19 8.5c0 3.5-3 6.5-8.5 11.2L12 21z"
-                      stroke="black" stroke-width="2" fill="none"/>
-            </svg>
-
-            <!-- الحساب -->
-            <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24">
-                <circle cx="12" cy="7" r="4" stroke="black" stroke-width="2"/>
-                <path d="M4 21c0-4 4-7 8-7s8 3 8 7" stroke="black" stroke-width="2"/>
-            </svg>
-
-            <!-- السلة -->
-            <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24">
-                <path d="M6 6h15l-2 12H5L3 6h3" stroke="black" stroke-width="2"/>
-                <circle cx="9" cy="20" r="1.5" fill="black"/>
-                <circle cx="17" cy="20" r="1.5" fill="black"/>
-            </svg>
+        <!-- ============================
+             الشعار
+        ============================= -->
+        <div class="vg-logo">
+            <a href="/" class="vg-brand">VogaStyle</a>
         </div>
-    </div>
 
-    <!-- ============================
-         الشعار
-    ============================= -->
-    <div class="vg-logo">
-        <a href="/" class="vg-brand">VogaStyle</a>
-    </div>
+        <!-- ============================
+             القائمة الرئيسية
+        ============================= -->
+        <nav class="vg-nav">
+            <ul>
+                <li><a href="#">النساء</a></li>
+                <li><a href="#">الرجال</a></li>
+                <li><a href="#">الأطفال</a></li>
+                <li><a href="#">المنزل</a></li>
+                <li><a href="#">التجميل</a></li>
+            </ul>
+        </nav>
 
-    <!-- ============================
-         القائمة الرئيسية
-    ============================= -->
-    <nav class="vg-nav">
-        <ul>
-            <li><a href="#">النساء</a></li>
-            <li><a href="#">الرجال</a></li>
-            <li><a href="#">الأطفال</a></li>
-            <li><a href="#">المنزل</a></li>
-            <li><a href="#">التجميل</a></li>
-        </ul>
-    </nav>
+    </div>
 
 </header>
 
