@@ -1,0 +1,43 @@
+{% include "base/header.html" %}
+
+<section style="padding:50px; max-width:600px; margin:auto; font-family:'Cairo';">
+    <h2 style="color:#C9A77A; text-align:center; margin-bottom:20px;">إنشاء حساب جديد</h2>
+
+    <form method="POST" style="background:#F7F1E4; padding:25px; border-radius:12px;">
+        {% csrf_token %}
+
+        <label>اسم المستخدم</label>
+        <input type="text" name="username" required style="width:100%; margin-bottom:15px; padding:10px;">
+
+        <label>البريد الإلكتروني</label>
+        <input type="email" name="email" required style="width:100%; margin-bottom:15px; padding:10px;">
+
+        <label>كلمة المرور</label>
+        <input type="password" name="password" required style="width:100%; margin-bottom:15px; padding:10px;">
+
+        <label>رقم الجوال</label>
+        <input type="text" name="phone" style="width:100%; margin-bottom:15px; padding:10px;">
+
+        <label>المدينة</label>
+        <input type="text" name="city" style="width:100%; margin-bottom:15px; padding:10px;">
+
+        <label>الدولة</label>
+        <input type="text" name="country" style="width:100%; margin-bottom:15px; padding:10px;">
+
+        <label>العنوان</label>
+        <input type="text" name="address" style="width:100%; margin-bottom:15px; padding:10px;">
+
+        <button type="submit" style="
+            width:100%;
+            padding:12px;
+            background:#C9A77A;
+            color:#1A1A1A;
+            border:none;
+            font-size:18px;
+            cursor:pointer;
+            border-radius:8px;
+        ">إنشاء الحساب</button>
+    </form>
+</section>
+
+{% include "base/footer.html" %}
