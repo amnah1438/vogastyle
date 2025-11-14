@@ -16,13 +16,17 @@
         justify-content:space-between;
         padding:0 20px;
     ">
-        
-        <!-- الشعار -->
+
+        <!-- =====================
+             الشعار (Logo)
+        ====================== -->
         <div style="font-size:28px; font-weight:700; color:#C9A77A;">
             VogaStyle
         </div>
 
-        <!-- القائمة -->
+        <!-- =====================
+             القائمة (Navigation)
+        ====================== -->
         <nav>
             <ul style="
                 list-style:none;
@@ -31,17 +35,21 @@
                 margin:0;
                 padding:0;
             ">
-                <li><a href="/" style="color:#FFFFFF; text-decoration:none; font-weight:400;">الرئيسية</a></li>
+                <li><a href="/" style="color:#FFFFFF; text-decoration:none;">الرئيسية</a></li>
                 <li><a href="#" style="color:#FFFFFF; text-decoration:none;">المنتجات</a></li>
                 <li><a href="#" style="color:#FFFFFF; text-decoration:none;">الأقسام</a></li>
                 <li><a href="#" style="color:#FFFFFF; text-decoration:none;">تخفيضات</a></li>
             </ul>
         </nav>
 
-        <!-- اليمين: الأزرار + الأيقونات + قائمة الحساب + اللغات -->
+        <!-- =====================
+             يمين الهيدر
+        ====================== -->
         <div style="display:flex; align-items:center; gap:25px; font-size:18px; color:#C9A77A;">
 
-            <!-- زر تغيير اللغة -->
+            <!-- =====================
+                 زر اللغة
+            ====================== -->
             <div style="position:relative;">
                 <span id="langIcon" style="cursor:pointer; font-size:22px;">🌐</span>
 
@@ -58,14 +66,26 @@
                     list-style:none;
                     z-index:999;
                 ">
-                    <li><a href="/?lang=ar" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">العربية</a></li>
-                    <li><a href="/?lang=en" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">English</a></li>
+                    <li>
+                        <a href="/?lang=ar"
+                           style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">
+                            🇸🇦 العربية
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/?lang=en"
+                           style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">
+                            🇬🇧 English
+                        </a>
+                    </li>
                 </ul>
             </div>
 
-            <!-- أزرار تسجيل الدخول وإنشاء حساب -->
+            <!-- =====================
+                 تسجيل الدخول/إنشاء حساب
+            ====================== -->
             {% if not user.is_authenticated %}
-            <div style="display:flex; align-items:center; gap:15px; margin-left:20px;">
+            <div style="display:flex; align-items:center; gap:15px;">
 
                 <!-- تسجيل الدخول -->
                 <a href="{% url 'accounts:login' %}"
@@ -99,15 +119,20 @@
                    onmouseout="this.style.opacity='1';">
                     إنشاء حساب
                 </a>
+
             </div>
             {% endif %}
 
-            <!-- أيقونات -->
-            <span style="cursor:pointer; font-size:20px;">&#128269;</span> <!-- بحث -->
-            <span style="cursor:pointer; font-size:20px;">&#9829;</span> <!-- مفضلة -->
-            <span style="cursor:pointer; font-size:20px;">&#128722;</span> <!-- سلة -->
+            <!-- =====================
+                 أيقونات البحث + المفضلة + السلة
+            ====================== -->
+            <span style="cursor:pointer; font-size:20px;">&#128269;</span>
+            <span style="cursor:pointer; font-size:20px;">&#9829;</span>
+            <span style="cursor:pointer; font-size:20px;">&#128722;</span>
 
-            <!-- قائمة الحساب -->
+            <!-- =====================
+                 قائمة الحساب
+            ====================== -->
             <div style="position:relative;">
                 <span id="accountIcon" style="cursor:pointer; font-size:22px;">&#128100;</span>
 
@@ -124,16 +149,14 @@
                     list-style:none;
                     z-index:999;
                 ">
-
                     {% if user.is_authenticated %}
                         <li style="padding:8px 16px; color:#C9A77A;">مرحباً، {{ user.username }}</li>
-                        <li><a href="{% url 'accounts:profile' %}" style="display:block; padding:8px 16px; color:#FFF;">الملف الشخصي</a></li>
-                        <li><a href="{% url 'accounts:update_profile' %}" style="display:block; padding:8px 16px; color:#FFF;">تعديل الملف</a></li>
-                        <li><a href="{% url 'accounts:logout' %}" style="display:block; padding:8px 16px; color:#FFF;">تسجيل الخروج</a></li>
-
+                        <li><a href="{% url 'accounts:profile' %}" style="color:#FFF; padding:8px 16px; display:block;">الملف الشخصي</a></li>
+                        <li><a href="{% url 'accounts:update_profile' %}" style="color:#FFF; padding:8px 16px; display:block;">تعديل الملف</a></li>
+                        <li><a href="{% url 'accounts:logout' %}" style="color:#FFF; padding:8px 16px; display:block;">تسجيل الخروج</a></li>
                     {% else %}
-                        <li><a href="{% url 'accounts:login' %}" style="display:block; padding:8px 16px; color:#FFF;">تسجيل الدخول</a></li>
-                        <li><a href="{% url 'accounts:register' %}" style="display:block; padding:8px 16px; color:#FFF;">إنشاء حساب</a></li>
+                        <li><a href="{% url 'accounts:login' %}" style="color:#FFF; padding:8px 16px; display:block;">تسجيل الدخول</a></li>
+                        <li><a href="{% url 'accounts:register' %}" style="color:#FFF; padding:8px 16px; display:block;">إنشاء حساب</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -147,29 +170,34 @@
      جافاسكربت التحكم بالقوائم
 =========================== -->
 <script>
-// فتح/إغلاق قائمة الحساب
 document.addEventListener("DOMContentLoaded", function () {
-    const icon = document.getElementById("accountIcon");
-    const menu = document.getElementById("accountMenu");
 
-    icon.addEventListener("click", () => {
-        menu.style.display = menu.style.display === "block" ? "none" : "block";
+    /* ============================
+       قائمة الحساب
+    ============================ */
+    const accountIcon = document.getElementById("accountIcon");
+    const accountMenu = document.getElementById("accountMenu");
+
+    accountIcon.addEventListener("click", () => {
+        accountMenu.style.display =
+            accountMenu.style.display === "block" ? "none" : "block";
     });
 
     document.addEventListener("click", (e) => {
-        if (!icon.contains(e.target) && !menu.contains(e.target)) {
-            menu.style.display = "none";
+        if (!accountIcon.contains(e.target) && !accountMenu.contains(e.target)) {
+            accountMenu.style.display = "none";
         }
     });
-});
 
-// فتح/إغلاق قائمة اللغات
-document.addEventListener("DOMContentLoaded", function () {
+    /* ============================
+       قائمة اللغات
+    ============================ */
     const langIcon = document.getElementById("langIcon");
     const langMenu = document.getElementById("langMenu");
 
     langIcon.addEventListener("click", () => {
-        langMenu.style.display = langMenu.style.display === "block" ? "none" : "block";
+        langMenu.style.display =
+            langMenu.style.display === "block" ? "none" : "block";
     });
 
     document.addEventListener("click", (e) => {
