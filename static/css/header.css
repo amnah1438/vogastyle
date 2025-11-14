@@ -1,5 +1,5 @@
 /* ============================
-   RESET بسيط لضبط الخطوط
+   RESET
 ============================ */
 * {
     margin: 0;
@@ -35,25 +35,30 @@
 }
 
 /* ============================
-   Dropdown اللغة + الدول
+   Dropdown اللغة
 ============================ */
 .vg-language-dropdown {
     position: relative;
     display: inline-block;
 }
 
+/* زر English */
 .vg-lang-btn {
     display: flex;
     align-items: center;
     gap: 8px;
     cursor: pointer;
-    padding: 4px 10px;
-    border-radius: 2px;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+.vg-lang-btn:hover {
+    background: #f5f5f5;
 }
 
 .vg-lang-btn span {
     font-size: 14px;
-    color: #555;
+    color: #444;
 }
 
 .vg-lang-btn .vg-flag {
@@ -63,34 +68,33 @@
 /* القائمة المنسدلة */
 .vg-lang-menu {
     position: absolute;
-    top: 100%;
-    left: 0;
-    margin-top: 6px;
-
+    top: 38px;        /* ينزل تحت English */
+    right: 0;         /* يلصقها بالجهة اليمين */
     min-width: 210px;
+
     background: #ffffff;
     border: 1px solid #e0e0e0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+    border-radius: 6px;
 
-    padding: 6px 0;
+    padding: 8px 0;
     z-index: 1000;
 
-    display: none; /* ستظهر بالجافاسكربت لاحقاً */
+    display: none;
 }
 
 .vg-lang-menu .vg-item {
-    padding: 6px 12px;
-    font-size: 14px;
+    padding: 10px 14px;
+    font-size: 15px;
     color: #333;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     cursor: pointer;
 }
 
 .vg-lang-menu .vg-item:hover {
-    background: #f5f5f5;
+    background: #f7f7f7;
 }
 
 /* ============================
@@ -150,5 +154,5 @@
 }
 
 .vg-nav a:hover {
-    color: #C9A77A;  /* لون ذهبي مشابه لفوغا */
+    color: #C9A77A;
 }
