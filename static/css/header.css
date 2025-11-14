@@ -225,3 +225,23 @@ svg.vg-flag-svg * {
         font-size: 28px;
     }
 }
+/* إصلاح نهائي لظهور الأعلام */
+.vg-flag-img {
+    width: 22px !important;
+    height: 16px !important;
+    display: inline-block !important;
+    flex-shrink: 0 !important;
+}
+
+.vg-flag-img * {
+    fill: inherit !important;
+    stroke: none !important;
+}
+
+/* منع أي ستايل آخر من إلغاء شكل العلم */
+.vg-lang-btn svg,
+.vg-lang-menu svg {
+    all: initial !important;
+    width: 22px !important;
+    height: 16px !important;
+}
