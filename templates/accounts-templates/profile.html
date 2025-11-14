@@ -1,0 +1,89 @@
+{% include "base/header.html" %}
+
+<section style="padding:50px; max-width:700px; margin:auto; font-family:'Cairo';">
+    <h2 style="
+        color:#C9A77A; 
+        text-align:center; 
+        margin-bottom:30px;
+        font-weight:700;
+    ">
+        الملف الشخصي
+    </h2>
+
+    <div style="
+        background:#F7F1E4;
+        padding:30px;
+        border-radius:15px;
+        box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    ">
+
+        <!-- اسم المستخدم -->
+        <div style="margin-bottom:20px;">
+            <strong style="color:#111;">اسم المستخدم:</strong>
+            <span style="color:#1A1A1A;">{{ profile.user.username }}</span>
+        </div>
+
+        <!-- البريد الإلكتروني -->
+        <div style="margin-bottom:20px;">
+            <strong style="color:#111;">البريد الإلكتروني:</strong>
+            <span style="color:#1A1A1A;">{{ profile.user.email }}</span>
+        </div>
+
+        <!-- رقم الجوال -->
+        <div style="margin-bottom:20px;">
+            <strong style="color:#111;">رقم الجوال:</strong>
+            <span style="color:#1A1A1A;">
+                {{ profile.phone|default:"غير محدد" }}
+            </span>
+        </div>
+
+        <!-- المدينة -->
+        <div style="margin-bottom:20px;">
+            <strong style="color:#111;">المدينة:</strong>
+            <span style="color:#1A1A1A;">
+                {{ profile.city|default:"غير محددة" }}
+            </span>
+        </div>
+
+        <!-- الدولة -->
+        <div style="margin-bottom:20px;">
+            <strong style="color:#111;">الدولة:</strong>
+            <span style="color:#1A1A1A;">
+                {{ profile.country|default:"غير محددة" }}
+            </span>
+        </div>
+
+        <!-- العنوان -->
+        <div style="margin-bottom:20px;">
+            <strong style="color:#111;">العنوان:</strong>
+            <span style="color:#1A1A1A;">
+                {{ profile.address|default:"غير محدد" }}
+            </span>
+        </div>
+
+        <!-- زر تعديل الملف -->
+        <div style="text-align:center; margin-top:30px;">
+            <a href="{% url 'accounts:update_profile' %}" style="
+                background:#C9A77A; 
+                padding:12px 30px;
+                color:#1A1A1A;
+                border-radius:10px;
+                text-decoration:none;
+                font-size:18px;
+                font-weight:600;
+            ">
+                تعديل الملف الشخصي
+            </a>
+        </div>
+
+        <!-- زر العودة للصفحة الرئيسية -->
+        <div style="text-align:center; margin-top:15px;">
+            <a href="/" style="color:#C9A77A; font-size:16px;">
+                العودة للصفحة الرئيسية
+            </a>
+        </div>
+
+    </div>
+</section>
+
+{% include "base/footer.html" %}
