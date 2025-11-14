@@ -241,8 +241,6 @@ svg.vg-flag-svg * {
 /* منع أي ستايل آخر من إلغاء شكل العلم */
 .vg-lang-btn svg,
 .vg-lang-menu svg {
-.vg-lang-btn svg,
-.vg-lang-menu svg {
     width: 22px !important;
     height: 16px !important;
 }
