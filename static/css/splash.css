@@ -1,10 +1,15 @@
+/* ============================
+   RESET
+============================ */
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: hidden; /* يمنع التمرير أثناء السلاش فقط */
 }
 
-/* الحاوية */
+/* ============================
+   Splash Container
+============================ */
 .splash {
     width: 100%;
     height: 100vh;
@@ -14,17 +19,21 @@ body {
 
     /* حركة الاختفاء */
     animation: fadeOut 1s ease forwards;
-    animation-delay: 2s; /* تبقى 2 ثانية ثم تختفي */
+    animation-delay: 2s; /* يبقى 2 ثانية ثم يبدأ التخفي */
 }
 
-/* صورة السلاش */
+/* ============================
+   Splash Image
+============================ */
 .splash-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* تعريف الحركة */
+/* ============================
+   Animation
+============================ */
 @keyframes fadeOut {
     to {
         opacity: 0;
