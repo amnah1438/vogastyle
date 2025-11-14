@@ -1,4 +1,4 @@
-/* RESET */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,156 +7,122 @@
 }
 
 /* ============================
-   الشريط العلوي — Top Bar
+   Utility Bar
 ============================ */
-.vg-topbar {
+.vg-utility-bar {
     width: 100%;
-    background: #ffffff;
-    border-bottom: 1px solid #e6e6e6;
-    padding: 10px 25px;
+    background: #f8f8f8;
+    padding: 8px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.vg-ut-link {
+    margin-left: 15px;
+    font-size: 13px;
+    color: #444;
+    cursor: pointer;
+}
+
+/* ============================
+   Main Header
+============================ */
+.vg-main-header {
+    width: 100%;
+    padding: 12px 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* أيقونة واحدة */
+.vg-icon-btn img {
+    width: 22px;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: .2s;
+}
+
+.vg-icon-btn img:hover {
+    opacity: 1;
+}
+
+/* شريط البحث */
+.vg-search-box {
+    width: 45%;
+    height: 45px;
+    background: #f2f2f2;
+    border-radius: 30px;
+    padding: 0 15px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-/* يمين */
-.vg-top-right {
+.vg-search-box input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+.vg-search-btn img {
+    width: 20px;
+}
+
+/* مجموعة الأيقونات */
+.vg-icons-right {
     display: flex;
     align-items: center;
+    gap: 18px;
+}
+
+/* السلة */
+.vg-cart-icon {
     position: relative;
 }
 
-.vg-country-box {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    cursor: pointer;
-    padding: 6px 12px;
-    border-radius: 6px;
-    border: 1px solid #eee;
-    background: #fff;
-    transition: 0.25s ease;
-}
-
-.vg-country-box:hover {
-    background: #f5f5f5;
-}
-
-.vg-flag-current {
-    width: 24px;
-    height: 16px;
-}
-
-.vg-country-name {
-    font-size: 14px;
-    color: #333;
-}
-
-.vg-arrow {
-    font-size: 11px;
-    opacity: 0.7;
-}
-
-/* قائمة الدول */
-.vg-country-menu {
+.vg-cart-badge {
     position: absolute;
-    top: 48px;
-    right: 0;
-    background: #fff;
-    border-radius: 8px;
-    width: 160px;
-    border: 1px solid #ececec;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-    display: none;
-    overflow: hidden;
-    z-index: 9999;
-}
-
-.vg-country-menu.show {
-    display: block;
-}
-
-.vg-country-item {
-    width: 100%;
-    padding: 10px 12px;
-    background: #fff;
-    border: none;
-
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 10px;
-
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.vg-country-item:hover {
-    background: #f7f7f7;
-}
-
-.vg-flag {
-    width: 22px;
-    height: 16px;
-}
-
-/* يسار */
-.vg-top-left {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.vg-icon-btn img {
-    width: 22px;
-    height: 22px;
-    opacity: 0.8;
-    transition: 0.2s ease;
-}
-
-.vg-icon-btn:hover img {
-    opacity: 1;
+    top: -6px;
+    right: -5px;
+    background: #000;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 5px;
+    border-radius: 50%;
 }
 
 /* ============================
-   الشعار — Logo
-============================ */
-.vg-logo {
-    text-align: center;
-    padding: 22px 0;
-}
-
-.vg-brand {
-    font-size: 38px;
-    font-weight: 800;
-    color: #000;
-    text-decoration: none;
-}
-
-/* ============================
-   القائمة — Navigation
+   Navigation Menu
 ============================ */
 .vg-nav {
-    width: 100%;
-    background: #ffffff;
+    background: #fff;
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
 }
 
 .vg-nav ul {
-    list-style: none;
+    padding: 12px 30px;
+
     display: flex;
     justify-content: center;
-    gap: 55px;
-    padding: 14px 0;
+    gap: 40px;
+
+    list-style: none;
 }
 
 .vg-nav a {
     text-decoration: none;
-    color: #000;
-    font-size: 18px;
+    color: #333;
     font-weight: 500;
+    font-size: 15px;
 }
 
 .vg-nav a:hover {
