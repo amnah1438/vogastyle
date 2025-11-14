@@ -28,23 +28,74 @@
     gap: 14px;
 }
 
-.vg-lang {
-    font-size: 14px;
-    color: #555;
-    cursor: pointer;
-}
-
-.vg-flag {
-    font-size: 18px;
-}
-
 .vg-right {
     display: flex;
     align-items: center;
     gap: 22px;
 }
 
-/* أيقونات SVG */
+/* ============================
+   Dropdown اللغة + الدول
+============================ */
+.vg-language-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.vg-lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 4px 10px;
+    border-radius: 2px;
+}
+
+.vg-lang-btn span {
+    font-size: 14px;
+    color: #555;
+}
+
+.vg-lang-btn .vg-flag {
+    font-size: 16px;
+}
+
+/* القائمة المنسدلة */
+.vg-lang-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 6px;
+
+    min-width: 210px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    border-radius: 4px;
+
+    padding: 6px 0;
+    z-index: 1000;
+
+    display: none; /* ستظهر بالجافاسكربت لاحقاً */
+}
+
+.vg-lang-menu .vg-item {
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.vg-lang-menu .vg-item:hover {
+    background: #f5f5f5;
+}
+
+/* ============================
+   أيقونات SVG
+============================ */
 .vg-icon {
     width: 22px;
     height: 22px;
