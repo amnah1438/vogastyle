@@ -1,5 +1,12 @@
 from django.shortcuts import render
+from catalog.models import Product   # <-- مهم جداً
 
 def home(request):
-    # عرض الصفحة الرئيسية من داخل مجلد core-templates
-    return render(request, "home.html")
+    # جلب آخر المنتجات
+    products = Product.objects.all().order_by('-created_at')[:12]
+
+    context = {
+        "products": products,
+    }
+
+    return render(request, "core-templates/home.html", context)
