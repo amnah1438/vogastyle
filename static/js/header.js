@@ -1,17 +1,17 @@
 // =============================
-//   فتح / إغلاق قائمة اللغة
+//   فتح / إغلاق قائمة الدول فقط
 // =============================
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const btn = document.querySelector(".vg-lang-btn");
+    const flagBtn = document.querySelector(".vg-flag-btn"); // زر العلم فقط
     const menu = document.querySelector(".vg-lang-menu");
 
-    if (btn && menu) {
+    if (flagBtn && menu) {
 
-        // فتح/إغلاق القائمة عند الضغط على زر اللغة
-        btn.addEventListener("click", function (e) {
-            e.stopPropagation();   // منع انتشار الحدث
+        // فتح/إغلاق القائمة عند الضغط على العلم
+        flagBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
             menu.style.display = (menu.style.display === "block") ? "none" : "block";
         });
 
@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.addEventListener("click", function () {
             menu.style.display = "none";
         });
+
     }
 
 });
@@ -30,12 +31,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const langText = document.querySelector(".vg-lang-text");
+    const langText = document.querySelector(".vg-lang-text"); // نص اللغة فقط
     const langForm = document.querySelector(".lang-form");
 
     if (langText && langForm) {
-        langText.addEventListener("click", function () {
-            langForm.submit();   // إرسال فورم تغيير اللغة
+        langText.addEventListener("click", function (e) {
+            e.stopPropagation(); // لا يدخل على قائمة الدول
+            langForm.submit();
         });
     }
 
@@ -43,18 +45,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // =============================
-//   إغلاق القائمة عند الضغط خارج زر العلم
+//   لمنع إغلاق القائمة عند الضغط داخلها
 // =============================
 
-document.addEventListener("click", function (e) {
+document.addEventListener("DOMContentLoaded", function () {
 
-    const container = document.querySelector(".vg-language-dropdown");
     const menu = document.querySelector(".vg-lang-menu");
 
-    if (container && menu) {
-        if (!container.contains(e.target)) {
-            menu.style.display = "none";
-        }
+    if (menu) {
+        menu.addEventListener("click", function (e) {
+            e.stopPropagation(); // يمنع الإغلاق
+        });
     }
 
 });
