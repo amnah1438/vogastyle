@@ -69,7 +69,7 @@ TEMPLATES = [
             BASE_DIR / 'templates',
             BASE_DIR / 'templates/base-templates',
             BASE_DIR / 'templates/core-templates',
-            BASEBASE_DIR / 'templates/accounts-templates',
+            BASE_DIR / 'templates/accounts-templates',
             BASE_DIR / 'templates/cart-templates',
             BASE_DIR / 'templates/catalog-templates',
             BASE_DIR / 'templates/orders-templates',
@@ -77,7 +77,7 @@ TEMPLATES = [
             BASE_DIR / 'templates/marketing-templates',
         ],
 
-        # إصلاح مهم جداً: يجب أن يكون True
+        # إصلاح مهم جداً
         'APP_DIRS': True,
 
         'OPTIONS': {
