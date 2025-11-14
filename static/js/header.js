@@ -27,20 +27,3 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
-
-
-// =============================================
-//   2) تغيير اللغة (عربي ↔ English)
-// =============================================
-document.addEventListener("DOMContentLoaded", function () {
-
-    const langText = document.querySelector(".vg-lang-text");  // نص اللغة
-    const langForm = document.querySelector(".lang-form");     // فورم تغيير اللغة
-
-    if (langText && langForm) {
-        langText.addEventListener("click", function (e) {
-            e.stopPropagation();
-            langForm.submit(); // تغيير اللغة مباشرة
-        });
-    }
-});
