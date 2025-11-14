@@ -25,7 +25,7 @@
             <p style="font-size:18px; color:#111111; margin-bottom:24px;">
                 اكتشفي أحدث صيحات الموضة المختارة بعناية.
             </p>
-            <a href="#" style="
+            <a href="/catalog/" style="
                 background:#C9A77A;
                 color:#1A1A1A;
                 padding:14px 28px;
@@ -64,6 +64,65 @@
             text-align:center;
         ">منتجات مميزة</h2>
 
+        <!-- شبكة المنتجات -->
         <div style="
             display:grid;
-            grid-template-columns:repeat
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap:30px;
+        ">
+
+            {% for product in products %}
+            <div style="
+                background:#F7F1E4;
+                padding:20px;
+                border-radius:10px;
+                text-align:center;
+                transition:0.3s;
+            ">
+                <!-- صورة المنتج -->
+                <a href="/catalog/{{ product.slug }}/">
+                    <img src="{{ product.main_image.url }}" 
+                    alt="{{ product.name }}"
+                    style="width:100%; height:320px; object-fit:cover; border-radius:10px;">
+                </a>
+
+                <!-- اسم المنتج -->
+                <h3 style="
+                    font-size:20px;
+                    font-weight:600;
+                    margin:15px 0 10px;
+                    color:#1A1A1A;
+                ">
+                    {{ product.name }}
+                </h3>
+
+                <!-- السعر -->
+                <p style="font-size:18px; color:#C9A77A; margin-bottom:12px;">
+                    {{ product.price }} ر.س
+                </p>
+
+                <!-- زر التفاصيل -->
+                <a href="/catalog/{{ product.slug }}/" style="
+                    display:inline-block;
+                    padding:10px 20px;
+                    background:#C9A77A;
+                    color:#1A1A1A;
+                    text-decoration:none;
+                    border-radius:4px;
+                    font-weight:600;
+                ">
+                    عرض التفاصيل
+                </a>
+            </div>
+            {% empty %}
+                <p style="text-align:center; font-size:18px; color:#555;">
+                    لا توجد منتجات حالياً.
+                </p>
+            {% endfor %}
+
+        </div>
+
+    </div>
+</section>
+
+{% include "footer.html" %}
