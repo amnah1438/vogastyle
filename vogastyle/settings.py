@@ -130,7 +130,9 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-STATIC_ROOT = BASE_DIR.parent / "staticfiles"
+# ❗ تعديل مهم وصحيح لبيئة التطوير
+# لا نستخدم parent هنا، نخليه داخل المشروع
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # ============================
 # ملفات الوسائط Media
@@ -149,7 +151,6 @@ CLOUDINARY_STORAGE = {
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-# 🔥 إضافة التهيئة المطلوبة لحل الخطأ
 cloudinary.config(
     cloud_name="dyg4401o9",
     api_key="293858138167552",
