@@ -1,6 +1,4 @@
-/* ============================
-   RESET
-============================ */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -22,7 +20,7 @@
     justify-content: space-between;
 }
 
-/* يمين: اختيار الدولة */
+/* يمين */
 .vg-top-right {
     display: flex;
     align-items: center;
@@ -65,13 +63,11 @@
     position: absolute;
     top: 48px;
     right: 0;
-
     background: #fff;
     border-radius: 8px;
     width: 160px;
     border: 1px solid #ececec;
     box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-
     display: none;
     overflow: hidden;
     z-index: 9999;
@@ -105,32 +101,22 @@
     height: 16px;
 }
 
-/* ============================
-   يسار: أيقونات (كاميرا + بحث + غيرها)
-============================ */
+/* يسار */
 .vg-top-left {
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
-.vg-icon-btn {
-    background: none;
-    border: none;
-    padding: 4px;
-    cursor: pointer;
-}
-
 .vg-icon-btn img {
     width: 22px;
     height: 22px;
     opacity: 0.8;
-    transition: 0.25s ease;
+    transition: 0.2s ease;
 }
 
 .vg-icon-btn:hover img {
     opacity: 1;
-    filter: drop-shadow(0 0 2px #ddd);
 }
 
 /* ============================
@@ -144,8 +130,8 @@
 .vg-brand {
     font-size: 38px;
     font-weight: 800;
-    text-decoration: none;
     color: #000;
+    text-decoration: none;
 }
 
 /* ============================
@@ -175,26 +161,4 @@
 
 .vg-nav a:hover {
     color: #C9A77A;
-}
-
-/* ============================
-   RESPONSIVE
-============================ */
-@media (max-width: 768px) {
-
-    .vg-topbar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        padding: 12px;
-    }
-
-    .vg-nav ul {
-        gap: 25px;
-        font-size: 16px;
-    }
-
-    .vg-brand {
-        font-size: 30px;
-    }
 }
