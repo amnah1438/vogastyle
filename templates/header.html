@@ -1,3 +1,4 @@
+{% load static %}
 <!-- ===========================
      شريط الهيدر - VogaStyle
 =========================== -->
@@ -40,10 +41,11 @@
         <!-- اليمين: الأزرار + الأيقونات + قائمة الحساب -->
         <div style="display:flex; align-items:center; gap:25px; font-size:18px; color:#C9A77A;">
 
-            <!-- أزرار تسجيل الدخول وإنشاء حساب (تظهر فقط لغير المسجّلين) -->
+            <!-- أزرار تسجيل الدخول وإنشاء حساب -->
             {% if not user.is_authenticated %}
             <div style="display:flex; align-items:center; gap:15px; margin-left:20px;">
 
+                <!-- تسجيل الدخول -->
                 <a href="{% url 'accounts:login' %}"
                    style="
                         padding:8px 18px;
@@ -59,6 +61,7 @@
                     تسجيل الدخول
                 </a>
 
+                <!-- إنشاء حساب -->
                 <a href="{% url 'accounts:register' %}"
                    style="
                         padding:8px 18px;
@@ -74,21 +77,20 @@
                    onmouseout="this.style.opacity='1';">
                     إنشاء حساب
                 </a>
-
             </div>
             {% endif %}
 
             <!-- أيقونات -->
-            <span style="cursor:pointer;">&#128269;</span>
-            <span style="cursor:pointer;">&#9829;</span>
-            <span style="cursor:pointer;">&#128722;</span>
+            <span style="cursor:pointer; font-size:20px;">&#128269;</span> <!-- بحث -->
+            <span style="cursor:pointer; font-size:20px;">&#9829;</span> <!-- مفضلة -->
+            <span style="cursor:pointer; font-size:20px;">&#128722;</span> <!-- سلة -->
 
             <!-- قائمة الحساب -->
             <div style="position:relative;">
-                <span style="cursor:pointer;">&#128100;</span>
+                <span id="accountIcon" style="cursor:pointer; font-size:22px;">&#128100;</span>
 
                 <!-- القائمة المنسدلة -->
-                <ul style="
+                <ul id="accountMenu" style="
                     position:absolute;
                     right:0;
                     margin-top:10px;
@@ -100,17 +102,17 @@
                     display:none;
                     list-style:none;
                     z-index:99;
-                " class="account-menu">
+                ">
 
                     {% if user.is_authenticated %}
                         <li style="padding:8px 16px; color:#C9A77A;">مرحباً، {{ user.username }}</li>
-                        <li><a href="{% url 'accounts:profile' %}" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">الملف الشخصي</a></li>
-                        <li><a href="{% url 'accounts:update_profile' %}" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">تعديل الملف</a></li>
-                        <li><a href="{% url 'accounts:logout' %}" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">تسجيل الخروج</a></li>
+                        <li><a href="{% url 'accounts:profile' %}" style="display:block; padding:8px 16px; color:#FFF;">الملف الشخصي</a></li>
+                        <li><a href="{% url 'accounts:update_profile' %}" style="display:block; padding:8px 16px; color:#FFF;">تعديل الملف</a></li>
+                        <li><a href="{% url 'accounts:logout' %}" style="display:block; padding:8px 16px; color:#FFF;">تسجيل الخروج</a></li>
 
                     {% else %}
-                        <li><a href="{% url 'accounts:login' %}" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">تسجيل الدخول</a></li>
-                        <li><a href="{% url 'accounts:register' %}" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">إنشاء حساب</a></li>
+                        <li><a href="{% url 'accounts:login' %}" style="display:block; padding:8px 16px; color:#FFF;">تسجيل الدخول</a></li>
+                        <li><a href="{% url 'accounts:register' %}" style="display:block; padding:8px 16px; color:#FFF;">إنشاء حساب</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -121,19 +123,18 @@
 </header>
 
 <script>
-    // فتح / إغلاق القائمة المنسدلة عند الضغط على أيقونة الحساب
-    document.addEventListener("DOMContentLoaded", function () {
-        const icon = document.querySelector('header span[style*="128100"]');
-        const menu = document.querySelector(".account-menu");
+document.addEventListener("DOMContentLoaded", function () {
+    const icon = document.getElementById("accountIcon");
+    const menu = document.getElementById("accountMenu");
 
-        icon.addEventListener("click", () => {
-            menu.style.display = menu.style.display === "block" ? "none" : "block";
-        });
-
-        document.addEventListener("click", (e) => {
-            if (!icon.contains(e.target) && !menu.contains(e.target)) {
-                menu.style.display = "none";
-            }
-        });
+    icon.addEventListener("click", () => {
+        menu.style.display = menu.style.display === "block" ? "none" : "block";
     });
+
+    document.addEventListener("click", (e) => {
+        if (!icon.contains(e.target) && !menu.contains(e.target)) {
+            menu.style.display = "none";
+        }
+    });
+});
 </script>
