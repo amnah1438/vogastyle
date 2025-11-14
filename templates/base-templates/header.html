@@ -11,10 +11,10 @@
         <!-- يسار -->
         <div class="vg-left">
 
-            <!-- ========== Dropdown اللغة + الدولة ========== -->
+            <!-- ========== Dropdown الدولة ========== -->
             <div class="vg-country-lang-box">
 
-                <!-- زر العرض -->
+                <!-- زر الفتح -->
                 <div class="vg-country-trigger" id="countryTrigger">
 
                     <!-- العلم المختار -->
@@ -31,11 +31,11 @@
                         {% endif %}
                     </span>
 
-                    <!-- سهم صغير -->
+                    <!-- سهم -->
                     <span class="vg-arrow">▾</span>
                 </div>
 
-                <!-- القائمة المنسدلة -->
+                <!-- قائمة الدول -->
                 <div class="vg-country-menu" id="countryMenu">
 
                     <!-- السعودية -->
@@ -84,9 +84,11 @@
 
         </div>
 
-        <!-- يمين -->
+        <!-- يمين — أيقونات -->
         <div class="vg-right">
-            {{ block.super }}
+            <img src="{% static 'icons/search.svg' %}" class="old-icon">
+            <img src="{% static 'icons/user.svg' %}" class="old-icon">
+            <img src="{% static 'icons/cart.svg' %}" class="old-icon">
         </div>
 
     </div>
@@ -112,5 +114,3 @@
     </nav>
 
 </header>
-
-<script src="{% static 'js/header.js' %}"></script>
