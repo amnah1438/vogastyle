@@ -9,7 +9,7 @@
 }
 
 /* ============================
-   1) الشريط العلوي — Top Bar
+   الشريط العلوي — Top Bar
 ============================ */
 .vg-topbar {
     width: 100%;
@@ -22,30 +22,14 @@
     justify-content: space-between;
 }
 
-/* يسار */
-.vg-left {
+/* يمين: اختيار الدولة */
+.vg-top-right {
     display: flex;
     align-items: center;
-    gap: 14px;
-}
-
-/* يمين */
-.vg-right {
-    display: flex;
-    align-items: center;
-    gap: 22px;
-}
-
-/* ============================
-   2) Dropdown الاحترافي (لغة + دولة)
-============================ */
-.vg-country-lang-box {
     position: relative;
-    display: inline-block;
 }
 
-/* زر الفتح */
-.vg-country-trigger {
+.vg-country-box {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -54,46 +38,39 @@
     border-radius: 6px;
     border: 1px solid #eee;
     background: #fff;
-    user-select: none;
     transition: 0.25s ease;
 }
 
-.vg-country-trigger:hover {
+.vg-country-box:hover {
     background: #f5f5f5;
 }
 
-/* العلم المختار */
 .vg-flag-current {
     width: 24px;
     height: 16px;
-    display: block;
 }
 
-/* اسم الدولة */
 .vg-country-name {
     font-size: 14px;
     color: #333;
 }
 
-/* السهم */
 .vg-arrow {
-    font-size: 12px;
-    margin-top: 2px;
-    color: #444;
+    font-size: 11px;
+    opacity: 0.7;
 }
 
 /* قائمة الدول */
 .vg-country-menu {
     position: absolute;
-    top: 45px;
+    top: 48px;
     right: 0;
 
-    background: #ffffff;
+    background: #fff;
     border-radius: 8px;
     width: 160px;
-
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     border: 1px solid #ececec;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 
     display: none;
     overflow: hidden;
@@ -104,53 +81,60 @@
     display: block;
 }
 
-/* عناصر القائمة */
 .vg-country-item {
     width: 100%;
-    background: white;
-    border: none;
     padding: 10px 12px;
+    background: #fff;
+    border: none;
 
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 10px;
 
     font-size: 14px;
     cursor: pointer;
-    text-align: right;
 }
 
 .vg-country-item:hover {
     background: #f7f7f7;
 }
 
-/* أعلام القائمة */
 .vg-flag {
     width: 22px;
     height: 16px;
-    flex-shrink: 0;
 }
 
 /* ============================
-   3) الأيقونات — Icons
+   يسار: أيقونات (كاميرا + بحث + غيرها)
 ============================ */
-.old-icon {
-    width: 26px;
-    height: 26px;
+.vg-top-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.vg-icon-btn {
+    background: none;
+    border: none;
+    padding: 4px;
     cursor: pointer;
+}
+
+.vg-icon-btn img {
+    width: 22px;
+    height: 22px;
+    opacity: 0.8;
     transition: 0.25s ease;
 }
 
-.old-icon * {
-    stroke: #222 !important;
-}
-
-.old-icon:hover * {
-    stroke: #C9A77A !important;
+.vg-icon-btn:hover img {
+    opacity: 1;
+    filter: drop-shadow(0 0 2px #ddd);
 }
 
 /* ============================
-   4) الشعار — Logo
+   الشعار — Logo
 ============================ */
 .vg-logo {
     text-align: center;
@@ -165,7 +149,7 @@
 }
 
 /* ============================
-   5) القائمة — Navigation
+   القائمة — Navigation
 ============================ */
 .vg-nav {
     width: 100%;
@@ -194,14 +178,15 @@
 }
 
 /* ============================
-   6) RESPONSIVE
+   RESPONSIVE
 ============================ */
 @media (max-width: 768px) {
 
     .vg-topbar {
         flex-direction: column;
-        gap: 10px;
         align-items: flex-start;
+        gap: 10px;
+        padding: 12px;
     }
 
     .vg-nav ul {
@@ -209,11 +194,7 @@
         font-size: 16px;
     }
 
-    .vg-logo {
-        padding: 15px 0;
-    }
-
     .vg-brand {
-        font-size: 28px;
+        font-size: 30px;
     }
 }
