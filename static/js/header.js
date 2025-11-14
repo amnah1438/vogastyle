@@ -1,61 +1,46 @@
-// =============================
-//   فتح / إغلاق قائمة الدول فقط
-// =============================
-
+// =============================================
+//   1) فتح وإغلاق قائمة الدول (Dropdown)
+// =============================================
 document.addEventListener("DOMContentLoaded", function () {
 
-    const flagBtn = document.querySelector(".vg-flag-btn"); // زر العلم فقط
-    const menu = document.querySelector(".vg-lang-menu");
+    const trigger = document.getElementById("countryTrigger"); // زر الدولة
+    const menu = document.getElementById("countryMenu");       // قائمة الدول
 
-    if (flagBtn && menu) {
+    if (trigger && menu) {
 
-        // فتح/إغلاق القائمة عند الضغط على العلم
-        flagBtn.addEventListener("click", function (e) {
+        // فتح/إغلاق القائمة عند الضغط على الزر
+        trigger.addEventListener("click", function (e) {
             e.stopPropagation();
-            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+            menu.classList.toggle("show");
         });
 
-        // إغلاق القائمة عند الضغط خارجها
-        document.addEventListener("click", function () {
-            menu.style.display = "none";
+        // إغلاق عند الضغط خارج القائمة
+        document.addEventListener("click", function (e) {
+            if (!trigger.contains(e.target) && !menu.contains(e.target)) {
+                menu.classList.remove("show");
+            }
         });
 
+        // منع الإغلاق عند الضغط داخل القائمة
+        menu.addEventListener("click", function (e) {
+            e.stopPropagation();
+        });
     }
-
 });
 
 
-// =============================
-//   تبديل اللغة (عربي ↔ English)
-// =============================
-
+// =============================================
+//   2) تغيير اللغة (عربي ↔ English)
+// =============================================
 document.addEventListener("DOMContentLoaded", function () {
 
-    const langText = document.querySelector(".vg-lang-text"); // نص اللغة فقط
-    const langForm = document.querySelector(".lang-form");
+    const langText = document.querySelector(".vg-lang-text");  // نص اللغة
+    const langForm = document.querySelector(".lang-form");     // فورم تغيير اللغة
 
     if (langText && langForm) {
         langText.addEventListener("click", function (e) {
-            e.stopPropagation(); // لا يدخل على قائمة الدول
-            langForm.submit();
+            e.stopPropagation();
+            langForm.submit(); // تغيير اللغة مباشرة
         });
     }
-
-});
-
-
-// =============================
-//   لمنع إغلاق القائمة عند الضغط داخلها
-// =============================
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const menu = document.querySelector(".vg-lang-menu");
-
-    if (menu) {
-        menu.addEventListener("click", function (e) {
-            e.stopPropagation(); // يمنع الإغلاق
-        });
-    }
-
 });
