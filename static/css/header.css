@@ -246,3 +246,9 @@
     stroke: #C9A77A;
     opacity: 0.8;
 }
+/* إصلاح عدم ظهور الأعلام */
+.vg-flag-icon,
+.vg-lang-menu svg {
+    stroke: none !important;
+    fill: inherit !important;
+}
