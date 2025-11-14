@@ -106,13 +106,13 @@
 
                     {% if user.is_authenticated %}
                         <li style="padding:8px 16px; color:#C9A77A;">مرحباً، {{ user.username }}</li>
-                        <li><a href="{% url 'accounts:profile' %}" style="display:block; padding:8px 16px; color:#FFF;">الملف الشخصي</a></li>
-                        <li><a href="{% url 'accounts:update_profile' %}" style="display:block; padding:8px 16px; color:#FFF;">تعديل الملف</a></li>
-                        <li><a href="{% url 'accounts:logout' %}" style="display:block; padding:8px 16px; color:#FFF;">تسجيل الخروج</a></li>
+                        <li><a href="{% url 'accounts:profile' %}" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">الملف الشخصي</a></li>
+                        <li><a href="{% url 'accounts:update_profile' %}" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">تعديل الملف</a></li>
+                        <li><a href="{% url 'accounts:logout' %}" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">تسجيل الخروج</a></li>
 
                     {% else %}
-                        <li><a href="{% url 'accounts:login' %}" style="display:block; padding:8px 16px; color:#FFF;">تسجيل الدخول</a></li>
-                        <li><a href="{% url 'accounts:register' %}" style="display:block; padding:8px 16px; color:#FFF;">إنشاء حساب</a></li>
+                        <li><a href="{% url 'accounts:login' %}" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">تسجيل الدخول</a></li>
+                        <li><a href="{% url 'accounts:register' %}" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">إنشاء حساب</a></li>
                     {% endif %}
                 </ul>
             </div>
