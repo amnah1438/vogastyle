@@ -1,4 +1,6 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
+
 
 class Category(models.Model):
     name = models.CharField(
@@ -9,8 +11,8 @@ class Category(models.Model):
         unique=True,
         verbose_name="الرابط (Slug)"
     )
-    image = models.ImageField(
-        upload_to='categories/',
+    image = CloudinaryField(
+        folder="categories/",
         blank=True,
         null=True,
         verbose_name="صورة التصنيف"
@@ -57,8 +59,10 @@ class Product(models.Model):
         auto_now_add=True,
         verbose_name="تاريخ الإضافة"
     )
-    main_image = models.ImageField(
-        upload_to='products/',
+
+    # الصورة الرئيسية للمنتج من Cloudinary
+    main_image = CloudinaryField(
+        folder="products/",
         verbose_name="الصورة الرئيسية"
     )
 
@@ -77,8 +81,10 @@ class ProductImage(models.Model):
         related_name="images",
         verbose_name="المنتج"
     )
-    image = models.ImageField(
-        upload_to='products/extra/',
+
+    # الصور الإضافية للمنتج من Cloudinary
+    image = CloudinaryField(
+        folder="products/extra/",
         verbose_name="الصورة"
     )
 
