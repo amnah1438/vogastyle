@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container py-4">
+
+    <h2 class="text-center mb-4" style="color:#C9A77A;">{{ page_title }}</h2>
+
+    <div class="row">
+        {% for product in products %}
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm">
+                <img src="{{ product.main_image.url }}" class="card-img-top" alt="{{ product.name }}">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="price" style="color:#C9A77A; font-weight:bold;">
+                        {{ product.price }} ر.س
+                    </p>
+                    <a href="{% url 'catalog:product_detail' product.slug %}"
+                        class="btn btn-dark w-100">
+                        عرض التفاصيل
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p class="text-center">لا توجد منتجات متاحة حالياً.</p>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}
