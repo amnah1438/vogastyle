@@ -7,14 +7,51 @@
 
     <title>VogaStyle</title>
 
-    <!-- هنا مستقبلاً نربط ملفات CSS العامة مثل الهيدر -->
+    <!-- هنا سيتم ربط CSS مثل الهيدر لاحقاً -->
 </head>
 
 <body>
 
-    <!-- الهيدر سيكون هنا لاحقًا -->
+    <!-- ============================
+          Header (VogaStyle)
+    ============================ -->
 
-    <!-- المحتوى المتغير لكل صفحة -->
+    <header class="header">
+
+        <!-- الشريط العلوي -->
+        <div class="top-bar">
+            <div class="left">
+                <button class="menu-btn">
+                    <img src="{% static 'images/menu.png' %}" alt="menu" />
+                </button>
+            </div>
+
+            <div class="center">
+                <a href="/" class="brand">VogaStyle</a>
+            </div>
+
+            <div class="right">
+                <img src="{% static 'images/user.png' %}" class="icon" alt="user" />
+                <img src="{% static 'images/bag.png' %}" class="icon" alt="bag" />
+            </div>
+        </div>
+
+        <!-- القائمة السفلية -->
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="#">النساء</a></li>
+                <li><a href="#">الرجال</a></li>
+                <li><a href="#">الأطفال</a></li>
+                <li><a href="#">المنزل</a></li>
+                <li><a href="#">التجميل</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- ============================
+          محتوى كل صفحة
+    ============================ -->
     {% block content %}
     {% endblock %}
 
