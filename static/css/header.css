@@ -55,25 +55,25 @@
     user-select: none;
 }
 
-/* نص اللغة (English / العربية) */
+/* نص اللغة */
 .vg-lang-text {
     font-size: 14px;
     color: #444;
     cursor: pointer;
 }
 
-/* العلم الموجود بجانب اللغة */
+/* زر العلم */
 .vg-flag-btn {
     cursor: pointer;
     display: flex;
     align-items: center;
 }
 
+/* العلم — إصلاح SVG */
 .vg-flag-icon {
-    width: 22px;
-    height: 15px;
-    border-radius: 3px;
-    object-fit: cover;
+    width: 22px !important;
+    height: 16px !important;
+    display: inline-block !important;
 }
 
 /* Hover */
@@ -81,7 +81,7 @@
     background: #f5f5f5;
 }
 
-/* القائمة المنسدلة */
+/* القائمة */
 .vg-lang-menu {
     position: absolute;
     top: 42px;
@@ -99,7 +99,7 @@
     display: none;
 }
 
-/* عناصر الدول */
+/* عنصر دولة */
 .vg-item {
     padding: 10px 14px;
     font-size: 15px;
@@ -115,7 +115,7 @@
     background: #f7f7f7;
 }
 
-/* إظهار القائمة */
+/* عند الفتح */
 .vg-language-dropdown.show .vg-lang-menu {
     display: block;
 }
@@ -151,7 +151,7 @@
 }
 
 /* ============================
-   3) القائمة الرئيسية — Navigation
+   3) القائمة — Navigation
 ============================ */
 .vg-nav {
     width: 100%;
@@ -181,7 +181,7 @@
 }
 
 /* ============================
-   RESPONSIVE (موبايل)
+   RESPONSIVE
 ============================ */
 @media (max-width: 768px) {
 
@@ -206,9 +206,8 @@
 }
 
 /* ============================
-   🔥 الأيقونات القديمة — شكل فوغا
+   🔥 الأيقونات القديمة — فوغا
 ============================ */
-
 .old-icon {
     width: 22px;
     height: 22px;
@@ -246,9 +245,16 @@
     stroke: #C9A77A;
     opacity: 0.8;
 }
-/* إصلاح عدم ظهور الأعلام */
-.vg-flag-icon,
+
+/* ============================
+   🔧 إصلاح كامل لظهور الأعلام SVG
+============================ */
+.vg-lang-btn svg,
 .vg-lang-menu svg {
+    all: unset !important;
+    width: 22px !important;
+    height: 16px !important;
+    display: inline-block !important;
     stroke: none !important;
-    fill: inherit !important;
+    fill: initial !important;
 }
