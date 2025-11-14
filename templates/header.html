@@ -38,8 +38,30 @@
             </ul>
         </nav>
 
-        <!-- اليمين: الأزرار + الأيقونات + قائمة الحساب -->
+        <!-- اليمين: الأزرار + الأيقونات + قائمة الحساب + اللغات -->
         <div style="display:flex; align-items:center; gap:25px; font-size:18px; color:#C9A77A;">
+
+            <!-- زر تغيير اللغة -->
+            <div style="position:relative;">
+                <span id="langIcon" style="cursor:pointer; font-size:22px;">🌐</span>
+
+                <ul id="langMenu" style="
+                    position:absolute;
+                    right:0;
+                    margin-top:10px;
+                    background:#1A1A1A;
+                    border:1px solid #C9A77A;
+                    border-radius:8px;
+                    padding:10px 0;
+                    width:160px;
+                    display:none;
+                    list-style:none;
+                    z-index:999;
+                ">
+                    <li><a href="/?lang=ar" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">العربية</a></li>
+                    <li><a href="/?lang=en" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">English</a></li>
+                </ul>
+            </div>
 
             <!-- أزرار تسجيل الدخول وإنشاء حساب -->
             {% if not user.is_authenticated %}
@@ -89,7 +111,6 @@
             <div style="position:relative;">
                 <span id="accountIcon" style="cursor:pointer; font-size:22px;">&#128100;</span>
 
-                <!-- القائمة المنسدلة -->
                 <ul id="accountMenu" style="
                     position:absolute;
                     right:0;
@@ -101,18 +122,18 @@
                     width:180px;
                     display:none;
                     list-style:none;
-                    z-index:99;
+                    z-index:999;
                 ">
 
                     {% if user.is_authenticated %}
                         <li style="padding:8px 16px; color:#C9A77A;">مرحباً، {{ user.username }}</li>
-                        <li><a href="{% url 'accounts:profile' %}" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">الملف الشخصي</a></li>
-                        <li><a href="{% url 'accounts:update_profile' %}" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">تعديل الملف</a></li>
-                        <li><a href="{% url 'accounts:logout' %}" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">تسجيل الخروج</a></li>
+                        <li><a href="{% url 'accounts:profile' %}" style="display:block; padding:8px 16px; color:#FFF;">الملف الشخصي</a></li>
+                        <li><a href="{% url 'accounts:update_profile' %}" style="display:block; padding:8px 16px; color:#FFF;">تعديل الملف</a></li>
+                        <li><a href="{% url 'accounts:logout' %}" style="display:block; padding:8px 16px; color:#FFF;">تسجيل الخروج</a></li>
 
                     {% else %}
-                        <li><a href="{% url 'accounts:login' %}" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">تسجيل الدخول</a></li>
-                        <li><a href="{% url 'accounts:register' %}" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">إنشاء حساب</a></li>
+                        <li><a href="{% url 'accounts:login' %}" style="display:block; padding:8px 16px; color:#FFF;">تسجيل الدخول</a></li>
+                        <li><a href="{% url 'accounts:register' %}" style="display:block; padding:8px 16px; color:#FFF;">إنشاء حساب</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -122,7 +143,11 @@
     </div>
 </header>
 
+<!-- ===========================
+     جافاسكربت التحكم بالقوائم
+=========================== -->
 <script>
+// فتح/إغلاق قائمة الحساب
 document.addEventListener("DOMContentLoaded", function () {
     const icon = document.getElementById("accountIcon");
     const menu = document.getElementById("accountMenu");
@@ -134,6 +159,22 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("click", (e) => {
         if (!icon.contains(e.target) && !menu.contains(e.target)) {
             menu.style.display = "none";
+        }
+    });
+});
+
+// فتح/إغلاق قائمة اللغات
+document.addEventListener("DOMContentLoaded", function () {
+    const langIcon = document.getElementById("langIcon");
+    const langMenu = document.getElementById("langMenu");
+
+    langIcon.addEventListener("click", () => {
+        langMenu.style.display = langMenu.style.display === "block" ? "none" : "block";
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!langIcon.contains(e.target) && !langMenu.contains(e.target)) {
+            langMenu.style.display = "none";
         }
     });
 });
