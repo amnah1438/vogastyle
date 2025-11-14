@@ -39,7 +39,7 @@
                 <div class="vg-country-menu" id="countryMenu">
 
                     <!-- السعودية -->
-                    <form method="post" action="{% url 'set_country' %}">
+                    <form method="post" action="{% url 'core:set_country' %}">
                         {% csrf_token %}
                         <button name="country" value="sa" class="vg-country-item">
                             <img src="{% static 'images/flags/sa.svg' %}" class="vg-flag"> السعودية
@@ -47,7 +47,7 @@
                     </form>
 
                     <!-- الإمارات -->
-                    <form method="post" action="{% url 'set_country' %}">
+                    <form method="post" action="{% url 'core:set_country' %}">
                         {% csrf_token %}
                         <button name="country" value="ae" class="vg-country-item">
                             <img src="{% static 'images/flags/ae.svg' %}" class="vg-flag"> الإمارات
@@ -55,7 +55,7 @@
                     </form>
 
                     <!-- الكويت -->
-                    <form method="post" action="{% url 'set_country' %}">
+                    <form method="post" action="{% url 'core:set_country' %}">
                         {% csrf_token %}
                         <button name="country" value="kw" class="vg-country-item">
                             <img src="{% static 'images/flags/kw.svg' %}" class="vg-flag"> الكويت
@@ -63,7 +63,7 @@
                     </form>
 
                     <!-- البحرين -->
-                    <form method="post" action="{% url 'set_country' %}">
+                    <form method="post" action="{% url 'core:set_country' %}">
                         {% csrf_token %}
                         <button name="country" value="bh" class="vg-country-item">
                             <img src="{% static 'images/flags/bh.svg' %}" class="vg-flag"> البحرين
@@ -71,7 +71,7 @@
                     </form>
 
                     <!-- قطر -->
-                    <form method="post" action="{% url 'set_country' %}">
+                    <form method="post" action="{% url 'core:set_country' %}">
                         {% csrf_token %}
                         <button name="country" value="qa" class="vg-country-item">
                             <img src="{% static 'images/flags/qa.svg' %}" class="vg-flag"> قطر
