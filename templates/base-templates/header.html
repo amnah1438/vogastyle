@@ -1,136 +1,97 @@
 {% load static %}
-
-<!-- ===========================
-     شريط الهيدر - VogaStyle
-=========================== -->
 <header class="vg-header">
 
-    <div class="vg-container">
+    <!-- ============================
+         1) الشريط العلوي – Top Bar
+    ============================ -->
+    <div class="vg-topbar">
 
-        <!-- =====================
-             الشعار (Logo)
-        ====================== -->
-        <div class="vg-logo">
-            <a href="/" class="vg-brand">VogaStyle</a>
+        <!-- يسار -->
+        <div class="vg-left">
+
+            <!-- قائمة اللغة -->
+            <div class="vg-language-dropdown">
+
+                <div class="vg-lang-btn">
+                    <span>English</span>
+                    <span class="vg-flag">🇸🇦</span>
+                </div>
+
+                <!-- القائمة المنسدلة -->
+                <div class="vg-lang-menu">
+                    <div class="vg-item"><span>🇧🇭</span> البحرين</div>
+                    <div class="vg-item"><span>🇮🇶</span> العراق</div>
+                    <div class="vg-item"><span>🇯🇴</span> الأردن</div>
+                    <div class="vg-item"><span>🇰🇿</span> كازاخستان</div>
+                    <div class="vg-item"><span>🇰🇼</span> الكويت</div>
+                    <div class="vg-item"><span>🇱🇾</span> ليبيا</div>
+                    <div class="vg-item"><span>🇴🇲</span> عُمان</div>
+                    <div class="vg-item"><span>🇶🇦</span> قطر</div>
+                    <div class="vg-item"><span>🇸🇦</span> المملكة العربية السعودية</div>
+                    <div class="vg-item"><span>🇦🇪</span> الإمارات العربية المتحدة</div>
+                </div>
+
+            </div>
+
         </div>
 
-        <!-- =====================
-             القائمة (Navigation)
-        ====================== -->
-        <nav class="vg-nav">
-            <ul>
-                <li><a href="/">الرئيسية</a></li>
-                <li><a href="#">المنتجات</a></li>
-                <li><a href="#">الأقسام</a></li>
-                <li><a href="#">تخفيضات</a></li>
-            </ul>
-        </nav>
-
-        <!-- =====================
-             يمين الهيدر
-        ====================== -->
+        <!-- يمين -->
         <div class="vg-right">
 
-            <!-- =====================
-                 قائمة اللغة
-            ====================== -->
-            <div class="vg-dropdown">
-                <span id="langIcon" class="vg-icon-btn">🌐</span>
+            <!-- بحث -->
+            <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <circle cx="11" cy="11" r="7" stroke="black" stroke-width="2"/>
+                <path d="M20 20l-4-4" stroke="black" stroke-width="2"/>
+            </svg>
 
-                <ul id="langMenu" class="vg-dropdown-menu">
-                    <li><a href="/?lang=ar">🇸🇦 العربية</a></li>
-                    <li><a href="/?lang=en">🇬🇧 English</a></li>
-                </ul>
-            </div>
+            <!-- الكاميرا -->
+            <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="7" width="18" height="14" rx="2" stroke="black" stroke-width="2"/>
+                <circle cx="12" cy="14" r="4" stroke="black" stroke-width="2"/>
+                <path d="M8 7l2-3h4l2 3" stroke="black" stroke-width="2"/>
+            </svg>
 
-            <!-- =====================
-                 تسجيل الدخول/إنشاء حساب
-            ====================== -->
-            {% if not user.is_authenticated %}
-            <div class="vg-auth-btns">
+            <!-- المفضلة -->
+            <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M12 21l-1.5-1.3C5 15 2 12 2 8.5 2 6 4 4 6.5 4c1.7 0 3.4 1 4.3 2.4C11.1 5 12.9 4 14.6 4 17 4 19 6 19 8.5c0 3.5-3 6.5-8.5 11.2L12 21z"
+                stroke="black" stroke-width="2" fill="none"/>
+            </svg>
 
-                <a href="{% url 'accounts:login' %}" class="vg-login-btn">
-                    تسجيل الدخول
-                </a>
+            <!-- الحساب -->
+            <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="7" r="4" stroke="black" stroke-width="2"/>
+                <path d="M4 21c0-4 4-7 8-7s8 3 8 7" stroke="black" stroke-width="2"/>
+            </svg>
 
-                <a href="{% url 'accounts:register' %}" class="vg-register-btn">
-                    إنشاء حساب
-                </a>
-
-            </div>
-            {% endif %}
-
-            <!-- =====================
-                 أيقونات البحث + المفضلة + السلة
-            ====================== -->
-            <span class="vg-icon-btn">&#128269;</span>
-            <span class="vg-icon-btn">&#9829;</span>
-            <span class="vg-icon-btn">&#128722;</span>
-
-            <!-- =====================
-                 قائمة الحساب
-            ====================== -->
-            <div class="vg-dropdown">
-                <span id="accountIcon" class="vg-icon-btn">&#128100;</span>
-
-                <ul id="accountMenu" class="vg-dropdown-menu">
-
-                    {% if user.is_authenticated %}
-                        <li class="vg-user-welcome">مرحباً، {{ user.username }}</li>
-                        <li><a href="{% url 'accounts:profile' %}">الملف الشخصي</a></li>
-                        <li><a href="{% url 'accounts:update_profile' %}">تعديل الملف</a></li>
-                        <li><a href="{% url 'accounts:logout' %}">تسجيل الخروج</a></li>
-
-                    {% else %}
-                        <li><a href="{% url 'accounts:login' %}">تسجيل الدخول</a></li>
-                        <li><a href="{% url 'accounts:register' %}">إنشاء حساب</a></li>
-                    {% endif %}
-
-                </ul>
-            </div>
+            <!-- السلة -->
+            <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M6 6h15l-2 12H5L3 6h3" stroke="black" stroke-width="2"/>
+                <circle cx="9" cy="20" r="1.5" fill="black"/>
+                <circle cx="17" cy="20" r="1.5" fill="black"/>
+            </svg>
 
         </div>
 
     </div>
 
+    <!-- ============================
+         2) الشعار
+    ============================ -->
+    <div class="vg-logo">
+        <a href="/" class="vg-brand">VogaStyle</a>
+    </div>
+
+    <!-- ============================
+         3) القائمة الرئيسية
+    ============================ -->
+    <nav class="vg-nav">
+        <ul>
+            <li><a href="#">النساء</a></li>
+            <li><a href="#">الرجال</a></li>
+            <li><a href="#">الأطفال</a></li>
+            <li><a href="#">المنزل</a></li>
+            <li><a href="#">التجميل</a></li>
+        </ul>
+    </nav>
+
 </header>
-
-<!-- ===========================
-     جافاسكربت التحكم بالقوائم
-=========================== -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-    /* ============================
-       قائمة الحساب
-    ============================ */
-    const accountIcon = document.getElementById("accountIcon");
-    const accountMenu = document.getElementById("accountMenu");
-
-    accountIcon.addEventListener("click", () => {
-        accountMenu.classList.toggle("show");
-    });
-
-    document.addEventListener("click", (e) => {
-        if (!accountIcon.contains(e.target) && !accountMenu.contains(e.target)) {
-            accountMenu.classList.remove("show");
-        }
-    });
-
-    /* ============================
-       قائمة اللغات
-    ============================ */
-    const langIcon = document.getElementById("langIcon");
-    const langMenu = document.getElementById("langMenu");
-
-    langIcon.addEventListener("click", () => {
-        langMenu.classList.toggle("show");
-    });
-
-    document.addEventListener("click", (e) => {
-        if (!langIcon.contains(e.target) && !langMenu.contains(e.target)) {
-            langMenu.classList.remove("show");
-        }
-    });
-});
-</script>
