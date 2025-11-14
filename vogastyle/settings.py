@@ -77,7 +77,6 @@ TEMPLATES = [
             BASE_DIR / 'templates/marketing-templates',
         ],
 
-        # إصلاح مهم جداً
         'APP_DIRS': True,
 
         'OPTIONS': {
@@ -149,6 +148,13 @@ CLOUDINARY_STORAGE = {
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+# 🔥 إضافة التهيئة المطلوبة لحل الخطأ
+cloudinary.config(
+    cloud_name="dyg4401o9",
+    api_key="293858138167552",
+    api_secret="-BNiHzI1HAVjD0bBY00zAb0yPNo"
+)
 
 # ============================
 # الإعداد الافتراضي
