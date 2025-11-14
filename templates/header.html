@@ -37,8 +37,46 @@
             </ul>
         </nav>
 
-        <!-- أيقونات + قائمة الحساب -->
+        <!-- اليمين: الأزرار + الأيقونات + قائمة الحساب -->
         <div style="display:flex; align-items:center; gap:25px; font-size:18px; color:#C9A77A;">
+
+            <!-- أزرار تسجيل الدخول وإنشاء حساب (تظهر فقط لغير المسجّلين) -->
+            {% if not user.is_authenticated %}
+            <div style="display:flex; align-items:center; gap:15px; margin-left:20px;">
+
+                <a href="{% url 'accounts:login' %}"
+                   style="
+                        padding:8px 18px;
+                        border:1px solid #C9A77A;
+                        color:#C9A77A;
+                        text-decoration:none;
+                        border-radius:6px;
+                        font-size:15px;
+                        transition:0.3s;
+                   "
+                   onmouseover="this.style.backgroundColor='#C9A77A'; this.style.color='#1A1A1A';"
+                   onmouseout="this.style.backgroundColor='transparent'; this.style.color='#C9A77A';">
+                    تسجيل الدخول
+                </a>
+
+                <a href="{% url 'accounts:register' %}"
+                   style="
+                        padding:8px 18px;
+                        background-color:#C9A77A;
+                        color:#1A1A1A;
+                        text-decoration:none;
+                        border-radius:6px;
+                        font-size:15px;
+                        font-weight:600;
+                        transition:0.3s;
+                   "
+                   onmouseover="this.style.opacity='0.8';"
+                   onmouseout="this.style.opacity='1';">
+                    إنشاء حساب
+                </a>
+
+            </div>
+            {% endif %}
 
             <!-- أيقونات -->
             <span style="cursor:pointer;">&#128269;</span>
