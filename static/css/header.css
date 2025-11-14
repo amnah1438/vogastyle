@@ -258,3 +258,27 @@
     stroke: none !important;
     fill: initial !important;
 }
+/* إصلاح نهائي يمنع أي CSS آخر من إزالة fill الخاص بالأعلام */
+.vg-lang-btn svg *,
+.vg-lang-menu svg * {
+    fill: currentColor !important;
+}
+
+.vg-lang-btn svg,
+.vg-lang-menu svg {
+    color: initial !important;
+    fill: initial !important;
+    stroke: none !important;
+}
+/* إصلاح نهائي يمنع أي CSS آخر من إزالة fill الخاص بالأعلام */
+.vg-lang-btn svg *,
+.vg-lang-menu svg * {
+    fill: currentColor !important;
+}
+
+.vg-lang-btn svg,
+.vg-lang-menu svg {
+    color: initial !important;
+    fill: initial !important;
+    stroke: none !important;
+}
