@@ -5,119 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>VogaStyle</title>
+    <title>{% block title %}VogaStyle{% endblock %}</title>
 
-    <!-- ربط CSS الخاص بالهيدر -->
+    <!-- ملفات CSS الأساسية -->
     <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body>
 
-<!-- ============================================
-     Header (نسخة فوغا بالحرف)
-=============================================== -->
-<header class="vg-header">
+    <!-- ===========================
+         الهيدر (ملف خارجي)
+    ============================ -->
+    {% include "base-templates/header.html" %}
 
-    <!-- ================================
-         1) الشريط العلوي (Top Bar)
-    ================================= -->
-    <div class="vg-topbar">
+    <!-- ===========================
+         محتوى الصفحة
+    ============================ -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
 
-        <!-- يسار: dropdown اللغة -->
-        <div class="vg-left">
+    <!-- ===========================
+         الفوتر (عند إضافته لاحقاً)
+    ============================ -->
+    {% include "base-templates/footer.html" %}
 
-            <div class="vg-language-dropdown">
-
-                <!-- زر القائمة -->
-                <div class="vg-lang-btn">
-                    <span>English</span>
-                    <span class="vg-flag">🇸🇦</span>
-                </div>
-
-                <!-- القائمة المنسدلة -->
-                <div class="vg-lang-menu">
-                    <div class="vg-item"><span>🇧🇭</span> البحرين</div>
-                    <div class="vg-item"><span>🇮🇶</span> العراق</div>
-                    <div class="vg-item"><span>🇯🇴</span> الأردن</div>
-                    <div class="vg-item"><span>🇰🇿</span> كازاخستان</div>
-                    <div class="vg-item"><span>🇰🇼</span> الكويت</div>
-                    <div class="vg-item"><span>🇱🇾</span> ليبيا</div>
-                    <div class="vg-item"><span>🇴🇲</span> عُمان</div>
-                    <div class="vg-item"><span>🇶🇦</span> قطر</div>
-                    <div class="vg-item"><span>🇸🇦</span> المملكة العربية السعودية</div>
-                    <div class="vg-item"><span>🇦🇪</span> الإمارات العربية المتحدة</div>
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- يمين: أيقونات فوغا -->
-        <div class="vg-right">
-
-            <!-- بحث -->
-            <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <circle cx="11" cy="11" r="7" stroke="black" stroke-width="2"/>
-                <path d="M20 20l-4-4" stroke="black" stroke-width="2"/>
-            </svg>
-
-            <!-- الكاميرا -->
-            <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <rect x="3" y="7" width="18" height="14" rx="2" stroke="black" stroke-width="2"/>
-                <circle cx="12" cy="14" r="4" stroke="black" stroke-width="2"/>
-                <path d="M8 7l2-3h4l2 3" stroke="black" stroke-width="2"/>
-            </svg>
-
-            <!-- المفضلة -->
-            <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <path d="M12 21l-1.5-1.3C5 15 2 12 2 8.5 2 6 4 4 6.5 4c1.7 0 3.4 1 4.3 2.4C11.1 5 12.9 4 14.6 4 17 4 19 6 19 8.5c0 3.5-3 6.5-8.5 11.2L12 21z"
-                      stroke="black" stroke-width="2" fill="none"/>
-            </svg>
-
-            <!-- الحساب -->
-            <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <circle cx="12" cy="7" r="4" stroke="black" stroke-width="2"/>
-                <path d="M4 21c0-4 4-7 8-7s8 3 8 7" stroke="black" stroke-width="2"/>
-            </svg>
-
-            <!-- السلة -->
-            <svg class="vg-icon" width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <path d="M6 6h15l-2 12H5L3 6h3" stroke="black" stroke-width="2"/>
-                <circle cx="9" cy="20" r="1.5" fill="black"/>
-                <circle cx="17" cy="20" r="1.5" fill="black"/>
-            </svg>
-
-        </div>
-    </div>
-
-    <!-- ================================
-         2) الشعار (Brand)
-    ================================= -->
-    <div class="vg-logo">
-        <a href="/" class="vg-brand">VogaStyle</a>
-    </div>
-
-    <!-- ================================
-         3) القائمة الرئيسية (Navigation)
-    ================================= -->
-    <nav class="vg-nav">
-        <ul>
-            <li><a href="#">النساء</a></li>
-            <li><a href="#">الرجال</a></li>
-            <li><a href="#">الأطفال</a></li>
-            <li><a href="#">المنزل</a></li>
-            <li><a href="#">التجميل</a></li>
-        </ul>
-    </nav>
-
-</header>
-
-<!-- ============================================
-     بلوك المحتوى
-=============================================== -->
-{% block content %}
-{% endblock %}
-<script src="{% static 'js/header.js' %}"></script>
+    <!-- ملفات JS -->
+    <script src="{% static 'js/header.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 
 </body>
 </html>
