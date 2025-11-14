@@ -238,9 +238,3 @@ svg.vg-flag-svg * {
     stroke: none !important;
 }
 
-/* منع أي ستايل آخر من إلغاء شكل العلم */
-.vg-lang-btn svg,
-.vg-lang-menu svg {
-    width: 22px !important;
-    height: 16px !important;
-}
