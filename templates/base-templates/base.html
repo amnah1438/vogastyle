@@ -1,40 +1,77 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% load i18n %}
 
-    <title>{% block title %}VogaStyle{% endblock %}</title>
+<header class="vg-header">
 
-    <!-- ملفات CSS الأساسية -->
-    <link rel="stylesheet" href="{% static 'css/header.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
+    <!-- ======================================
+         1) الطبقة الأولى — Top Utility Bar
+    ======================================= -->
+    <div class="vg-utility-bar">
+        <div class="vg-utility-right">
+            <span class="vg-ut-link">العروض</span>
+            <span class="vg-ut-link">مركز المساعدة</span>
+            <span class="vg-ut-link">تتبع الطلب</span>
+        </div>
 
-<body>
+        <div class="vg-utility-left">
+            <span class="vg-ut-link">السعودية | SAR</span>
+            <span class="vg-ut-link">العربية</span>
+        </div>
+    </div>
 
-    <!-- ===========================
-         الهيدر (ملف خارجي)
-    ============================ -->
-    {% include "base-templates/header.html" %}
+    <!-- ======================================
+         2) الطبقة الثانية — Main Header
+    ======================================= -->
+    <div class="vg-main-header">
 
-    <!-- ===========================
-         محتوى الصفحة
-    ============================ -->
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
+        <!-- الكاميرا -->
+        <div class="vg-icon-btn">
+            <img src="{% static 'icons/camera.svg' %}" alt="">
+        </div>
 
-    <!-- ===========================
-         الفوتر (عند إضافته لاحقاً)
-    ============================ -->
-    {% include "base-templates/footer.html" %}
+        <!-- شريط البحث -->
+        <div class="vg-search-box">
+            <input type="text" placeholder="ابحثي عن منتج، ماركة، فئة...">
+            <button class="vg-search-btn">
+                <img src="{% static 'icons/search.svg' %}" alt="">
+            </button>
+        </div>
 
-    <!-- ملفات JS -->
-    <script src="{% static 'js/header.js' %}"></script>
-    <script src="{% static 'js/main.js' %}"></script>
+        <!-- الأيقونات -->
+        <div class="vg-icons-right">
 
-</body>
-</html>
+            <div class="vg-icon-btn">
+                <img src="{% static 'icons/heart.svg' %}" alt="">
+            </div>
+
+            <div class="vg-icon-btn">
+                <img src="{% static 'icons/user.svg' %}" alt="">
+            </div>
+
+            <div class="vg-icon-btn">
+                <img src="{% static 'icons/bell.svg' %}" alt="">
+            </div>
+
+            <div class="vg-icon-btn vg-cart-icon">
+                <img src="{% static 'icons/cart.svg' %}" alt="">
+                <span class="vg-cart-badge">0</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ======================================
+         3) الطبقة الثالثة — Main Navigation
+    ======================================= -->
+    <nav class="vg-nav">
+        <ul>
+            <li><a href="#">النساء</a></li>
+            <li><a href="#">الرجال</a></li>
+            <li><a href="#">الأطفال</a></li>
+            <li><a href="#">التجميل</a></li>
+            <li><a href="#">المنزل</a></li>
+            <li><a href="#">العلامات التجارية</a></li>
+        </ul>
+    </nav>
+
+</header>
