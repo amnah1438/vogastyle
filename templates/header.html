@@ -30,19 +30,72 @@
                 margin:0;
                 padding:0;
             ">
-                <li><a href="#" style="color:#FFFFFF; text-decoration:none; font-weight:400;">الرئيسية</a></li>
+                <li><a href="/" style="color:#FFFFFF; text-decoration:none; font-weight:400;">الرئيسية</a></li>
                 <li><a href="#" style="color:#FFFFFF; text-decoration:none;">المنتجات</a></li>
                 <li><a href="#" style="color:#FFFFFF; text-decoration:none;">الأقسام</a></li>
                 <li><a href="#" style="color:#FFFFFF; text-decoration:none;">تخفيضات</a></li>
             </ul>
         </nav>
 
-        <!-- أيقونات -->
-        <div style="display:flex; gap:20px; font-size:18px;">
-            <span style="color:#C9A77A; cursor:pointer;">&#128269;</span>
-            <span style="color:#C9A77A; cursor:pointer;">&#9829;</span>
-            <span style="color:#C9A77A; cursor:pointer;">&#128722;</span>
+        <!-- أيقونات + قائمة الحساب -->
+        <div style="display:flex; align-items:center; gap:25px; font-size:18px; color:#C9A77A;">
+
+            <!-- أيقونات -->
+            <span style="cursor:pointer;">&#128269;</span>
+            <span style="cursor:pointer;">&#9829;</span>
+            <span style="cursor:pointer;">&#128722;</span>
+
+            <!-- قائمة الحساب -->
+            <div style="position:relative;">
+                <span style="cursor:pointer;">&#128100;</span>
+
+                <!-- القائمة المنسدلة -->
+                <ul style="
+                    position:absolute;
+                    right:0;
+                    margin-top:10px;
+                    background:#1A1A1A;
+                    border:1px solid #C9A77A;
+                    border-radius:8px;
+                    padding:10px 0;
+                    width:180px;
+                    display:none;
+                    list-style:none;
+                    z-index:99;
+                " class="account-menu">
+
+                    {% if user.is_authenticated %}
+                        <li style="padding:8px 16px; color:#C9A77A;">مرحباً، {{ user.username }}</li>
+                        <li><a href="{% url 'accounts:profile' %}" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">الملف الشخصي</a></li>
+                        <li><a href="{% url 'accounts:update_profile' %}" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">تعديل الملف</a></li>
+                        <li><a href="{% url 'accounts:logout' %}" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">تسجيل الخروج</a></li>
+
+                    {% else %}
+                        <li><a href="{% url 'accounts:login' %}" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">تسجيل الدخول</a></li>
+                        <li><a href="{% url 'accounts:register' %}" style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">إنشاء حساب</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+
         </div>
 
     </div>
 </header>
+
+<script>
+    // فتح / إغلاق القائمة المنسدلة عند الضغط على أيقونة الحساب
+    document.addEventListener("DOMContentLoaded", function () {
+        const icon = document.querySelector('header span[style*="128100"]');
+        const menu = document.querySelector(".account-menu");
+
+        icon.addEventListener("click", () => {
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!icon.contains(e.target) && !menu.contains(e.target)) {
+                menu.style.display = "none";
+            }
+        });
+    });
+</script>
