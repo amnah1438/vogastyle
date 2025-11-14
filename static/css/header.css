@@ -184,3 +184,33 @@
         font-size: 28px;
     }
 }
+
+/* ============================
+   🔥 الأيقونات القديمة — شكل فوغا
+============================ */
+
+.old-icon {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+/* اللون الأساسي أسود ناعم */
+.old-icon * {
+    stroke: #222 !important;
+    transition: 0.3s ease;
+}
+
+/* الهوفر سماوي فاخر */
+.old-icon:hover * {
+    stroke: #00A6E0 !important;
+}
+
+.old-icon circle[fill] {
+    fill: #222 !important;
+}
+
+.old-icon:hover circle[fill] {
+    fill: #00A6E0 !important;
+}
