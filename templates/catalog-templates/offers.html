@@ -3,29 +3,40 @@
 
 {% block content %}
 
-<div class="container py-4">
+<!-- ============================= -->
+<!--      بنر العروض (Hero)       -->
+<!-- ============================= -->
+<div class="hero-section" 
+     style="
+        background: url('{% static "images/offers-banner.jpg" %}') center/cover no-repeat;
+        height: 350px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+     ">
+    <h1 style="color:white; font-size:45px; font-weight:600; text-shadow:0 0 8px #000;">
+        عروض خاصة 🛍️
+    </h1>
+</div>
 
-    <h2 class="text-center mb-4" style="color:#C9A77A;">{{ page_title }}</h2>
+<div class="container py-5">
+
+    <!-- عنوان القسم -->
+    <h2 class="text-center mb-4" style="color:#C9A77A; font-weight:700;">
+        منتجات مختارة بعناية
+    </h2>
+
+    <!-- ============================= -->
+    <!--   استدعاء قالب المنتجات      -->
+    <!-- ============================= -->
 
     <div class="row">
         {% for product in products %}
-        <div class="col-md-3 mb-4">
-            <div class="card shadow-sm">
-                <img src="{{ product.main_image.url }}" class="card-img-top" alt="{{ product.name }}">
-                <div class="card-body text-center">
-                    <h5 class="card-title">{{ product.name }}</h5>
-                    <p class="price" style="color:#C9A77A; font-weight:bold;">
-                        {{ product.price }} ر.س
-                    </p>
-                    <a href="{% url 'catalog:product_detail' product.slug %}"
-                        class="btn btn-dark w-100">
-                        عرض التفاصيل
-                    </a>
-                </div>
-            </div>
-        </div>
+
+            {% include "catalog-templates/includes/product_card.html" with product=product %}
+
         {% empty %}
-        <p class="text-center">لا توجد منتجات متاحة حالياً.</p>
+        <p class="text-center mt-5">لا توجد منتجات متاحة حالياً.</p>
         {% endfor %}
     </div>
 
