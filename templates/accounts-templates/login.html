@@ -1,32 +1,53 @@
-{% include "base/header.html" %}
+{% include "header.html" %}
+{% include "messages.html" %}
 
 <section style="padding:50px; max-width:500px; margin:auto; font-family:'Cairo';">
-    <h2 style="color:#C9A77A; text-align:center; margin-bottom:20px;">تسجيل الدخول</h2>
+    <h2 style="color:#C9A77A; text-align:center; margin-bottom:20px;">
+        تسجيل الدخول
+    </h2>
 
-    <form method="POST" style="background:#F7F1E4; padding:25px; border-radius:12px;">
+    <form method="POST" 
+          style="background:#F7F1E4; padding:25px; border-radius:12px;">
         {% csrf_token %}
 
-        <label>اسم المستخدم</label>
-        <input type="text" name="username" required style="width:100%; margin-bottom:15px; padding:10px;">
+        <!-- اسم المستخدم -->
+        <label style="font-weight:600;">اسم المستخدم</label>
+        <input type="text" name="username" required
+               style="width:100%; margin-bottom:15px; padding:10px; border-radius:8px;">
 
-        <label>كلمة المرور</label>
-        <input type="password" name="password" required style="width:100%; margin-bottom:20px; padding:10px;">
+        <!-- كلمة المرور -->
+        <label style="font-weight:600;">كلمة المرور</label>
+        <input type="password" name="password" required
+               style="width:100%; margin-bottom:15px; padding:10px; border-radius:8px;">
 
-        <button type="submit" style="
-            width:100%;
-            padding:12px;
-            background:#C9A77A;
-            color:#1A1A1A;
-            border:none;
-            font-size:18px;
-            cursor:pointer;
-            border-radius:8px;
-        ">دخول</button>
+        <!-- زر الدخول -->
+        <button type="submit"
+                style="
+                    width:100%;
+                    padding:12px;
+                    background:#C9A77A;
+                    color:#1A1A1A;
+                    border:none;
+                    border-radius:8px;
+                    font-size:16px;
+                    font-weight:600;
+                    cursor:pointer;
+                    transition:0.3s;
+                "
+                onmouseover="this.style.opacity='0.8';"
+                onmouseout="this.style.opacity='1';">
+            دخول
+        </button>
+
+        <p style="margin-top:20px; text-align:center;">
+            ليس لديك حساب؟
+            <a href="{% url 'accounts:register' %}" 
+               style="color:#C9A77A; text-decoration:none;">
+                إنشاء حساب جديد
+            </a>
+        </p>
+
     </form>
-
-    <div style="text-align:center; margin-top:15px;">
-        <a href="/accounts/register/" style="color:#C9A77A;">ليس لديك حساب؟ سجل الآن</a>
-    </div>
 </section>
 
-{% include "base/footer.html" %}
+{% include "footer.html" %}
