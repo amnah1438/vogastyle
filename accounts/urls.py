@@ -1,7 +1,9 @@
 from django.urls import path
+from . import views
 
-app_name = 'accounts'
+app_name = "accounts"
 
 urlpatterns = [
-    # سيتم إضافة المسارات هنا لاحقاً
+    path("register/", views.register_view, name="register"),
+    path("login/", views.login_view, name="login"),
 ]
