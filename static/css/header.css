@@ -1,76 +1,103 @@
 /* ============================
-   Header - VogaStyle
+   RESET بسيط لضبط الخطوط
 ============================ */
-
-.header {
-    width: 100%;
-    background: #ffffff;
-    border-bottom: 1px solid #e7e7e7;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Cairo", sans-serif;
 }
 
-/* الشريط العلوي */
-.top-bar {
+/* ============================
+   1) الشريط العلوي — Top Bar
+============================ */
+.vg-topbar {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 10px 25px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 12px 20px;
 }
 
-/* زر القائمة */
-.menu-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-}
-
-/* الشعار */
-.brand {
-    font-size: 28px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #000;
-}
-
-/* الأيقونات اليمينية */
-.right {
+.vg-left {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 14px;
 }
 
-/* تنسيق أيقونات SVG */
-.icon {
-    width: 24px;
-    height: 24px;
+.vg-lang {
+    font-size: 14px;
+    color: #555;
     cursor: pointer;
 }
 
-.icon:hover {
-    opacity: 0.7;
+.vg-flag {
+    font-size: 18px;
 }
 
-/* القائمة السفلية */
-.nav-bar {
-    border-top: 1px solid #e7e7e7;
+.vg-right {
+    display: flex;
+    align-items: center;
+    gap: 22px;
 }
 
-.nav-bar ul {
-    margin: 0;
-    padding: 10px 0;
+/* أيقونات SVG */
+.vg-icon {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.vg-icon:hover {
+    opacity: 0.5;
+}
+
+/* ============================
+   2) الشعار — Logo
+============================ */
+.vg-logo {
+    text-align: center;
+    padding: 18px 0;
+}
+
+.vg-brand {
+    font-size: 35px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #000;
+    letter-spacing: 1px;
+}
+
+/* ============================
+   3) القائمة الرئيسية — Navigation
+============================ */
+.vg-nav {
+    width: 100%;
+    background: #ffffff;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.vg-nav ul {
+    list-style: none;
     display: flex;
     justify-content: center;
-    gap: 40px;
-    list-style: none;
+    gap: 55px;
+    padding: 14px 0;
 }
 
-.nav-bar a {
+.vg-nav a {
     text-decoration: none;
-    color: #333;
-    font-size: 17px;
+    color: #000;
+    font-size: 18px;
     font-weight: 500;
+    transition: 0.2s;
 }
 
-.nav-bar a:hover {
-    color: #000;
+.vg-nav a:hover {
+    color: #C9A77A;  /* لون ذهبي مشابه لفوغا */
 }
