@@ -1,83 +1,45 @@
 {% load static %}
+
 <!-- ===========================
      شريط الهيدر - VogaStyle
 =========================== -->
-<header style="
-    background-color:#1A1A1A;
-    color:#C9A77A;
-    padding:16px 0;
-    font-family:'Cairo', sans-serif;
-">
-    <div style="
-        max-width:1300px;
-        margin:auto;
-        display:flex;
-        align-items:center;
-        justify-content:space-between;
-        padding:0 20px;
-    ">
+<header class="vg-header">
+
+    <div class="vg-container">
 
         <!-- =====================
              الشعار (Logo)
         ====================== -->
-        <div style="font-size:28px; font-weight:700; color:#C9A77A;">
-            VogaStyle
+        <div class="vg-logo">
+            <a href="/" class="vg-brand">VogaStyle</a>
         </div>
 
         <!-- =====================
              القائمة (Navigation)
         ====================== -->
-        <nav>
-            <ul style="
-                list-style:none;
-                display:flex;
-                gap:32px;
-                margin:0;
-                padding:0;
-            ">
-                <li><a href="/" style="color:#FFFFFF; text-decoration:none;">الرئيسية</a></li>
-                <li><a href="#" style="color:#FFFFFF; text-decoration:none;">المنتجات</a></li>
-                <li><a href="#" style="color:#FFFFFF; text-decoration:none;">الأقسام</a></li>
-                <li><a href="#" style="color:#FFFFFF; text-decoration:none;">تخفيضات</a></li>
+        <nav class="vg-nav">
+            <ul>
+                <li><a href="/">الرئيسية</a></li>
+                <li><a href="#">المنتجات</a></li>
+                <li><a href="#">الأقسام</a></li>
+                <li><a href="#">تخفيضات</a></li>
             </ul>
         </nav>
 
         <!-- =====================
              يمين الهيدر
         ====================== -->
-        <div style="display:flex; align-items:center; gap:25px; font-size:18px; color:#C9A77A;">
+        <div class="vg-right">
 
             <!-- =====================
-                 زر اللغة
+                 قائمة اللغة
             ====================== -->
-            <div style="position:relative;">
-                <span id="langIcon" style="cursor:pointer; font-size:22px;">🌐</span>
+            <div class="vg-dropdown">
+                <span id="langIcon" class="vg-icon-btn">🌐</span>
 
-                <ul id="langMenu" style="
-                    position:absolute;
-                    right:0;
-                    margin-top:10px;
-                    background:#1A1A1A;
-                    border:1px solid #C9A77A;
-                    border-radius:8px;
-                    padding:10px 0;
-                    width:160px;
-                    display:none;
-                    list-style:none;
-                    z-index:999;
-                ">
-                    <li>
-                        <a href="/?lang=ar"
-                           style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">
-                            🇸🇦 العربية
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/?lang=en"
-                           style="display:block; padding:8px 16px; color:#FFF; text-decoration:none;">
-                            🇬🇧 English
-                        </a>
-                    </li>
+                <ul id="langMenu" class="vg-dropdown-menu">
+                    <li><a href="/?lang=ar">🇸🇦 العربية</a></li>
+                    <li><a href="/?lang=en">🇬🇧 English</a></li>
                 </ul>
             </div>
 
@@ -85,38 +47,13 @@
                  تسجيل الدخول/إنشاء حساب
             ====================== -->
             {% if not user.is_authenticated %}
-            <div style="display:flex; align-items:center; gap:15px;">
+            <div class="vg-auth-btns">
 
-                <!-- تسجيل الدخول -->
-                <a href="{% url 'accounts:login' %}"
-                   style="
-                        padding:8px 18px;
-                        border:1px solid #C9A77A;
-                        color:#C9A77A;
-                        text-decoration:none;
-                        border-radius:6px;
-                        font-size:15px;
-                        transition:0.3s;
-                   "
-                   onmouseover="this.style.backgroundColor='#C9A77A'; this.style.color='#1A1A1A';"
-                   onmouseout="this.style.backgroundColor='transparent'; this.style.color='#C9A77A';">
+                <a href="{% url 'accounts:login' %}" class="vg-login-btn">
                     تسجيل الدخول
                 </a>
 
-                <!-- إنشاء حساب -->
-                <a href="{% url 'accounts:register' %}"
-                   style="
-                        padding:8px 18px;
-                        background-color:#C9A77A;
-                        color:#1A1A1A;
-                        text-decoration:none;
-                        border-radius:6px;
-                        font-size:15px;
-                        font-weight:600;
-                        transition:0.3s;
-                   "
-                   onmouseover="this.style.opacity='0.8';"
-                   onmouseout="this.style.opacity='1';">
+                <a href="{% url 'accounts:register' %}" class="vg-register-btn">
                     إنشاء حساب
                 </a>
 
@@ -126,44 +63,36 @@
             <!-- =====================
                  أيقونات البحث + المفضلة + السلة
             ====================== -->
-            <span style="cursor:pointer; font-size:20px;">&#128269;</span>
-            <span style="cursor:pointer; font-size:20px;">&#9829;</span>
-            <span style="cursor:pointer; font-size:20px;">&#128722;</span>
+            <span class="vg-icon-btn">&#128269;</span>
+            <span class="vg-icon-btn">&#9829;</span>
+            <span class="vg-icon-btn">&#128722;</span>
 
             <!-- =====================
                  قائمة الحساب
             ====================== -->
-            <div style="position:relative;">
-                <span id="accountIcon" style="cursor:pointer; font-size:22px;">&#128100;</span>
+            <div class="vg-dropdown">
+                <span id="accountIcon" class="vg-icon-btn">&#128100;</span>
 
-                <ul id="accountMenu" style="
-                    position:absolute;
-                    right:0;
-                    margin-top:10px;
-                    background:#1A1A1A;
-                    border:1px solid #C9A77A;
-                    border-radius:8px;
-                    padding:10px 0;
-                    width:180px;
-                    display:none;
-                    list-style:none;
-                    z-index:999;
-                ">
+                <ul id="accountMenu" class="vg-dropdown-menu">
+
                     {% if user.is_authenticated %}
-                        <li style="padding:8px 16px; color:#C9A77A;">مرحباً، {{ user.username }}</li>
-                        <li><a href="{% url 'accounts:profile' %}" style="color:#FFF; padding:8px 16px; display:block;">الملف الشخصي</a></li>
-                        <li><a href="{% url 'accounts:update_profile' %}" style="color:#FFF; padding:8px 16px; display:block;">تعديل الملف</a></li>
-                        <li><a href="{% url 'accounts:logout' %}" style="color:#FFF; padding:8px 16px; display:block;">تسجيل الخروج</a></li>
+                        <li class="vg-user-welcome">مرحباً، {{ user.username }}</li>
+                        <li><a href="{% url 'accounts:profile' %}">الملف الشخصي</a></li>
+                        <li><a href="{% url 'accounts:update_profile' %}">تعديل الملف</a></li>
+                        <li><a href="{% url 'accounts:logout' %}">تسجيل الخروج</a></li>
+
                     {% else %}
-                        <li><a href="{% url 'accounts:login' %}" style="color:#FFF; padding:8px 16px; display:block;">تسجيل الدخول</a></li>
-                        <li><a href="{% url 'accounts:register' %}" style="color:#FFF; padding:8px 16px; display:block;">إنشاء حساب</a></li>
+                        <li><a href="{% url 'accounts:login' %}">تسجيل الدخول</a></li>
+                        <li><a href="{% url 'accounts:register' %}">إنشاء حساب</a></li>
                     {% endif %}
+
                 </ul>
             </div>
 
         </div>
 
     </div>
+
 </header>
 
 <!-- ===========================
@@ -179,13 +108,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const accountMenu = document.getElementById("accountMenu");
 
     accountIcon.addEventListener("click", () => {
-        accountMenu.style.display =
-            accountMenu.style.display === "block" ? "none" : "block";
+        accountMenu.classList.toggle("show");
     });
 
     document.addEventListener("click", (e) => {
         if (!accountIcon.contains(e.target) && !accountMenu.contains(e.target)) {
-            accountMenu.style.display = "none";
+            accountMenu.classList.remove("show");
         }
     });
 
@@ -196,13 +124,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const langMenu = document.getElementById("langMenu");
 
     langIcon.addEventListener("click", () => {
-        langMenu.style.display =
-            langMenu.style.display === "block" ? "none" : "block";
+        langMenu.classList.toggle("show");
     });
 
     document.addEventListener("click", (e) => {
         if (!langIcon.contains(e.target) && !langMenu.contains(e.target)) {
-            langMenu.style.display = "none";
+            langMenu.classList.remove("show");
         }
     });
 });
