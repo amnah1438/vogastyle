@@ -18,7 +18,7 @@
                 <div class="vg-country-trigger" id="countryTrigger">
 
                     <!-- العلم المختار -->
-                    <img src="{% static 'images/flags/' %}{{ request.session.country|default:'sa' }}.png"
+                    <img src="{% static 'images/flags/' %}{{ request.session.country|default:'sa' }}.svg"
                          class="vg-flag-current">
 
                     <!-- اسم الدولة -->
@@ -42,7 +42,7 @@
                     <form method="post" action="{% url 'set_country' %}">
                         {% csrf_token %}
                         <button name="country" value="sa" class="vg-country-item">
-                            <img src="{% static 'images/flags/sa.png' %}" class="vg-flag"> السعودية
+                            <img src="{% static 'images/flags/sa.svg' %}" class="vg-flag"> السعودية
                         </button>
                     </form>
 
@@ -50,7 +50,7 @@
                     <form method="post" action="{% url 'set_country' %}">
                         {% csrf_token %}
                         <button name="country" value="ae" class="vg-country-item">
-                            <img src="{% static 'images/flags/ae.png' %}" class="vg-flag"> الإمارات
+                            <img src="{% static 'images/flags/ae.svg' %}" class="vg-flag"> الإمارات
                         </button>
                     </form>
 
@@ -58,7 +58,7 @@
                     <form method="post" action="{% url 'set_country' %}">
                         {% csrf_token %}
                         <button name="country" value="kw" class="vg-country-item">
-                            <img src="{% static 'images/flags/kw.png' %}" class="vg-flag"> الكويت
+                            <img src="{% static 'images/flags/kw.svg' %}" class="vg-flag"> الكويت
                         </button>
                     </form>
 
@@ -66,7 +66,7 @@
                     <form method="post" action="{% url 'set_country' %}">
                         {% csrf_token %}
                         <button name="country" value="bh" class="vg-country-item">
-                            <img src="{% static 'images/flags/bh.png' %}" class="vg-flag"> البحرين
+                            <img src="{% static 'images/flags/bh.svg' %}" class="vg-flag"> البحرين
                         </button>
                     </form>
 
@@ -74,7 +74,7 @@
                     <form method="post" action="{% url 'set_country' %}">
                         {% csrf_token %}
                         <button name="country" value="qa" class="vg-country-item">
-                            <img src="{% static 'images/flags/qa.png' %}" class="vg-flag"> قطر
+                            <img src="{% static 'images/flags/qa.svg' %}" class="vg-flag"> قطر
                         </button>
                     </form>
 
@@ -86,7 +86,6 @@
 
         <!-- يمين -->
         <div class="vg-right">
-            <!-- الإيقونات تبقينها كما هي ✔ -->
             {{ block.super }}
         </div>
 
@@ -114,5 +113,4 @@
 
 </header>
 
-<!-- js -->
 <script src="{% static 'js/header.js' %}"></script>
