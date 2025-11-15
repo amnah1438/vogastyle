@@ -163,14 +163,19 @@ body {
 .vg-country-menu.show {
     display: block;
 }
-/* توسيط الشعار بالنص */
+/* ============================
+   Logo — توسيط الشعار بالنص
+============================ */
 .vg-logo {
+    width: 100%;
     text-align: center;
+    margin: 20px 0 10px 0;
 }
 
 .vg-logo .vg-brand {
-    display: block;
-    text-align: center;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 700;
+    color: #000;
+    text-decoration: none;
+    font-family: "Riyadh Font", sans-serif !important;
 }
