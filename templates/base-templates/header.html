@@ -36,23 +36,44 @@
 
 
             <!-- القائمة المنسدلة -->
-            <div class="vg-country-menu" id="vgCountryMenu">
-                <button data-country="sa">
-                    <img src="{% static 'images/flags/sa.svg' %}"> السعودية
-                </button>
-                <button data-country="ae">
-                    <img src="{% static 'images/flags/ae.svg' %}"> الإمارات
-                </button>
-                <button data-country="kw">
-                    <img src="{% static 'images/flags/kw.svg' %}"> الكويت
-                </button>
-                <button data-country="qa">
-                    <img src="{% static 'images/flags/qa.svg' %}"> قطر
-                </button>
-                <button data-country="bh">
-                    <img src="{% static 'images/flags/bh.svg' %}"> البحرين
-                </button>
-            </div>
+<div class="vg-country-menu" id="vgCountryMenu">
+
+    <form method="post" action="{% url 'core:set_country' %}">
+        {% csrf_token %}
+        <button name="country" value="sa">
+            <img src="{% static 'images/flags/sa.svg' %}"> السعودية
+        </button>
+    </form>
+
+    <form method="post" action="{% url 'core:set_country' %}">
+        {% csrf_token %}
+        <button name="country" value="ae">
+            <img src="{% static 'images/flags/ae.svg' %}"> الإمارات
+        </button>
+    </form>
+
+    <form method="post" action="{% url 'core:set_country' %}">
+        {% csrf_token %}
+        <button name="country" value="kw">
+            <img src="{% static 'images/flags/kw.svg' %}"> الكويت
+        </button>
+    </form>
+
+    <form method="post" action="{% url 'core:set_country' %}">
+        {% csrf_token %}
+        <button name="country" value="qa">
+            <img src="{% static 'images/flags/qa.svg' %}"> قطر
+        </button>
+    </form>
+
+    <form method="post" action="{% url 'core:set_country' %}">
+        {% csrf_token %}
+        <button name="country" value="bh">
+            <img src="{% static 'images/flags/bh.svg' %}"> البحرين
+        </button>
+    </form>
+
+</div>
 
             <!-- اللغة -->
             <a class="vg-lang" href="/en/">EN</a>
