@@ -40,10 +40,12 @@
                 {% endfor %}
             </div>
 
-            <!-- زر تغيير اللغة -->
+            <!-- زر تغيير اللغة (تم إصلاحه بالكامل) -->
             <form action="/i18n/setlang/" method="post" class="vg-lang">
                 {% csrf_token %}
-                <input type="hidden" name="next" value="{{ request.path }}">
+                
+                <!-- إصلاح المشكلة — هذا هو السطر الصحيح -->
+                <input type="hidden" name="next" value="{{ request.get_full_path }}">
                 
                 {% if request.LANGUAGE_CODE == "ar" %}
                     <input type="hidden" name="language" value="en">
@@ -53,6 +55,7 @@
                     <button type="submit" class="vg-lang-btn">العربية</button>
                 {% endif %}
             </form>
+
         </div>
 
     </div>
