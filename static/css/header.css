@@ -1,225 +1,166 @@
-/* ============================
-   الخط العام
-============================ */
+/* الخط الأساسي */
 body {
-    margin: 0;
-    padding: 0;
     font-family: "Cairo", sans-serif;
     direction: rtl;
-}
-
-/* ============================
-   الحاوية العامة مثل فوغا
-============================ */
-.vg-container {
-    width: 92%;
-    max-width: 1450px;
-    margin: auto;
+    margin: 0;
 }
 
 /* ============================
    1) التوب بار
 ============================ */
 .vg-topbar {
-    background: #fafafa;
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1200;
+    background:#fafafa;
+    padding:8px 20px;
+    border-bottom:1px solid #eee;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1200;
 }
 
-/* يمين ويسار */
 .vg-top-right,
 .vg-top-left {
-    display: flex;
-    align-items: center;
-    gap: 18px;
+    display:flex;
+    align-items:center;
+    gap:18px;
 }
 
-/* ---------- الدولة ---------- */
+/* الدولة */
 .vg-country {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    cursor: pointer;
-    position: relative;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    cursor:pointer;
+    position:relative;
 }
 
 .vg-country img {
-    width: 22px;
+    width:22px;
 }
 
-.vg-arrow {
-    font-size: 12px;
-    opacity: 0.7;
-}
-
-/* ---------- قائمة الدول ---------- */
+/* القائمة */
 .vg-country-menu {
-    position: absolute;
-    top: 32px;
-    right: 0;
-    width: 150px;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    padding: 10px;
-    display: none;
-    z-index: 2000;
+    position:absolute;
+    top:32px;
+    right:0;
+    background:white;
+    border:1px solid #ddd;
+    border-radius:6px;
+    padding:10px;
+    display:none;
+    width:150px;
+    z-index:2000;
 }
 
 .vg-country-menu.show {
-    display: block;
+    display:block;
 }
 
 .vg-country-menu button {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: none;
-    border: none;
-    padding: 6px 0;
-    font-size: 14px;
-    cursor: pointer;
-    text-align: right;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    background:none;
+    border:none;
+    padding:6px 0;
+    cursor:pointer;
+    width:100%;
+    text-align:right;
+    font-size:14px;
 }
 
-.vg-country-menu img {
-    width: 20px;
-}
-
-/* ---------- اللغة ---------- */
-.vg-lang form {
-    display: inline-flex;
-    align-items: center;
-    margin: 0;
-}
-
+/* لغة */
 .vg-lang-btn {
-    background: none;
-    border: none;
-    color: #333;
-    font-size: 14px;
-    cursor: pointer;
+    background:none;
+    border:none;
+    font-size:14px;
+    cursor:pointer;
+    color:#333;
 }
 
-/* ---------- روابط التوب بار ---------- */
+/* روابط التوب بار */
 .vg-top-link {
-    font-size: 14px;
-    color: #333;
-    cursor: pointer;
-}
-
-/* ---------- أيقونات التوب بار ---------- */
-.vg-top-left img.vg-icon {
-    width: 22px;
-    cursor: pointer;
-    opacity: 0.8;
+    font-size:14px;
+    color:#333;
 }
 
 /* ============================
    2) المستوى الأوسط
 ============================ */
 .vg-middle {
-    display: grid;
+    display:grid;
     grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-    padding: 18px 0;
-    background: white;
-    position: sticky;
-    top: 48px;
-    z-index: 1100;
-    border-bottom: 1px solid #eee;
+    align-items:center;
+    padding:15px 20px;
+    background:white;
+    border-bottom:1px solid #eee;
 }
 
-/* ---------- الشعار ---------- */
 .vg-logo {
-    text-align: center;
+    text-align:center;
 }
 
 .vg-brand {
-    text-decoration: none;
-    font-size: 34px;
-    font-weight: 700;
-    color: #000;
+    font-size:32px;
+    font-weight:700;
+    text-decoration:none;
+    color:#000;
 }
 
-/* ---------- البحث ---------- */
+/* البحث */
 .vg-search-box {
-    background: #f3f3f3;
-    height: 45px;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 0 18px;
+    background:#f3f3f3;
+    height:45px;
+    border-radius:30px;
+    display:flex;
+    gap:10px;
+    align-items:center;
+    padding:0 18px;
 }
 
 .vg-search-box input {
-    background: none;
-    border: none;
-    outline: none;
-    font-size: 15px;
-    width: 100%;
+    border:none;
+    background:none;
+    outline:none;
+    width:100%;
 }
 
-.vg-search-box button {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-.vg-search-box img {
-    width: 20px;
-    opacity: 0.7;
-}
-
-/* ---------- أيقونات المستوى الأوسط ---------- */
 .vg-icons {
-    display: flex;
-    justify-content: flex-end;
-    gap: 18px;
-}
-
-.vg-icons button {
-    background: none;
-    border: none;
-    cursor: pointer;
+    display:flex;
+    gap:18px;
+    justify-content:flex-end;
 }
 
 .vg-icons img {
-    width: 24px;
+    width:24px;
 }
 
 /* ============================
    3) القائمة الرئيسية
 ============================ */
 .vg-nav {
-    background: white;
-    border-bottom: 2px solid #d9b88f;
+    background:white;
+    border-bottom:2px solid #d9b88f;
 }
 
 .vg-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 14px 0;
-    display: flex;
-    justify-content: center;
-    gap: 35px;
+    list-style:none;
+    display:flex;
+    gap:35px;
+    justify-content:center;
+    padding:14px 0;
+    margin:0;
 }
 
 .vg-nav a {
-    color: #222;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
+    text-decoration:none;
+    color:#222;
+    font-size:16px;
+    font-weight:600;
 }
 
 .vg-nav a:hover {
-    color: #C9A77A;
+    color:#C9A77A;
 }
