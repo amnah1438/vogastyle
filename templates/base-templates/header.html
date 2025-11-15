@@ -7,7 +7,6 @@
     ============================= -->
     <div class="vg-topbar">
 
-        <!-- يمين -->
         <div class="vg-top-right">
 
             <!-- اختيار الدولة -->
@@ -35,20 +34,17 @@
 
             <!-- قائمة الدول -->
             <div class="vg-country-dropdown" id="vgCountryMenu">
-                {% for code, label in {
-                    "sa": "السعودية",
-                    "ae": "الإمارات",
-                    "kw": "الكويت",
-                    "qa": "قطر",
-                    "bh": "البحرين"
-                }.items %}
+
+                {% for code, label in countries.items %}
                     <form method="post" action="{% url 'core:set_country' %}">
                         {% csrf_token %}
                         <button name="country" value="{{ code }}">
-                            <img src="{% static 'images/flags/' %}{{ code }}.svg"> {{ label }}
+                            <img src="{% static 'images/flags/' %}{{ code }}.svg">
+                            {{ label }}
                         </button>
                     </form>
                 {% endfor %}
+
             </div>
 
             <!-- اللغة -->
@@ -73,14 +69,12 @@
     ============================= -->
     <div class="vg-main-header">
 
-        <!-- شعار (في المنتصف) -->
         <div class="vg-logo">
             <a href="/">
                 <img src="{% static 'images/logo.svg' %}" alt="VogaStyle">
             </a>
         </div>
 
-        <!-- البحث -->
         <form class="vg-search">
             <input type="text" placeholder="ابحثي هنا">
             <button type="submit">
@@ -88,7 +82,6 @@
             </button>
         </form>
 
-        <!-- أيقونات -->
         <div class="vg-icons">
             <a href="/accounts/profile/">
                 <img src="{% static 'images/icons/user.svg' %}">
