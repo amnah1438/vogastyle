@@ -13,45 +13,36 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    position: relative; /* ✅ مضاف */
+    position: relative; /* مهم جداً */
 }
 
-/* ============================
-       اختيار الدولة
-============================ */
+/* زر الدولة */
 .vg-country {
     display: flex;
     align-items: center;
     gap: 6px;
     cursor: pointer;
+    position: relative; /* مهم جداً */
 }
 
-.vg-flag {
-    width: 22px;
-}
-
-.vg-arrow {
-    font-size: 12px;
-}
+.vg-flag { width: 22px; }
+.vg-arrow { font-size: 12px; }
 
 /* ============================
-       قائمة الدول
+   قائمة الدول — الآن صحيحة
 ============================ */
 .vg-country-menu {
-    position: absolute;   /* ✅ تعديل من fixed → absolute */
-    top: 50px;
-    left: 0;              /* يُضبط تلقائياً عبر RTL/LTR */
-    right: auto;
+    position: absolute;
+    top: 40px;
 
     background: #fff;
     border: 1px solid #ddd;
     padding: 8px 0;
     border-radius: 8px;
     display: none;
-    z-index: 5000;
+    z-index: 9999;
 
     width: 200px;
-
     max-height: 240px;
     overflow-y: auto;
 
@@ -62,22 +53,29 @@
     display: block !important;
 }
 
+/* RTL */
+html[dir="rtl"] .vg-country-menu {
+    right: 0;
+    left: auto;
+}
+
+/* LTR */
+html[dir="ltr"] .vg-country-menu {
+    left: 0;
+    right: auto;
+}
+
 .vg-country-menu form button {
     width: 100%;
     padding: 10px;
-
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     gap: 8px;
-
     background: transparent;
     border: none;
     cursor: pointer;
-
     direction: rtl;
     text-align: right;
-
     font-size: 16px;
     color: #000;
 }
@@ -99,7 +97,6 @@
     padding: 4px 12px;
     border-radius: 4px;
 }
-
 
 /* ============================
    MAIN BAR
@@ -124,9 +121,6 @@
     color: #000;
 }
 
-/* ============================
-        البحث والأيقونات
-============================ */
 .vg-actions {
     display: flex;
     align-items: center;
