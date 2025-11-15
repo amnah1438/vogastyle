@@ -76,9 +76,17 @@
 </div>
 
             <!-- اللغة -->
-            <a class="vg-lang" href="/en/">EN</a>
+         <div class="vg-lang">
+    <form action="/i18n/setlang/" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ request.path }}">
+        <input type="hidden" name="language" value="en">
+        <button type="submit" style="background:none;border:none;color:#000;cursor:pointer;">
+            EN
+        </button>
+    </form>
+</div>
 
-        </div>
 
         <!-- يسار -->
         <div class="vg-top-left">
