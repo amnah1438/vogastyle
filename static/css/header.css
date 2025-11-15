@@ -1,5 +1,5 @@
-/* استدعاء الخط الأساسي */
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
+/* استخدام خط كاريو */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
 
 /* Reset */
 * {
@@ -9,59 +9,20 @@
     font-family: "Cairo", sans-serif;
 }
 
-/* تطبيق خط Cairo على كامل الموقع */
-body {
-    font-family: "Cairo", sans-serif !important;
-}
-
 /* ============================
    Utility Bar
 ============================ */
-.vg-utility-bar {
+.vg-topbar {
     width: 100%;
     background: #f8f8f8;
     padding: 8px 25px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #e5e5e5;
 }
 
-.vg-ut-link {
-    margin-left: 15px;
-    font-size: 13px;
-    color: #444;
-    cursor: pointer;
-}
-
-/* ============================
-   Main Header
-============================ */
-.vg-main-header {
-    width: 100%;
-    padding: 12px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* ============================
-   أيقونة واحدة
-============================ */
-.vg-icon-btn img {
-    width: 22px;
-    cursor: pointer;
-    opacity: 0.85;
-    transition: .2s;
-}
-
-.vg-icon-btn img:hover {
-    opacity: 1;
-}
-
-/* ============================
-   Dropdown الدولة
-============================ */
 .vg-country-box {
     cursor: pointer;
     display: flex;
@@ -87,12 +48,30 @@ body {
 }
 
 /* ============================
-   Logo — توسيط الشعار بالنص
+   Icons Left
+============================ */
+.vg-top-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.vg-icon-btn img {
+    width: 22px;
+    opacity: 0.9;
+    transition: 0.2s;
+}
+
+.vg-icon-btn img:hover {
+    opacity: 1;
+}
+
+/* ============================
+   Logo — الشعار بالنص
 ============================ */
 .vg-logo {
-    width: 100%;
     text-align: center;
-    margin: 20px 0 10px 0;
+    padding: 15px 0;
 }
 
 .vg-logo .vg-brand {
@@ -100,7 +79,7 @@ body {
     font-weight: 700;
     color: #000;
     text-decoration: none;
-    font-family: "Cairo", sans-serif !important; /* ← هنا أهم سطر */
+    font-family: "Cairo", sans-serif;
 }
 
 /* ============================
@@ -124,7 +103,7 @@ body {
     text-decoration: none;
     color: #333;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .vg-nav a:hover {
