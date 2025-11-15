@@ -13,6 +13,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    position: relative; /* ✅ مضاف */
 }
 
 /* ============================
@@ -34,22 +35,20 @@
 }
 
 /* ============================
-       قائمة الدول (الإصلاح النهائي)
+       قائمة الدول
 ============================ */
 .vg-country-menu {
-    position: fixed;               /* أهم شيء */
-    top: 58px;                     /* أسفل التوب بار مباشرة */
-
-    /* الآن سنتركها تلقائية، وسيتم التحكم بها بالأسفل عبر RTL/LTR */
-    right: 20px;
-    left: auto;
+    position: absolute;   /* ✅ تعديل من fixed → absolute */
+    top: 50px;
+    left: 0;              /* يُضبط تلقائياً عبر RTL/LTR */
+    right: auto;
 
     background: #fff;
     border: 1px solid #ddd;
     padding: 8px 0;
     border-radius: 8px;
     display: none;
-    z-index: 5000;                 /* فوق كل الهيدر */
+    z-index: 5000;
 
     width: 200px;
 
@@ -150,21 +149,4 @@
 .vg-icons img {
     width: 22px;
     cursor: pointer;
-}
-
-
-/* ============================
-   دعم الفتح حسب اتجاه اللغة
-============================ */
-
-/* للعربية (RTL) — تفتح في اليسار */
-html[dir="rtl"] .vg-country-menu {
-    left: 20px !important;
-    right: auto !important;
-}
-
-/* للإنجليزية (LTR) — تفتح في اليمين */
-html[dir="ltr"] .vg-country-menu {
-    right: 20px !important;
-    left: auto !important;
 }
