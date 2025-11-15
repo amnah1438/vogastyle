@@ -1,22 +1,12 @@
 from django.shortcuts import render, redirect
-from catalog.models import Product   # <-- مهم جداً
+from catalog.models import Product
 
-
-# ============================
-# شاشة البداية Splash Screen
-# ============================
 def splash(request):
     return render(request, "core-templates/splash.html")
 
-
-# ============================
-# الصفحة الرئيسية Home
-# ============================
 def home(request):
-    # جلب آخر المنتجات
     products = Product.objects.all().order_by('-created_at')[:12]
 
-    # قائمة الدول — للعرض داخل الهيدر
     countries = {
         "sa": "السعودية",
         "ae": "الإمارات",
@@ -25,21 +15,20 @@ def home(request):
         "bh": "البحرين",
     }
 
-    context = {
+    return render(request, "core-templates/home.html", {
         "products": products,
         "countries": countries,
-    }
-
-    return render(request, "core-templates/home.html", context)
+    })
 
 
-# ============================
-# تغيير الدولة (Country Switch)
-# ============================
 def set_country(request):
     if request.method == "POST":
-        country = request.POST.get("country")
-        request.session["country"] = country   # نحفظها في الجلسة Session
-
-    # نرجّع المستخدم لنفس الصفحة التي كان عليها
+        request.session["country"] = request.POST.get("country")
     return redirect(request.META.get("HTTP_REFERER", "/"))
+
+# صفحات الأقسام
+def women(request): return render(request, "core-templates/coming.html")
+def men(request): return render(request, "core-templates/coming.html")
+def kids(request): return render(request, "core-templates/coming.html")
+def beauty(request): return render(request, "core-templates/coming.html")
+def home_category(request): return render(request, "core-templates/coming.html")

@@ -1,3 +1,6 @@
+/* ============================
+   TOP BAR
+============================ */
 .vg-topbar {
     background: #f2f2f2;
     padding: 8px 20px;
@@ -12,40 +15,41 @@
     gap: 20px;
 }
 
-/* تغيير الدولة */
+/* الدولة */
 .vg-country {
     display: flex;
     align-items: center;
     gap: 6px;
     cursor: pointer;
-    user-select: none;
 }
 
-.vg-flag { width: 22px; }
+.vg-flag {
+    width: 22px;
+}
+
+.vg-arrow {
+    font-size: 12px;
+}
 
 .vg-country-menu {
     position: absolute;
     background: white;
-    margin-top: 6px;
     border: 1px solid #ddd;
     padding: 8px 0;
-    border-radius: 6px;
+    border-radius: 8px;
     display: none;
-    z-index: 200;
+    z-index: 100;
 }
 
-.vg-country-menu.show {
-    display: block !important;
-}
+.vg-country-menu.show { display: block !important; }
 
 .vg-country-menu form button {
     width: 100%;
-    padding: 8px 14px;
+    padding: 10px;
     display: flex;
-    gap: 8px;
+    gap: 10px;
     background: transparent;
     border: none;
-    text-align: left;
     cursor: pointer;
 }
 
@@ -57,23 +61,25 @@
     border-radius: 4px;
 }
 
-/* MAIN BAR */
+/* ============================
+   MAIN BAR
+============================ */
 .vg-mainbar {
-    padding: 18px 20px;
+    padding: 20px 30px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
 .vg-nav a {
-    margin-left: 20px;
-    font-size: 16px;
+    margin-left: 25px;
+    font-size: 18px;
     font-weight: 500;
     color: #000;
 }
 
 .vg-logo-text {
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 700;
     color: #000;
 }
@@ -82,21 +88,20 @@
 .vg-actions {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
 
 .vg-search {
     display: flex;
     align-items: center;
     border: 1px solid #ccc;
-    padding: 6px 12px;
+    padding: 8px 12px;
     border-radius: 6px;
 }
 
 .vg-search input {
     border: none;
     outline: none;
-    background: transparent;
 }
 
 .vg-icons img {

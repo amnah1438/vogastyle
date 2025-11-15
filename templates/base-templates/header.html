@@ -2,15 +2,16 @@
 
 <header class="vg-header">
 
-    <!-- ============================
-         التوب بار الرمادي (الدولة + اللغة)
-    ============================= -->
+    <!-- ================================
+         التوب بار: الدولة + اللغة
+    ================================= -->
     <div class="vg-topbar">
 
         <div class="vg-topbar-right">
 
             <!-- زر تغيير الدولة -->
             <div class="vg-country" id="vgCountryTrigger">
+
                 <img src="{% static 'images/flags/' %}{{ request.session.country|default:'sa' }}.svg"
                      class="vg-flag">
 
@@ -43,6 +44,7 @@
             <form action="/i18n/setlang/" method="post" class="vg-lang">
                 {% csrf_token %}
                 <input type="hidden" name="next" value="{{ request.path }}">
+                
                 {% if request.LANGUAGE_CODE == "ar" %}
                     <input type="hidden" name="language" value="en">
                     <button type="submit" class="vg-lang-btn">English</button>
@@ -56,9 +58,9 @@
     </div>
 
 
-    <!-- ============================
-         البار الرئيسي
-    ============================= -->
+    <!-- ================================
+         الهيدر الرئيسي
+    ================================= -->
     <div class="vg-mainbar">
 
         <!-- قائمة الأقسام -->
@@ -67,13 +69,13 @@
             <a href="/men/">الرجال</a>
             <a href="/kids/">الأطفال</a>
             <a href="/beauty/">التجميل</a>
-            <a href="/home/">المنزل</a>
+            <a href="/home-category/">المنزل</a>
         </nav>
 
         <!-- اللوجو -->
         <div class="vg-logo">
             <a href="/">
-                <h2 class="vg-logo-text">فـوغـا سـتـايـلـي</h2>
+                <h2 class="vg-logo-text">فــوغــا ســتــايــلــي</h2>
             </a>
         </div>
 
@@ -88,13 +90,14 @@
                 </button>
             </form>
 
-            <!-- أيقونات -->
+            <!-- الأيقونات -->
             <div class="vg-icons">
                 <img src="{% static 'images/icons/camera.svg' %}">
                 <img src="{% static 'images/icons/bell.svg' %}">
                 <a href="/accounts/profile/"><img src="{% static 'images/icons/user.svg' %}"></a>
                 <a href="/cart/"><img src="{% static 'images/icons/cart.svg' %}"></a>
             </div>
+
         </div>
 
     </div>
