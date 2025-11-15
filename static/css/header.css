@@ -163,3 +163,14 @@ body {
 .vg-country-menu.show {
     display: block;
 }
+/* توسيط الشعار بالنص */
+.vg-logo {
+    text-align: center;
+}
+
+.vg-logo .vg-brand {
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+}
