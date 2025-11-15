@@ -1,13 +1,14 @@
 <header class="vg-header">
 
     <!-- ============================
-         المستوى الأول — Top Bar
+         المستوى الأول — دولة + لغة + أيقونات
     ============================= -->
     <div class="vg-topbar">
 
-        <!-- يمين: الدولة + اللغة -->
+        <!-- يمين -->
         <div class="vg-top-right">
 
+            <!-- زر الدولة -->
             <div class="vg-country-box" id="countryTrigger">
                 <img class="vg-flag-current" src="{% static 'images/flags/sa.svg' %}" alt="">
                 <span class="vg-country-name">السعودية | SAR</span>
@@ -17,69 +18,43 @@
             <!-- قائمة الدول -->
             <div class="vg-country-menu" id="countryMenu">
                 <button class="vg-country-item">
-                    <img class="vg-flag" src="{% static 'images/flags/sa.svg' %}" alt=""> السعودية
+                    <img src="{% static 'images/flags/sa.svg' %}" alt=""> السعودية
                 </button>
                 <button class="vg-country-item">
-                    <img class="vg-flag" src="{% static 'images/flags/ae.svg' %}" alt=""> الإمارات
+                    <img src="{% static 'images/flags/ae.svg' %}" alt=""> الإمارات
                 </button>
                 <button class="vg-country-item">
-                    <img class="vg-flag" src="{% static 'images/flags/kw.svg' %}" alt=""> الكويت
+                    <img src="{% static 'images/flags/kw.svg' %}" alt=""> الكويت
                 </button>
                 <button class="vg-country-item">
-                    <img class="vg-flag" src="{% static 'images/flags/qa.svg' %}" alt=""> قطر
+                    <img src="{% static 'images/flags/qa.svg' %}" alt=""> قطر
                 </button>
                 <button class="vg-country-item">
-                    <img class="vg-flag" src="{% static 'images/flags/bh.svg' %}" alt=""> البحرين
+                    <img src="{% static 'images/flags/bh.svg' %}" alt=""> البحرين
                 </button>
             </div>
 
-            <!-- زر تغيير اللغة -->
+            <!-- اللغة -->
             <div class="vg-lang">
-                <a href="/en/">English</a>
+                <a href="/en/">EN</a>
             </div>
 
         </div>
 
-        <!-- يسار: الأيقونات -->
+        <!-- يسار — الأيقونات -->
         <div class="vg-top-left">
-
-            <button class="vg-icon-btn">
-                <img src="{% static 'icons/camera.svg' %}" alt="">
-            </button>
-
-            <button class="vg-icon-btn">
-                <img src="{% static 'icons/search.svg' %}" alt="">
-            </button>
-
-            <button class="vg-icon-btn">
-                <img src="{% static 'icons/user.svg' %}" alt="">
-            </button>
-
-            <button class="vg-icon-btn">
-                <img src="{% static 'icons/cart.svg' %}" alt="">
-            </button>
-
+            <button class="vg-icon-btn"><img src="{% static 'icons/camera.svg' %}" alt=""></button>
+            <button class="vg-icon-btn"><img src="{% static 'icons/search.svg' %}" alt=""></button>
+            <button class="vg-icon-btn"><img src="{% static 'icons/user.svg' %}" alt=""></button>
+            <button class="vg-icon-btn"><img src="{% static 'icons/cart.svg' %}" alt=""></button>
         </div>
 
     </div>
 
-
     <!-- ============================
-         المستوى الثاني + الثالث معًا
+         المستوى الثاني + الثالث (مُدمج مثل فوغا)
     ============================= -->
-    <div class="vg-middle-merged">
-
-        <!-- القائمة يمين -->
-        <nav class="vg-nav">
-            <ul>
-                <li><a href="#">النساء</a></li>
-                <li><a href="#">الرجال</a></li>
-                <li><a href="#">الأطفال</a></li>
-                <li><a href="#">التجميل</a></li>
-                <li><a href="#">المنزل</a></li>
-                <li><a href="#">العلامات التجارية</a></li>
-            </ul>
-        </nav>
+    <div class="vg-middle-nav-container">
 
         <!-- الشعار بالنص -->
         <div class="vg-logo">
@@ -93,6 +68,18 @@
                 <img src="{% static 'icons/search.svg' %}" alt="">
             </button>
         </div>
+
+        <!-- القائمة يمين -->
+        <nav class="vg-nav">
+            <ul>
+                <li><a href="#">النساء</a></li>
+                <li><a href="#">الرجال</a></li>
+                <li><a href="#">الأطفال</a></li>
+                <li><a href="#">التجميل</a></li>
+                <li><a href="#">المنزل</a></li>
+                <li><a href="#">العلامات التجارية</a></li>
+            </ul>
+        </nav>
 
     </div>
 
