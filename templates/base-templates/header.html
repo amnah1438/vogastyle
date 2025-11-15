@@ -1,86 +1,90 @@
 <header class="vg-header">
 
     <!-- ============================
-         المستوى الأول — دولة + لغة + أيقونات
+         1) التوب بار
     ============================= -->
     <div class="vg-topbar">
 
         <!-- يمين -->
         <div class="vg-top-right">
 
-            <!-- زر الدولة -->
-            <div class="vg-country-box" id="countryTrigger">
-                <img class="vg-flag-current" src="{% static 'images/flags/sa.svg' %}" alt="">
-                <span class="vg-country-name">السعودية | SAR</span>
+            <!-- الدولة -->
+            <div class="vg-country" id="vgCountryTrigger">
+                <img src="{% static 'images/flags/sa.svg' %}" class="vg-flag-current">
+                <span>السعودية | SAR</span>
                 <span class="vg-arrow">▼</span>
             </div>
 
-            <!-- قائمة الدول -->
-            <div class="vg-country-menu" id="countryMenu">
-                <button class="vg-country-item">
-                    <img src="{% static 'images/flags/sa.svg' %}" alt=""> السعودية
+            <!-- القائمة المنسدلة -->
+            <div class="vg-country-menu" id="vgCountryMenu">
+                <button data-country="sa">
+                    <img src="{% static 'images/flags/sa.svg' %}"> السعودية
                 </button>
-                <button class="vg-country-item">
-                    <img src="{% static 'images/flags/ae.svg' %}" alt=""> الإمارات
+                <button data-country="ae">
+                    <img src="{% static 'images/flags/ae.svg' %}"> الإمارات
                 </button>
-                <button class="vg-country-item">
-                    <img src="{% static 'images/flags/kw.svg' %}" alt=""> الكويت
+                <button data-country="kw">
+                    <img src="{% static 'images/flags/kw.svg' %}"> الكويت
                 </button>
-                <button class="vg-country-item">
-                    <img src="{% static 'images/flags/qa.svg' %}" alt=""> قطر
+                <button data-country="qa">
+                    <img src="{% static 'images/flags/qa.svg' %}"> قطر
                 </button>
-                <button class="vg-country-item">
-                    <img src="{% static 'images/flags/bh.svg' %}" alt=""> البحرين
+                <button data-country="bh">
+                    <img src="{% static 'images/flags/bh.svg' %}"> البحرين
                 </button>
             </div>
 
             <!-- اللغة -->
-            <div class="vg-lang">
-                <a href="/en/">EN</a>
-            </div>
+            <a class="vg-lang" href="/en/">EN</a>
 
         </div>
 
-        <!-- يسار — الأيقونات -->
+        <!-- يسار -->
         <div class="vg-top-left">
-            <button class="vg-icon-btn"><img src="{% static 'icons/camera.svg' %}" alt=""></button>
-            <button class="vg-icon-btn"><img src="{% static 'icons/search.svg' %}" alt=""></button>
-            <button class="vg-icon-btn"><img src="{% static 'icons/user.svg' %}" alt=""></button>
-            <button class="vg-icon-btn"><img src="{% static 'icons/cart.svg' %}" alt=""></button>
+            <a class="vg-top-link">العروض</a>
+            <a class="vg-top-link">المساعدة</a>
+            <a class="vg-top-link">تتبع الطلب</a>
+        </div>
+    </div>
+
+    <!-- ============================
+         2) المستوى الأوسط
+    ============================= -->
+    <div class="vg-middle">
+
+        <!-- اللوجو -->
+        <div class="vg-logo">
+            <a href="/" class="vg-brand">VogaStyle</a>
+        </div>
+
+        <!-- البحث -->
+        <div class="vg-search-box">
+            <input type="search" placeholder="ابحثي عن منتج">
+            <button><img src="{% static 'icons/search.svg' %}"></button>
+        </div>
+
+        <!-- الأيقونات -->
+        <div class="vg-icons">
+            <button><img src="{% static 'icons/user.svg' %}"></button>
+            <button><img src="{% static 'icons/heart.svg' %}"></button>
+            <button><img src="{% static 'icons/cart.svg' %}"></button>
+            <button><img src="{% static 'icons/bell.svg' %}"></button>
         </div>
 
     </div>
 
     <!-- ============================
-         المستوى الثاني + الثالث (مُدمج مثل فوغا)
+         3) قائمة الأقسام
     ============================= -->
-    <div class="vg-middle-nav-container">
-
-        <!-- الشعار بالنص -->
-        <div class="vg-logo">
-            <a href="/" class="vg-brand">فوغا ستايل</a>
-        </div>
-
-        <!-- مربع البحث -->
-        <div class="vg-search-box">
-            <input type="text" placeholder="ابحث في فوغا ستايل">
-            <button class="vg-search-btn">
-                <img src="{% static 'icons/search.svg' %}" alt="">
-            </button>
-        </div>
-
-        <!-- القائمة يمين -->
-        <nav class="vg-nav">
-            <ul>
-                <li><a href="#">النساء</a></li>
-                <li><a href="#">الرجال</a></li>
-                <li><a href="#">الأطفال</a></li>
-                <li><a href="#">التجميل</a></li>
-                <li><a href="#">المنزل</a></li>
-                <li><a href="#">العلامات التجارية</a></li>
-            </ul>
-        </nav>
-
-    </div>
+    <nav class="vg-nav">
+        <ul>
+            <li><a href="#">النساء</a></li>
+            <li><a href="#">الرجال</a></li>
+            <li><a href="#">الأطفال</a></li>
+            <li><a href="#">التجميل</a></li>
+            <li><a href="#">المنزل</a></li>
+            <li><a href="#">العلامات التجارية</a></li>
+        </ul>
+    </nav>
 
 </header>
