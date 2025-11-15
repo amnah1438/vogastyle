@@ -3,10 +3,9 @@
 <header class="vg-header">
 
     <!-- ============================
-         1) التوب بار (دولة + لغة + روابط)
+         1) التوب بار
     ============================= -->
     <div class="vg-topbar">
-
         <div class="vg-top-right">
 
             <!-- الدولة -->
@@ -34,42 +33,20 @@
 
             <!-- قائمة الدول -->
             <div class="vg-country-menu" id="vgCountryMenu">
-
+                {% for code, label in {
+                    "sa":"السعودية",
+                    "ae":"الإمارات",
+                    "kw":"الكويت",
+                    "qa":"قطر",
+                    "bh":"البحرين"
+                }.items %}
                 <form method="post" action="{% url 'core:set_country' %}">
                     {% csrf_token %}
-                    <button name="country" value="sa">
-                        <img src="{% static 'images/flags/sa.svg' %}"> السعودية
+                    <button name="country" value="{{ code }}">
+                        <img src="{% static 'images/flags/' %}{{ code }}.svg"> {{ label }}
                     </button>
                 </form>
-
-                <form method="post" action="{% url 'core:set_country' %}">
-                    {% csrf_token %}
-                    <button name="country" value="ae">
-                        <img src="{% static 'images/flags/ae.svg' %}"> الإمارات
-                    </button>
-                </form>
-
-                <form method="post" action="{% url 'core:set_country' %}">
-                    {% csrf_token %}
-                    <button name="country" value="kw">
-                        <img src="{% static 'images/flags/kw.svg' %}"> الكويت
-                    </button>
-                </form>
-
-                <form method="post" action="{% url 'core:set_country' %}">
-                    {% csrf_token %}
-                    <button name="country" value="qa">
-                        <img src="{% static 'images/flags/qa.svg' %}"> قطر
-                    </button>
-                </form>
-
-                <form method="post" action="{% url 'core:set_country' %}">
-                    {% csrf_token %}
-                    <button name="country" value="bh">
-                        <img src="{% static 'images/flags/bh.svg' %}"> البحرين
-                    </button>
-                </form>
-
+                {% endfor %}
             </div>
 
             <!-- اللغة -->
@@ -89,28 +66,26 @@
             <span class="vg-top-link">العروض</span>
             <span class="vg-top-link">المساعدة</span>
             <span class="vg-top-link">تتبع الطلب</span>
-
         </div>
-
     </div>
 
     <!-- ============================
-         2) المستوى الأوسط (الشعار + البحث + الأيقونات)
+         2) الشعار + البحث + الأيقونات
     ============================= -->
     <div class="vg-middle">
 
-        <!-- البحث (يمين) -->
+        <!-- البحث يمين -->
         <div class="vg-search-box">
             <input type="text" placeholder="ابحثي عن منتج">
             <button><img src="{% static 'icons/search.svg' %}"></button>
         </div>
 
-        <!-- الشعار (وسط) -->
+        <!-- الشعار وسط -->
         <div class="vg-logo">
-            <a href="/" class="vg-brand center-title">MySite</a>
+            <a href="/" class="vg-brand center-title">VogaStyle</a>
         </div>
 
-        <!-- الأيقونات (يسار) -->
+        <!-- الأيقونات يسار -->
         <div class="vg-icons">
             <button><img src="{% static 'icons/user.svg' %}"></button>
             <button><img src="{% static 'icons/cart.svg' %}"></button>
