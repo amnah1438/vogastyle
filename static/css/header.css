@@ -1,5 +1,5 @@
-/* استدعاء خط الريال السعودي */
-@import url('https://fonts.googleapis.com/css2?family=Riyadh+Font:wght@400;700&display=swap');
+/* استدعاء الخط الأساسي */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
 
 /* Reset */
 * {
@@ -9,9 +9,9 @@
     font-family: "Cairo", sans-serif;
 }
 
-/* تطبيق الخط الجديد */
+/* تطبيق خط Cairo على كامل الموقع */
 body {
-    font-family: "Riyadh Font", sans-serif !important;
+    font-family: "Cairo", sans-serif !important;
 }
 
 /* ============================
@@ -21,7 +21,6 @@ body {
     width: 100%;
     background: #f8f8f8;
     padding: 8px 25px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,13 +40,14 @@ body {
 .vg-main-header {
     width: 100%;
     padding: 12px 25px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* أيقونة واحدة */
+/* ============================
+   أيقونة واحدة
+============================ */
 .vg-icon-btn img {
     width: 22px;
     cursor: pointer;
@@ -59,86 +59,8 @@ body {
     opacity: 1;
 }
 
-/* شريط البحث */
-.vg-search-box {
-    width: 45%;
-    height: 45px;
-    background: #f2f2f2;
-    border-radius: 30px;
-    padding: 0 15px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.vg-search-box input {
-    width: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 15px;
-}
-
-.vg-search-btn img {
-    width: 20px;
-}
-
-/* مجموعة الأيقونات */
-.vg-icons-right {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-}
-
-/* السلة */
-.vg-cart-icon {
-    position: relative;
-}
-
-.vg-cart-badge {
-    position: absolute;
-    top: -6px;
-    right: -5px;
-    background: #000;
-    color: #fff;
-    font-size: 11px;
-    padding: 2px 5px;
-    border-radius: 50%;
-}
-
 /* ============================
-   Navigation Menu
-============================ */
-.vg-nav {
-    background: #fff;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-}
-
-.vg-nav ul {
-    padding: 12px 30px;
-
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-
-    list-style: none;
-}
-
-.vg-nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    font-size: 15px;
-}
-
-.vg-nav a:hover {
-    color: #C9A77A;
-}
-
-/* ============================
-   Dropdown الدولة (مطلوب)
+   Dropdown الدولة
 ============================ */
 .vg-country-box {
     cursor: pointer;
@@ -163,6 +85,7 @@ body {
 .vg-country-menu.show {
     display: block;
 }
+
 /* ============================
    Logo — توسيط الشعار بالنص
 ============================ */
@@ -173,9 +96,37 @@ body {
 }
 
 .vg-logo .vg-brand {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 700;
     color: #000;
     text-decoration: none;
-    font-family: "Riyadh Font", sans-serif !important;
+    font-family: "Cairo", sans-serif !important; /* ← هنا أهم سطر */
+}
+
+/* ============================
+   Navigation Menu
+============================ */
+.vg-nav {
+    background: #fff;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.vg-nav ul {
+    padding: 12px 30px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+}
+
+.vg-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.vg-nav a:hover {
+    color: #C9A77A;
 }
