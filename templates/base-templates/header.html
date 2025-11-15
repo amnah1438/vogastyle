@@ -40,13 +40,15 @@
                 {% endfor %}
             </div>
 
-            <!-- زر تغيير اللغة (تم إصلاحه بالكامل) -->
+            <!-- ============================
+                 زر تغيير اللغة — تم إصلاحه
+            ============================= -->
             <form action="/i18n/setlang/" method="post" class="vg-lang">
                 {% csrf_token %}
-                
-                <!-- إصلاح المشكلة — هذا هو السطر الصحيح -->
-                <input type="hidden" name="next" value="{{ request.get_full_path }}">
-                
+
+                <!-- next ثابت لإجبار Django على التحويل الصحيح -->
+                <input type="hidden" name="next" value="/" />
+
                 {% if request.LANGUAGE_CODE == "ar" %}
                     <input type="hidden" name="language" value="en">
                     <button type="submit" class="vg-lang-btn">English</button>
