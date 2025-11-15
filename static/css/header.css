@@ -1,125 +1,173 @@
-/* الخط */
-body {
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: "Cairo", sans-serif;
 }
 
-/* ============= Top Bar ============= */
+body {
+    font-family: "Cairo", sans-serif;
+    direction: rtl;
+    background: #fff;
+}
+
+/* =============================
+   المستوى الأول — Top Bar
+============================== */
+
 .vg-topbar {
     width: 100%;
+    padding: 8px 30px;
     background: #f8f8f8;
-    padding: 8px 25px;
+    border-bottom: 1px solid #e5e5e5;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #eee;
 }
 
 /* يمين */
 .vg-top-right {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
 }
 
-/* الدولة */
+/* زر الدولة */
 .vg-country-box {
-    cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 5px;
-    position: relative;
+    gap: 6px;
+    cursor: pointer;
 }
 
+.vg-country-box img {
+    width: 20px;
+}
+
+.vg-arrow {
+    font-size: 11px;
+}
+
+/* قائمة الدول */
 .vg-country-menu {
     display: none;
     position: absolute;
-    right: 0;
-    top: 40px;
-    background: white;
-    padding: 10px;
+    background: #fff;
     border: 1px solid #eee;
     border-radius: 8px;
+    padding: 10px;
+    margin-top: 5px;
+    z-index: 999;
 }
 
 .vg-country-menu.show {
     display: block;
 }
 
-/* اللغة */
-.vg-lang a {
-    color: #000;
+.vg-country-item {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: right;
+    padding: 8px 2px;
+    cursor: pointer;
     font-size: 14px;
+}
+
+.vg-country-item img {
+    width: 18px;
+    margin-left: 5px;
+}
+
+/* زر اللغة */
+.vg-lang a {
+    font-size: 13px;
+    color: #333;
     text-decoration: none;
 }
 
-/* يسار: الأيقونات */
+/* يسار — الأيقونات */
 .vg-top-left {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 18px;
 }
 
 .vg-icon-btn img {
     width: 22px;
     cursor: pointer;
-    opacity: .8;
+    opacity: 0.85;
+    transition: .2s;
 }
 
-/* ============= المستوى الثاني (الشعار + البحث) ============= */
-.vg-middle {
+.vg-icon-btn img:hover {
+    opacity: 1;
+}
+
+/* =============================
+   المستوى الثاني + الثالث (مُدمج)
+============================== */
+
+.vg-middle-nav {
     width: 100%;
-    padding: 15px 25px;
+    padding: 15px 30px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+/* الشعار بالنص */
 .vg-logo {
-    width: 40%;
+    flex: 1;
     text-align: center;
 }
 
-.vg-brand {
-    font-size: 30px;
+.vg-logo .vg-brand {
+    font-size: 32px;
     font-weight: 700;
-    text-decoration: none;
     color: #000;
+    text-decoration: none;
 }
 
-/* البحث */
+/* صندوق البحث */
 .vg-search-box {
     width: 35%;
     height: 45px;
+    background: #f4f4f4;
     border-radius: 30px;
-    background: #f2f2f2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 0 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .vg-search-box input {
-    border: none;
-    background: none;
     width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 15px;
 }
 
 .vg-search-btn img {
     width: 20px;
 }
 
-/* ============= المستوى الثالث (القائمة) ============= */
+/* القائمة يمين */
 .vg-nav ul {
-    padding: 12px 25px;
     display: flex;
-    justify-content: flex-end;
-    gap: 30px;
+    gap: 35px;
     list-style: none;
 }
 
 .vg-nav a {
-    text-decoration: none;
+    font-size: 16px;
     color: #333;
+    text-decoration: none;
     font-weight: 500;
 }
 
