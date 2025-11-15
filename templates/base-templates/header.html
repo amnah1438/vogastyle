@@ -9,7 +9,7 @@
 
         <div class="vg-topbar-right">
 
-            <!-- زر تغيير الدولة -->
+            <!-- زر تغيير الدولة (مع القائمة داخله الآن) -->
             <div class="vg-country" id="vgCountryTrigger">
 
                 <img src="{% static 'images/flags/' %}{{ request.session.country|default:'sa' }}.svg"
@@ -25,28 +25,27 @@
                 </span>
 
                 <span class="vg-arrow">▼</span>
-            </div>
 
-            <!-- قائمة الدول -->
-            <div class="vg-country-menu" id="vgCountryMenu">
-                {% for code, label in countries.items %}
-                    <form method="post" action="{% url 'core:set_country' %}">
-                        {% csrf_token %}
-                        <button name="country" value="{{ code }}">
-                            <img src="{% static 'images/flags/' %}{{ code }}.svg">
-                            {{ label }}
-                        </button>
-                    </form>
-                {% endfor %}
+                <!-- ⭐⭐⭐ القائمة أصبحت داخل الزر ⭐⭐⭐ -->
+                <div class="vg-country-menu" id="vgCountryMenu">
+                    {% for code, label in countries.items %}
+                        <form method="post" action="{% url 'core:set_country' %}">
+                            {% csrf_token %}
+                            <button name="country" value="{{ code }}">
+                                <img src="{% static 'images/flags/' %}{{ code }}.svg">
+                                {{ label }}
+                            </button>
+                        </form>
+                    {% endfor %}
+                </div>
+
             </div>
 
             <!-- ============================
-                 زر تغيير اللغة — تم إصلاحه
+                 زر تغيير اللغة
             ============================= -->
             <form action="/i18n/setlang/" method="post" class="vg-lang">
                 {% csrf_token %}
-
-                <!-- next ثابت لإجبار Django على التحويل الصحيح -->
                 <input type="hidden" name="next" value="/" />
 
                 {% if request.LANGUAGE_CODE == "ar" %}
