@@ -17,8 +17,132 @@
 
 <body>
 
-    <!-- إدراج الهيدر -->
-    {% include "layouts/header.html" %}
+    <!-- الهيدر كامل مدمج هنا -->
+    <header class="vg-header">
+
+        <!-- 1) التوب بار -->
+        <div class="vg-topbar">
+
+            <!-- يمين: اختيار الدولة -->
+            <div class="vg-top-right">
+
+                <div class="vg-country-box" id="countryTrigger">
+                    <img src="{% static 'images/flags/' %}{{ request.session.country|default:'sa' }}.svg"
+                         class="vg-flag-current">
+
+                    <span class="vg-country-name">
+                        {% if request.session.country == 'ae' %} الإمارات
+                        {% elif request.session.country == 'kw' %} الكويت
+                        {% elif request.session.country == 'bh' %} البحرين
+                        {% elif request.session.country == 'qa' %} قطر
+                        {% else %} السعودية
+                        {% endif %}
+                    </span>
+
+                    <span class="vg-arrow">▾</span>
+                </div>
+
+                <!-- قائمة الدول -->
+                <div class="vg-country-menu" id="countryMenu">
+
+                    <form method="post" action="{% url 'core:set_country' %}">
+                        {% csrf_token %}
+                        <button name="country" value="sa" class="vg-country-item">
+                            <img src="{% static 'images/flags/sa.svg' %}" class="vg-flag"> السعودية
+                        </button>
+                    </form>
+
+                    <form method="post" action="{% url 'core:set_country' %}">
+                        {% csrf_token %}
+                        <button name="country" value="ae" class="vg-country-item">
+                            <img src="{% static 'images/flags/ae.svg' %}" class="vg-flag"> الإمارات
+                        </button>
+                    </form>
+
+                    <form method="post" action="{% url 'core:set_country' %}">
+                        {% csrf_token %}
+                        <button name="country" value="kw" class="vg-country-item">
+                            <img src="{% static 'images/flags/kw.svg' %}" class="vg-flag"> الكويت
+                        </button>
+                    </form>
+
+                    <form method="post" action="{% url 'core:set_country' %}">
+                        {% csrf_token %}
+                        <button name="country" value="bh" class="vg-country-item">
+                            <img src="{% static 'images/flags/bh.svg' %}" class="vg-flag"> البحرين
+                        </button>
+                    </form>
+
+                    <form method="post" action="{% url 'core:set_country' %}">
+                        {% csrf_token %}
+                        <button name="country" value="qa" class="vg-country-item">
+                            <img src="{% static 'images/flags/qa.svg' %}" class="vg-flag"> قطر
+                        </button>
+                    </form>
+
+                </div>
+
+            </div>
+
+            <!-- يسار التوب بار -->
+            <div class="vg-top-left">
+                <span class="vg-ut-link">العروض</span>
+                <span class="vg-ut-link">مركز المساعدة</span>
+                <span class="vg-ut-link">تتبع الطلب</span>
+            </div>
+
+        </div>
+
+        <!-- 2) الهيدر الرئيسي -->
+        <div class="vg-main-header">
+
+            <!-- اللوقو -->
+            <div class="vg-logo">
+                <a href="/" class="vg-brand">VogaStyle</a>
+            </div>
+
+            <!-- البحث -->
+            <div class="vg-search-box">
+                <input type="text" placeholder="ابحث عن منتجات">
+                <button type="submit">
+                    <img src="{% static 'icons/search.svg' %}" alt="search">
+                </button>
+            </div>
+
+            <!-- الأيقونات -->
+            <div class="vg-icons">
+                <button class="vg-icon-btn">
+                    <img src="{% static 'icons/user.svg' %}" alt="user">
+                </button>
+
+                <button class="vg-icon-btn">
+                    <img src="{% static 'icons/heart.svg' %}" alt="wishlist">
+                </button>
+
+                <button class="vg-icon-btn">
+                    <img src="{% static 'icons/cart.svg' %}" alt="cart">
+                </button>
+
+                <button class="vg-icon-btn">
+                    <img src="{% static 'icons/bell.svg' %}" alt="notification">
+                </button>
+            </div>
+
+        </div>
+
+        <!-- 3) القائمة الرئيسية -->
+        <nav class="vg-nav">
+            <ul>
+                <li><a href="#">النساء</a></li>
+                <li><a href="#">الرجال</a></li>
+                <li><a href="#">الأطفال</a></li>
+                <li><a href="#">المنزل</a></li>
+                <li><a href="#">التجميل</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
 
     <!-- المساحة التي تتغير في كل صفحة -->
     <main>
