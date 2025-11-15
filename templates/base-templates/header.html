@@ -10,12 +10,30 @@
         <!-- يمين -->
         <div class="vg-top-right">
 
-            <!-- الدولة -->
-            <div class="vg-country" id="vgCountryTrigger">
-                <img src="{% static 'images/flags/sa.svg' %}" class="vg-flag-current">
-                <span>السعودية | SAR</span>
-                <span class="vg-arrow">▼</span>
-            </div>
+         <div class="vg-country" id="vgCountryTrigger">
+
+    <!-- علم الدولة -->
+    <img src="{% static 'images/flags/' %}{{ request.session.country|default:'sa' }}.svg"
+         class="vg-flag-current">
+
+    <!-- اسم الدولة + العملة -->
+    <span class="vg-country-name">
+        {% if request.session.country == "ae" %}
+            الإمارات | AED
+        {% elif request.session.country == "kw" %}
+            الكويت | KWD
+        {% elif request.session.country == "qa" %}
+            قطر | QAR
+        {% elif request.session.country == "bh" %}
+            البحرين | BHD
+        {% else %}
+            السعودية | SAR
+        {% endif %}
+    </span>
+
+    <span class="vg-arrow">▼</span>
+</div>
+
 
             <!-- القائمة المنسدلة -->
             <div class="vg-country-menu" id="vgCountryMenu">
