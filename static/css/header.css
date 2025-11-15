@@ -39,7 +39,10 @@
 .vg-country-menu {
     position: fixed;               /* أهم شيء */
     top: 58px;                     /* أسفل التوب بار مباشرة */
-    right: 20px;                   /* مكان صحيح دائماً */
+
+    /* الآن سنتركها تلقائية، وسيتم التحكم بها بالأسفل عبر RTL/LTR */
+    right: 20px;
+    left: auto;
 
     background: #fff;
     border: 1px solid #ddd;
@@ -147,4 +150,21 @@
 .vg-icons img {
     width: 22px;
     cursor: pointer;
+}
+
+
+/* ============================
+   دعم الفتح حسب اتجاه اللغة
+============================ */
+
+/* للعربية (RTL) — تفتح في اليسار */
+html[dir="rtl"] .vg-country-menu {
+    left: 20px !important;
+    right: auto !important;
+}
+
+/* للإنجليزية (LTR) — تفتح في اليمين */
+html[dir="ltr"] .vg-country-menu {
+    right: 20px !important;
+    left: auto !important;
 }
