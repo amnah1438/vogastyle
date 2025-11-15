@@ -1,9 +1,17 @@
+/* استدعاء خط الريال السعودي */
+@import url('https://fonts.googleapis.com/css2?family=Riyadh+Font:wght@400;700&display=swap');
+
 /* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Cairo", sans-serif;
+}
+
+/* تطبيق الخط الجديد */
+body {
+    font-family: "Riyadh Font", sans-serif !important;
 }
 
 /* ============================
@@ -127,4 +135,31 @@
 
 .vg-nav a:hover {
     color: #C9A77A;
+}
+
+/* ============================
+   Dropdown الدولة (التعديل الجديد)
+============================ */
+.vg-country-box {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+}
+
+.vg-country-menu {
+    display: none;
+    position: absolute;
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 6px;
+    top: 35px;
+    right: 0;
+    z-index: 999;
+}
+
+.vg-country-menu.show {
+    display: block;
 }
