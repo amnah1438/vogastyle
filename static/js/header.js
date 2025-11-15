@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const menu = document.getElementById("vgCountryMenu");
 
     if (trigger && menu) {
+
         trigger.addEventListener("click", function (e) {
             e.stopPropagation();
             menu.classList.toggle("show");
@@ -11,6 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.addEventListener("click", function () {
             menu.classList.remove("show");
+        });
+
+        menu.addEventListener("click", function (e) {
+            e.stopPropagation();
         });
     }
 
