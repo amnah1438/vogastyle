@@ -7,7 +7,6 @@
     ============================= -->
     <div class="vg-topbar">
 
-        <!-- يمين -->
         <div class="vg-top-right">
 
             <!-- الدولة -->
@@ -33,7 +32,7 @@
                 <span class="vg-arrow">▼</span>
             </div>
 
-            <!-- القائمة المنسدلة للدول -->
+            <!-- قائمة الدول -->
             <div class="vg-country-menu" id="vgCountryMenu">
 
                 <form method="post" action="{% url 'core:set_country' %}">
@@ -93,16 +92,10 @@
 
         </div>
 
-        <!-- يسار -->
-        <div class="vg-top-left">
-            <img src="{% static 'icons/bell.svg' %}" class="vg-icon">
-            <img src="{% static 'icons/cart.svg' %}" class="vg-icon">
-            <img src="{% static 'icons/user.svg' %}" class="vg-icon">
-        </div>
     </div>
 
     <!-- ============================
-         2) المستوى الأوسط (الشعار + البحث)
+         2) المستوى الأوسط (الشعار + البحث + الأيقونات)
     ============================= -->
     <div class="vg-middle">
 
@@ -117,11 +110,11 @@
             <a href="/" class="vg-brand">VogaStyle</a>
         </div>
 
-        <!-- أيقونات -->
+        <!-- الأيقونات -->
         <div class="vg-icons">
-            <button><img src="{% static 'icons/bell.svg' %}"></button>
-            <button><img src="{% static 'icons/cart.svg' %}"></button>
             <button><img src="{% static 'icons/user.svg' %}"></button>
+            <button><img src="{% static 'icons/cart.svg' %}"></button>
+            <button><img src="{% static 'icons/bell.svg' %}"></button>
         </div>
 
     </div>
