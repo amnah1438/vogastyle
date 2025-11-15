@@ -9,7 +9,7 @@
         <div class="vg-top-right">
 
             <div class="vg-country-box" id="countryTrigger">
-                <img class="vg-flag-current" src="/static/icons/sa.svg" alt="">
+                <img class="vg-flag-current" src="{% static 'images/flags/sa.svg' %}" alt="">
                 <span class="vg-country-name">السعودية | SAR</span>
                 <span class="vg-arrow">▼</span>
             </div>
@@ -17,11 +17,11 @@
             <!-- قائمة الدول -->
             <div class="vg-country-menu" id="countryMenu">
                 <button class="vg-country-item">
-                    <img class="vg-flag" src="/static/icons/sa.svg" alt="">
+                    <img class="vg-flag" src="{% static 'images/flags/sa.svg' %}" alt="">
                     السعودية
                 </button>
                 <button class="vg-country-item">
-                    <img class="vg-flag" src="/static/icons/ae.svg" alt="">
+                    <img class="vg-flag" src="{% static 'images/flags/ae.svg' %}" alt="">
                     الإمارات
                 </button>
             </div>
@@ -31,29 +31,30 @@
         <!-- يسار -->
         <div class="vg-top-left">
             <button class="vg-icon-btn">
-                <img src="/static/icons/camera.svg" alt="">
+                <img src="{% static 'icons/camera.svg' %}" alt="">
             </button>
 
             <button class="vg-icon-btn">
-                <img src="/static/icons/search.svg" alt="">
+                <img src="{% static 'icons/search.svg' %}" alt="">
             </button>
 
             <button class="vg-icon-btn">
-                <img src="/static/icons/user.svg" alt="">
+                <img src="{% static 'icons/user.svg' %}" alt="">
+            </button>
+
+            <!-- لاحظي: heart.svg غير موجود → تركته لك لتضيفينه لاحقًا -->
+            <button class="vg-icon-btn">
+                <img src="{% static 'icons/bell.svg' %}" alt="">
             </button>
 
             <button class="vg-icon-btn">
-                <img src="/static/icons/heart.svg" alt="">
-            </button>
-
-            <button class="vg-icon-btn">
-                <img src="/static/icons/cart.svg" alt="">
+                <img src="{% static 'icons/cart.svg' %}" alt="">
             </button>
         </div>
     </div>
 
     <!-- ============================
-         الشعار
+         الشعار (في المنتصف)
     ============================= -->
     <div class="vg-logo">
         <a href="#" class="vg-brand">فوغا ستايل</a>
