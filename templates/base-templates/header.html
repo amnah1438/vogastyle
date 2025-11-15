@@ -1,11 +1,11 @@
 <header class="vg-header">
 
     <!-- ============================
-         الشريط العلوي — Top Bar
+         المستوى الأول — Top Bar
     ============================= -->
     <div class="vg-topbar">
 
-        <!-- يمين -->
+        <!-- يمين: الدولة + اللغة -->
         <div class="vg-top-right">
 
             <div class="vg-country-box" id="countryTrigger">
@@ -17,18 +17,30 @@
             <!-- قائمة الدول -->
             <div class="vg-country-menu" id="countryMenu">
                 <button class="vg-country-item">
-                    <img class="vg-flag" src="{% static 'images/flags/sa.svg' %}" alt="">
-                    السعودية
+                    <img class="vg-flag" src="{% static 'images/flags/sa.svg' %}" alt=""> السعودية
                 </button>
                 <button class="vg-country-item">
-                    <img class="vg-flag" src="{% static 'images/flags/ae.svg' %}" alt="">
-                    الإمارات
+                    <img class="vg-flag" src="{% static 'images/flags/ae.svg' %}" alt=""> الإمارات
                 </button>
+                <button class="vg-country-item">
+                    <img class="vg-flag" src="{% static 'images/flags/kw.svg' %}" alt=""> الكويت
+                </button>
+                <button class="vg-country-item">
+                    <img class="vg-flag" src="{% static 'images/flags/qa.svg' %}" alt=""> قطر
+                </button>
+                <button class="vg-country-item">
+                    <img class="vg-flag" src="{% static 'images/flags/bh.svg' %}" alt=""> البحرين
+                </button>
+            </div>
+
+            <!-- زر تغيير اللغة -->
+            <div class="vg-lang">
+                <a href="/en/">English</a>
             </div>
 
         </div>
 
-        <!-- يسار -->
+        <!-- يسار: الأيقونات -->
         <div class="vg-top-left">
 
             <button class="vg-icon-btn">
@@ -43,27 +55,36 @@
                 <img src="{% static 'icons/user.svg' %}" alt="">
             </button>
 
-            <!-- استبدال heart لأنه غير موجود -->
-            <button class="vg-icon-btn">
-                <img src="{% static 'icons/bell.svg' %}" alt="">
-            </button>
-
             <button class="vg-icon-btn">
                 <img src="{% static 'icons/cart.svg' %}" alt="">
             </button>
 
         </div>
+
     </div>
 
     <!-- ============================
-         الشعار بالنص
+         المستوى الثاني — الشعار + البحث
     ============================= -->
-    <div class="vg-logo">
-        <a href="#" class="vg-brand">فوغا ستايل</a>
+    <div class="vg-middle">
+
+        <!-- الشعار بالنص -->
+        <div class="vg-logo">
+            <a href="/" class="vg-brand">فوغا ستايل</a>
+        </div>
+
+        <!-- مربع البحث -->
+        <div class="vg-search-box">
+            <input type="text" placeholder="ابحث في فوغا ستايل">
+            <button class="vg-search-btn">
+                <img src="{% static 'icons/search.svg' %}" alt="">
+            </button>
+        </div>
+
     </div>
 
     <!-- ============================
-         القائمة الرئيسية
+         المستوى الثالث — القائمة يمين
     ============================= -->
     <nav class="vg-nav">
         <ul>

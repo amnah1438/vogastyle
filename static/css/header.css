@@ -1,28 +1,27 @@
-/* استخدام خط كاريو */
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
-
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* الخط */
+body {
     font-family: "Cairo", sans-serif;
 }
 
-/* ============================
-   Utility Bar
-============================ */
+/* ============= Top Bar ============= */
 .vg-topbar {
     width: 100%;
     background: #f8f8f8;
     padding: 8px 25px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #eee;
 }
 
+/* يمين */
+.vg-top-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* الدولة */
 .vg-country-box {
     cursor: pointer;
     display: flex;
@@ -34,22 +33,26 @@
 .vg-country-menu {
     display: none;
     position: absolute;
-    background: #fff;
-    border: 1px solid #eee;
-    padding: 10px;
-    border-radius: 6px;
-    top: 35px;
     right: 0;
-    z-index: 999;
+    top: 40px;
+    background: white;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 8px;
 }
 
 .vg-country-menu.show {
     display: block;
 }
 
-/* ============================
-   Icons Left
-============================ */
+/* اللغة */
+.vg-lang a {
+    color: #000;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+/* يسار: الأيقونات */
 .vg-top-left {
     display: flex;
     align-items: center;
@@ -58,44 +61,59 @@
 
 .vg-icon-btn img {
     width: 22px;
-    opacity: 0.9;
-    transition: 0.2s;
+    cursor: pointer;
+    opacity: .8;
 }
 
-.vg-icon-btn img:hover {
-    opacity: 1;
+/* ============= المستوى الثاني (الشعار + البحث) ============= */
+.vg-middle {
+    width: 100%;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* ============================
-   Logo — الشعار بالنص
-============================ */
 .vg-logo {
+    width: 40%;
     text-align: center;
-    padding: 15px 0;
 }
 
-.vg-logo .vg-brand {
+.vg-brand {
     font-size: 30px;
     font-weight: 700;
-    color: #000;
     text-decoration: none;
-    font-family: "Cairo", sans-serif;
+    color: #000;
 }
 
-/* ============================
-   Navigation Menu
-============================ */
-.vg-nav {
-    background: #fff;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-}
-
-.vg-nav ul {
-    padding: 12px 30px;
+/* البحث */
+.vg-search-box {
+    width: 35%;
+    height: 45px;
+    border-radius: 30px;
+    background: #f2f2f2;
     display: flex;
-    justify-content: center;
-    gap: 40px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.vg-search-box input {
+    border: none;
+    background: none;
+    width: 100%;
+}
+
+.vg-search-btn img {
+    width: 20px;
+}
+
+/* ============= المستوى الثالث (القائمة) ============= */
+.vg-nav ul {
+    padding: 12px 25px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
     list-style: none;
 }
 
@@ -103,7 +121,6 @@
     text-decoration: none;
     color: #333;
     font-weight: 500;
-    font-size: 16px;
 }
 
 .vg-nav a:hover {
