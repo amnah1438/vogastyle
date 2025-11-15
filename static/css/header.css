@@ -23,7 +23,6 @@
     align-items: center;
     gap: 6px;
     cursor: pointer;
-    position: relative; /* مهم لظهور القائمة تحت الزر */
 }
 
 .vg-flag {
@@ -35,26 +34,26 @@
 }
 
 /* ============================
-       قائمة الدول (معدّلة)
+       قائمة الدول (الإصلاح النهائي)
 ============================ */
 .vg-country-menu {
-    position: absolute;
-    top: 30px;            /* تظهر تحت الزر */
-    right: 0;
+    position: fixed;               /* أهم شيء */
+    top: 58px;                     /* أسفل التوب بار مباشرة */
+    right: 20px;                   /* مكان صحيح دائماً */
 
     background: #fff;
     border: 1px solid #ddd;
     padding: 8px 0;
     border-radius: 8px;
     display: none;
-    z-index: 1000;
+    z-index: 5000;                 /* فوق كل الهيدر */
 
-    width: 180px;
+    width: 200px;
 
-    max-height: 200px;   /* يمنع خروج القائمة فوق */
-    overflow-y: auto;    /* Scroll لو طويلة */
+    max-height: 240px;
+    overflow-y: auto;
 
-    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 
 .vg-country-menu.show {
@@ -68,7 +67,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 8px;   /* المسافة بين العلم والنص */
+    gap: 8px;
 
     background: transparent;
     border: none;
