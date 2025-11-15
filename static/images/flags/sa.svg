@@ -1,4 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
-  <path fill="#006c35" d="M0 0h640v480H0z"/>
-  <path fill="#fff" d="M477 160c18 0 33 15 33 33 0 19-15 34-33 34H315v25h162c11 0 20 9 20 20s-9 21-20 21h-33v25H263v-25h-33c-11 0-20-10-20-21s9-20 20-20h33v-25H163c-18 0-33-15-33-34 0-18 15-33 33-33h314z"/>
+  <!-- الخلفية الخضراء -->
+  <rect width="640" height="480" fill="#006c35"/>
+
+  <!-- الشهادة (نص عادي - مو نفس الخط الرسمي لكن توضيحي) -->
+  <text x="50%" y="40%" fill="#ffffff"
+        font-size="40"
+        text-anchor="middle"
+        direction="rtl"
+        font-family="Tahoma, 'Amiri', 'Scheherazade', serif">
+    لا إله إلا الله محمد رسول الله
+  </text>
+
+  <!-- السيف (شكل بسيط) -->
+  <rect x="160" y="260" width="320" height="8" fill="#ffffff" rx="4"/>
+  <rect x="440" y="252" width="40" height="8" fill="#ffffff" rx="2"/>
 </svg>
