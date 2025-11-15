@@ -3,12 +3,14 @@
 <header class="vg-header">
 
     <!-- ============================
-         1) التوب بار
+         التوب بار: الدولة + اللغة
     ============================= -->
     <div class="vg-topbar">
+
+        <!-- يمين -->
         <div class="vg-top-right">
 
-            <!-- الدولة -->
+            <!-- اختيار الدولة -->
             <div class="vg-country" id="vgCountryTrigger">
 
                 <img src="{% static 'images/flags/' %}{{ request.session.country|default:'sa' }}.svg"
@@ -32,20 +34,20 @@
             </div>
 
             <!-- قائمة الدول -->
-            <div class="vg-country-menu" id="vgCountryMenu">
+            <div class="vg-country-dropdown" id="vgCountryMenu">
                 {% for code, label in {
-                    "sa":"السعودية",
-                    "ae":"الإمارات",
-                    "kw":"الكويت",
-                    "qa":"قطر",
-                    "bh":"البحرين"
+                    "sa": "السعودية",
+                    "ae": "الإمارات",
+                    "kw": "الكويت",
+                    "qa": "قطر",
+                    "bh": "البحرين"
                 }.items %}
-                <form method="post" action="{% url 'core:set_country' %}">
-                    {% csrf_token %}
-                    <button name="country" value="{{ code }}">
-                        <img src="{% static 'images/flags/' %}{{ code }}.svg"> {{ label }}
-                    </button>
-                </form>
+                    <form method="post" action="{% url 'core:set_country' %}">
+                        {% csrf_token %}
+                        <button name="country" value="{{ code }}">
+                            <img src="{% static 'images/flags/' %}{{ code }}.svg"> {{ label }}
+                        </button>
+                    </form>
                 {% endfor %}
             </div>
 
@@ -53,7 +55,7 @@
             <form action="/i18n/setlang/" method="post" class="vg-lang">
                 {% csrf_token %}
                 <input type="hidden" name="next" value="{{ request.path }}">
-                
+
                 {% if request.LANGUAGE_CODE == "ar" %}
                     <input type="hidden" name="language" value="en">
                     <button type="submit" class="vg-lang-btn">EN</button>
@@ -63,49 +65,40 @@
                 {% endif %}
             </form>
 
-            <span class="vg-top-link">العروض</span>
-            <span class="vg-top-link">المساعدة</span>
-            <span class="vg-top-link">تتبع الطلب</span>
         </div>
     </div>
 
     <!-- ============================
-         2) الشعار + البحث + الأيقونات
+         الهيدر الرئيسي
     ============================= -->
-    <div class="vg-middle">
+    <div class="vg-main-header">
 
-        <!-- البحث يمين -->
-        <div class="vg-search-box">
-            <input type="text" placeholder="ابحثي عن منتج">
-            <button><img src="{% static 'icons/search.svg' %}"></button>
-        </div>
-
-        <!-- الشعار وسط -->
+        <!-- شعار (في المنتصف) -->
         <div class="vg-logo">
-            <a href="/" class="vg-brand center-title">VogaStyle</a>
+            <a href="/">
+                <img src="{% static 'images/logo.svg' %}" alt="VogaStyle">
+            </a>
         </div>
 
-        <!-- الأيقونات يسار -->
+        <!-- البحث -->
+        <form class="vg-search">
+            <input type="text" placeholder="ابحثي هنا">
+            <button type="submit">
+                <img src="{% static 'images/icons/search.svg' %}" alt="Search">
+            </button>
+        </form>
+
+        <!-- أيقونات -->
         <div class="vg-icons">
-            <button><img src="{% static 'icons/user.svg' %}"></button>
-            <button><img src="{% static 'icons/cart.svg' %}"></button>
-            <button><img src="{% static 'icons/bell.svg' %}"></button>
+            <a href="/accounts/profile/">
+                <img src="{% static 'images/icons/user.svg' %}">
+            </a>
+
+            <a href="/cart/">
+                <img src="{% static 'images/icons/cart.svg' %}">
+            </a>
         </div>
 
     </div>
-
-    <!-- ============================
-         3) القائمة الرئيسية
-    ============================= -->
-    <nav class="vg-nav">
-        <ul>
-            <li><a href="#">النساء</a></li>
-            <li><a href="#">الرجال</a></li>
-            <li><a href="#">الأطفال</a></li>
-            <li><a href="#">التجميل</a></li>
-            <li><a href="#">المنزل</a></li>
-            <li><a href="#">العلامات التجارية</a></li>
-        </ul>
-    </nav>
 
 </header>
