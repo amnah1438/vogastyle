@@ -21,6 +21,7 @@
     align-items: center;
     gap: 6px;
     cursor: pointer;
+    position: relative; /* مهم جداً */
 }
 
 .vg-flag {
@@ -31,26 +32,47 @@
     font-size: 12px;
 }
 
+/* ============================
+      قائمة الدول (معدّلة)
+============================ */
 .vg-country-menu {
-    position: absolute;
+    position: absolute;   /* تظهر تحت الزر نفسه */
+    top: 30px;            /* تنزل القائمة أسفل الزر */
+    right: 0;
+
     background: white;
     border: 1px solid #ddd;
     padding: 8px 0;
     border-radius: 8px;
     display: none;
-    z-index: 100;
+    z-index: 1000;
+
+    width: 180px;
+
+    max-height: 200px;   /* يمنع خروج القائمة فوق */
+    overflow-y: auto;    /* scroll لو طويلة */
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
 }
 
-.vg-country-menu.show { display: block !important; }
+.vg-country-menu.show { 
+    display: block !important; 
+}
 
 .vg-country-menu form button {
     width: 100%;
     padding: 10px;
     display: flex;
+    align-items: center;
     gap: 10px;
     background: transparent;
     border: none;
     cursor: pointer;
+    text-align: left;
+}
+
+.vg-country-menu form button:hover {
+    background: #f5f5f5;
 }
 
 /* زر اللغة */
