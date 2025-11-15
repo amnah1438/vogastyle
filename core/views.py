@@ -16,8 +16,18 @@ def home(request):
     # جلب آخر المنتجات
     products = Product.objects.all().order_by('-created_at')[:12]
 
+    # قائمة الدول — للعرض داخل الهيدر
+    countries = {
+        "sa": "السعودية",
+        "ae": "الإمارات",
+        "kw": "الكويت",
+        "qa": "قطر",
+        "bh": "البحرين",
+    }
+
     context = {
         "products": products,
+        "countries": countries,
     }
 
     return render(request, "core-templates/home.html", context)
