@@ -140,6 +140,15 @@ html[dir="ltr"] .vg-country-menu {
     outline: none;
 }
 
+/* ============================
+   ICONS SPACING — التعديل الوحيد
+============================ */
+.vg-icons {
+    display: flex;
+    align-items: center;
+    gap: 28px;  /* ← المسافة بين الأيقونات */
+}
+
 .vg-icons img {
     width: 22px;
     cursor: pointer;
