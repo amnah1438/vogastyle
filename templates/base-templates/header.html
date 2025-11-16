@@ -28,7 +28,7 @@
 
             </div>
 
-            <!-- قائمة الدول (خارج الزر لكن داخل نفس الأب) -->
+            <!-- قائمة الدول -->
             <div class="vg-country-menu" id="vgCountryMenu">
                 {% for code, label in countries.items %}
                     <form method="post" action="{% url 'core:set_country' %}">
@@ -99,6 +99,33 @@
                 <a href="/accounts/profile/"><img src="{% static 'images/icons/user.svg' %}"></a>
                 <a href="/cart/"><img src="{% static 'images/icons/cart.svg' %}"></a>
             </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================
+         SEARCH OVERLAY — FULL SCREEN
+    ================================= -->
+    <div class="vg-search-overlay" id="vgSearchOverlay">
+
+        <div class="vg-search-box">
+
+            <!-- زر الإغلاق -->
+            <button class="vg-search-close" id="vgSearchClose">×</button>
+
+            <!-- شريط البحث -->
+            <form action="/search/" method="get" class="vg-search-form">
+                <img src="{% static 'images/icons/search.svg' %}" class="vg-search-icon">
+                <input type="text" name="q" placeholder="ابحث" autocomplete="off">
+            </form>
+
+            <!-- زر البحث بصورة -->
+            <button class="vg-search-by-image">
+                <img src="{% static 'images/icons/camera.svg' %}">
+                البحث عبر صورة
+            </button>
 
         </div>
 
