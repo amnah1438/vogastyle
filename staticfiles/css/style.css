@@ -1,0 +1,50 @@
+/* شبكة الأقسام مثل فوغا كلوسيت */
+.vg-category-grid {
+    padding: 40px 20px;
+    background: #fff;
+    font-family: 'Tajawal', sans-serif;
+}
+
+.vg-grid-container {
+    max-width: 1300px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.vg-grid-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    display: block;
+}
+
+.vg-grid-item img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    transition: 0.3s ease;
+}
+
+.small-item img {
+    height: 240px;
+}
+
+.vg-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.75);
+    padding: 12px 40px;
+    border-radius: 6px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #000;
+    text-align: center;
+}
+
+.vg-grid-item:hover img {
+    transform: scale(1.07);
+}
