@@ -20,7 +20,6 @@
         flex-wrap:wrap;
     ">
         
-        <!-- النص -->
         <div style="flex:1; min-width:300px;">
             <h1 style="font-size:48px; font-weight:700; color:#C9A77A; margin-bottom:16px;">
                 أناقتك تبدأ من هنا
@@ -38,7 +37,6 @@
             ">تسوقي الآن</a>
         </div>
 
-        <!-- الصورة -->
         <div style="flex:1; min-width:300px; text-align:center;">
             <img src="https://via.placeholder.com/450x600" 
             alt="VogaStyle Banner"
@@ -49,44 +47,46 @@
 </section>
 
 
-
 <!-- ===========================
-     شبكة الأقسام (مثل فوغا كلوسيت)
+     شبكة الأقسام مثل فوغا كلوسيت
 =========================== -->
-<section class="vg-category-grid" style="margin-top:60px;">
-    <div class="vg-grid-container">
+<section class="vg-category-grid">
 
-        <!-- الرجال -->
-        <a href="/men/" class="vg-grid-item">
+    <!-- الصف العلوي (صورتين كبار) -->
+    <div class="vg-grid-top">
+        
+        <a href="/men/" class="vg-item">
             <img src="{% static 'images/cat/men.jpg' %}" alt="للرجال">
             <div class="vg-overlay">للرجال</div>
         </a>
 
-        <!-- النساء -->
-        <a href="/women/" class="vg-grid-item">
+        <a href="/women/" class="vg-item">
             <img src="{% static 'images/cat/women.jpg' %}" alt="للنساء">
             <div class="vg-overlay">للنساء</div>
         </a>
 
-        <!-- المنزل -->
-        <a href="/home-category/" class="vg-grid-item small-item">
+    </div>
+
+    <!-- الصف السفلي (3 صور أصغر) -->
+    <div class="vg-grid-bottom">
+        
+        <a href="/home-category/" class="vg-item">
             <img src="{% static 'images/cat/home.jpg' %}" alt="للمنزل">
             <div class="vg-overlay">للمنزل</div>
         </a>
 
-        <!-- الجمال -->
-        <a href="/beauty/" class="vg-grid-item small-item">
+        <a href="/beauty/" class="vg-item">
             <img src="{% static 'images/cat/beauty.jpg' %}" alt="للجمال">
             <div class="vg-overlay">للجمال</div>
         </a>
 
-        <!-- الأطفال -->
-        <a href="/kids/" class="vg-grid-item small-item">
+        <a href="/kids/" class="vg-item">
             <img src="{% static 'images/cat/kids.jpg' %}" alt="للأطفال">
             <div class="vg-overlay">للأطفال</div>
         </a>
 
     </div>
+
 </section>
 
 
@@ -110,7 +110,6 @@
             text-align:center;
         ">منتجات مميزة</h2>
 
-        <!-- شبكة المنتجات -->
         <div style="
             display:grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -125,14 +124,12 @@
                 text-align:center;
                 transition:0.3s;
             ">
-                <!-- صورة المنتج -->
                 <a href="/catalog/{{ product.slug }}/">
                     <img src="{{ product.main_image.url }}" 
                     alt="{{ product.name }}"
                     style="width:100%; height:320px; object-fit:cover; border-radius:10px;">
                 </a>
 
-                <!-- اسم المنتج -->
                 <h3 style="
                     font-size:20px;
                     font-weight:600;
@@ -142,12 +139,10 @@
                     {{ product.name }}
                 </h3>
 
-                <!-- السعر -->
                 <p style="font-size:18px; color:#C9A77A; margin-bottom:12px;">
                     {{ product.price }} ر.س
                 </p>
 
-                <!-- زر التفاصيل -->
                 <a href="/catalog/{{ product.slug }}/" style="
                     display:inline-block;
                     padding:10px 20px;
@@ -160,6 +155,7 @@
                     عرض التفاصيل
                 </a>
             </div>
+
             {% empty %}
                 <p style="text-align:center; font-size:18px; color:#555;">
                     لا توجد منتجات حالياً.
