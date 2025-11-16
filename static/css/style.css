@@ -23,7 +23,7 @@
     overflow: hidden;
     border-radius: 10px;
     display: block;
-    cursor: pointer;   /* ← NEW: يخلي العنصر قابل للضغط */
+    cursor: pointer;
 }
 
 .vg-grid-top img {
@@ -51,7 +51,7 @@
     font-weight: 600;
     color: #000;
     text-align: center;
-    transition: 0.3s ease;  /* ← NEW: تفاعل جميل */
+    transition: 0.3s ease;
 }
 
 /* hover */
@@ -64,5 +64,5 @@
 }
 
 .vg-item:hover .vg-overlay {
-    background: rgba(255,255,255,1);  /* ← NEW: لما تمرر الفأرة يصير أبيض ناصع */
+    background: rgba(255,255,255,1);
 }
