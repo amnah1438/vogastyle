@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
-  <path fill="#007a3d" d="M0 0h900v200H0z"/>
-  <path fill="#ffffff" d="M0 200h900v200H0z"/>
-  <path fill="#ce1126" d="M0 400h900v200H0z"/>
-  <path fill="#000000" d="M0 0l200 150v300L0 600z"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="63" fill="none" preserveAspectRatio="none"><g clip-path="url(#A)"><g fill-rule="evenodd"><path d="M0 20.992h126v21.004H0V20.992z" fill="#fff"/><path d="M0 41.996h126V63H0V41.996z" fill="#ce1126"/><path d="M0 0H126V21.004H0V0Z" fill="#007a3d"/><path d="M0 0v63l27.498-21.004.065-21.016L0 0z" fill="#000"/></g><path d="M.05.05h83.9v62.9H.05V.05z" stroke="#333" stroke-width=".9"/></g><defs><clipPath id="A"><path fill="#fff" d="M0 0h84v63H0z"/></clipPath></defs></svg>

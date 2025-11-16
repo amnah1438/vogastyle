@@ -1,17 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600">
-  <rect width="1200" height="600" fill="#8a1538"/>
-  <polygon fill="#fff" points="
-    0,0 420,0
-    480,30 420,60
-    480,90 420,120
-    480,150 420,180
-    480,210 420,240
-    480,270 420,300
-    480,330 420,360
-    480,390 420,420
-    480,450 420,480
-    480,510 420,540
-    420,600 0,600
-  "/>
-</svg>
-
+<svg xmlns="http://www.w3.org/2000/svg" width="84" height="63" fill="none" preserveAspectRatio="none"><g clip-path="url(#A)"><path d="M0 0H84V63H0V0Z" fill="#8d1b3d"/><path d="M0 0v63h20.79l12.836-3.504-12.836-3.491L33.613 52.5 20.79 48.996l12.823-3.491L20.79 42l12.836-3.504-12.836-3.491L33.613 31.5 20.79 27.996l12.823-3.491L20.79 21l12.836-3.504-12.836-3.491L33.613 10.5 20.79 6.996l12.836-3.491L20.777 0H0z" fill="#fff"/><path d="M.05.05h83.9v62.9H.05V.05z" stroke="#333" stroke-width=".9"/></g><defs><clipPath id="A"><path fill="#fff" d="M0 0h84v63H0z"/></clipPath></defs></svg>
