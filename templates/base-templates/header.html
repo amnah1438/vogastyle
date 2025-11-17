@@ -108,31 +108,13 @@
 
     </div>
 
-
-    <!-- ================================
-         SEARCH OVERLAY — FULL SCREEN
-    ================================= -->
-    <div class="vg-search-overlay" id="vgSearchOverlay">
-
-        <div class="vg-search-box">
-
-            <!-- زر الإغلاق -->
-            <button class="vg-search-close" id="vgSearchClose">×</button>
-
-            <!-- شريط البحث -->
-            <form action="/search/" method="get" class="vg-search-form">
-                <img src="{% static 'images/icons/search.svg' %}" class="vg-search-icon">
-                <input type="text" name="q" placeholder="ابحث" autocomplete="off">
-            </form>
-
-            <!-- زر البحث بصورة -->
-            <button class="vg-search-by-image">
-                <img src="{% static 'images/icons/camera.svg' %}">
-                البحث عبر صورة
-            </button>
-
-        </div>
-
-    </div>
-
 </header>
+
+<!-- =====================================
+     🎥 بنـر الفيديـــو (1639 × 319)
+====================================== -->
+<div class="vg-banner-video">
+    <video autoplay muted loop playsinline>
+        <source src="{% static 'videos/banner.mp4' %}" type="video/mp4">
+    </video>
+</div>
