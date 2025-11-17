@@ -4,47 +4,13 @@
 {% block content %}
 
 <!-- ===========================
-     البانر الرئيسي
+     🎥 بنـر الفيديـــو
 =========================== -->
-<section style="
-    background:#F7F1E4;
-    padding:80px 20px;
-    font-family:'Cairo', sans-serif;
-">
-    <div style="
-        max-width:1300px;
-        margin:auto;
-        display:flex;
-        align-items:center;
-        justify-content:space-between;
-        flex-wrap:wrap;
-    ">
-        
-        <div style="flex:1; min-width:300px;">
-            <h1 style="font-size:48px; font-weight:700; color:#C9A77A; margin-bottom:16px;">
-                أناقتك تبدأ من هنا
-            </h1>
-            <p style="font-size:18px; color:#111111; margin-bottom:24px;">
-                اكتشفي أحدث صيحات الموضة المختارة بعناية.
-            </p>
-            <a href="/catalog/" style="
-                background:#C9A77A;
-                color:#1A1A1A;
-                padding:14px 28px;
-                border-radius:4px;
-                font-size:18px;
-                text-decoration:none;
-            ">تسوقي الآن</a>
-        </div>
-
-        <div style="flex:1; min-width:300px; text-align:center;">
-            <img src="https://via.placeholder.com/450x600" 
-            alt="VogaStyle Banner"
-            style="max-width:100%; border-radius:8px;">
-        </div>
-
-    </div>
-</section>
+<div class="vg-banner-video">
+    <video autoplay muted loop playsinline>
+        <source src="{% static 'videos/banner.mp4' %}" type="video/mp4">
+    </video>
+</div>
 
 
 <!-- ===========================
@@ -88,7 +54,6 @@
     </div>
 
 </section>
-
 
 
 <!-- ===========================
