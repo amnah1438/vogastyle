@@ -172,4 +172,91 @@ html[dir="ltr"] .vg-country-menu {
     display: flex;
 }
 
-.vg
+.vg-search-box {
+    width: 70%;
+    max-width: 900px;
+    position: relative;
+}
+
+/* زر الإغلاق */
+.vg-search-close {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    font-size: 45px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* شريط البحث */
+.vg-search-form {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 12px;
+}
+
+.vg-search-form input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 28px;
+    color: #fff;
+    text-align: right;
+}
+
+.vg-search-icon {
+    width: 30px;
+    filter: brightness(0) invert(1);
+}
+
+/* زر البحث بصورة */
+.vg-search-by-image {
+    margin-top: 40px;
+    background: transparent;
+    border: 1px solid #fff;
+    padding: 12px 35px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.vg-search-by-image img {
+    width: 26px;
+    filter: brightness(0) invert(1);
+}
+
+
+/* ==========================================
+   🎥 VIDEO BANNER — يحافظ على شكله
+=========================================== */
+.vg-banner-video {
+    width: 100%;
+    height: auto;
+    margin-top: 18px; /* مسافة بين الهيدر والبنر */
+    text-align: center; /* يمنع انزياح الفيديو */
+}
+
+.vg-banner-video video {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* يحافظ على الشكل بالكامل */
+    display: block;
+    background: #000; /* لون فخم تحت البنر لو احتاج */
+}
+
+
+/* ==========================================
+   رفع شبكة الأقسام تحت البنر
+=========================================== */
+.vg-category-grid {
+    margin-top: -10px; /* قريبة من البنر بدون التصاق */
+}
