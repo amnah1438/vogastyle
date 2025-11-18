@@ -241,22 +241,63 @@ html[dir="ltr"] .vg-country-menu {
 .vg-banner-video {
     width: 100%;
     height: auto;
-    margin-top: 18px; /* مسافة بين الهيدر والبنر */
-    text-align: center; /* يمنع انزياح الفيديو */
+    margin-top: 18px; 
+    text-align: center;
 }
 
 .vg-banner-video video {
     width: 100%;
     height: auto;
-    object-fit: contain; /* يحافظ على الشكل بالكامل */
+    object-fit: contain;
     display: block;
-    background: #000; /* لون فخم تحت البنر لو احتاج */
+    background: #000;
 }
-
 
 /* ==========================================
    رفع شبكة الأقسام تحت البنر
 =========================================== */
 .vg-category-grid {
-    margin-top: -10px; /* قريبة من البنر بدون التصاق */
+    margin-top: -10px;
+}
+
+/* ==========================================================
+   ⭐ شريط الماركات المتحرك – Boohoo Style
+========================================================== */
+
+.vg-brands-wrapper {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    padding: 25px 0;
+    margin-top: 25px;
+}
+
+.vg-brands-track {
+    display: flex;
+    gap: 65px;
+    align-items: center;
+    animation: vgScrollBrands 26s linear infinite;
+}
+
+.vg-brands-track img {
+    height: 55px;
+    width: auto;
+    opacity: 0.9;
+    transition: 0.3s;
+}
+
+.vg-brands-track a:hover img {
+    opacity: 1;
+    transform: scale(1.07);
+}
+
+/* إيقاف الحركة عند مرور الماوس */
+.vg-brands-wrapper:hover .vg-brands-track {
+    animation-play-state: paused;
+}
+
+/* حركة السحب */
+@keyframes vgScrollBrands {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
 }

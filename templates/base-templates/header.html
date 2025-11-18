@@ -65,7 +65,6 @@
     ================================= -->
     <div class="vg-mainbar">
 
-        <!-- قائمة الأقسام -->
         <nav class="vg-nav">
             <a href="/women/">النساء</a>
             <a href="/men/">الرجال</a>
@@ -74,17 +73,14 @@
             <a href="/home-category/">المنزل</a>
         </nav>
 
-        <!-- اللوجو -->
         <div class="vg-logo">
             <a href="/">
                 <h2 class="vg-logo-text">فــوغــا ســتــايــلــي</h2>
             </a>
         </div>
 
-        <!-- البحث + الأيقونات -->
         <div class="vg-actions">
 
-            <!-- البحث -->
             <form class="vg-search">
                 <input type="text" placeholder="{% if request.LANGUAGE_CODE == 'ar' %}ابحث{% else %}Search{% endif %}">
                 <button type="submit">
@@ -92,10 +88,8 @@
                 </button>
             </form>
 
-            <!-- الأيقونات -->
             <div class="vg-icons">
 
-                <!-- ⭐ أيقونة البحث المضافة (تشغل الـ Overlay) -->
                 <img src="{% static 'images/icons/search.svg' %}" class="vg-open-search">
 
                 <img src="{% static 'images/icons/camera.svg' %}">
@@ -110,11 +104,50 @@
 
 </header>
 
+
 <!-- =====================================
-     🎥 بنـر الفيديـــو (مع مسافة صغيرة)
+     🎥 بنــر الفيديو
 ====================================== -->
 <div class="vg-banner-video" style="margin-top: 10px;">
     <video autoplay muted loop playsinline>
         <source src="{% static 'videos/banner.mp4' %}" type="video/mp4">
     </video>
+</div>
+
+
+
+<!-- =====================================
+     ⭐ شريط الماركات المتحرك (Boohoo Style)
+====================================== -->
+<div class="vg-brands-wrapper">
+    <div class="vg-brands-track">
+
+        <a href="/brand/joliemoi/"><img src="{% static 'brands/joliemoi.png' %}"></a>
+        <a href="/brand/axparis/"><img src="{% static 'brands/axparis.png' %}"></a>
+        <a href="/brand/oasis/"><img src="{% static 'brands/oasis.png' %}"></a>
+        <a href="/brand/coast/"><img src="{% static 'brands/coast.png' %}"></a>
+        <a href="/brand/maybelline/"><img src="{% static 'brands/maybelline.png' %}"></a>
+        <a href="/brand/nyx/"><img src="{% static 'brands/nyx.png' %}"></a>
+        <a href="/brand/misspap/"><img src="{% static 'brands/misspap.png' %}"></a>
+        <a href="/brand/puma/"><img src="{% static 'brands/puma.png' %}"></a>
+        <a href="/brand/olaplex/"><img src="{% static 'brands/olaplex.png' %}"></a>
+        <a href="/brand/kerastase/"><img src="{% static 'brands/kerastase.png' %}"></a>
+        <a href="/brand/trendyol/"><img src="{% static 'brands/trendyol.png' %}"></a>
+        <a href="/brand/karenmillen/"><img src="{% static 'brands/karenmillen.png' %}"></a>
+
+        <!-- تكرار لضمان تمرير لانهائي -->
+        <a href="/brand/joliemoi/"><img src="{% static 'brands/joliemoi.png' %}"></a>
+        <a href="/brand/axparis/"><img src="{% static 'brands/axparis.png' %}"></a>
+        <a href="/brand/oasis/"><img src="{% static 'brands/oasis.png' %}"></a>
+        <a href="/brand/coast/"><img src="{% static 'brands/coast.png' %}"></a>
+        <a href="/brand/maybelline/"><img src="{% static 'brands/maybelline.png' %}"></a>
+        <a href="/brand/nyx/"><img src="{% static 'brands/nyx.png' %}"></a>
+        <a href="/brand/misspap/"><img src="{% static 'brands/misspap.png' %}"></a>
+        <a href="/brand/puma/"><img src="{% static 'brands/puma.png' %}"></a>
+        <a href="/brand/olaplex/"><img src="{% static 'brands/olaplex.png' %}"></a>
+        <a href="/brand/kerastase/"><img src="{% static 'brands/kerastase.png' %}"></a>
+        <a href="/brand/trendyol/"><img src="{% static 'brands/trendyol.png' %}"></a>
+        <a href="/brand/karenmillen/"><img src="{% static 'brands/karenmillen.png' %}"></a>
+
+    </div>
 </div>
