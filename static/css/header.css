@@ -28,6 +28,7 @@
 .vg-flag { width: 22px; }
 .vg-arrow { font-size: 12px; }
 
+
 /* ============================
    قائمة الدول
 ============================ */
@@ -50,17 +51,8 @@
     display: block !important;
 }
 
-/* RTL */
-html[dir="rtl"] .vg-country-menu {
-    right: 0;
-    left: auto;
-}
-
-/* LTR */
-html[dir="ltr"] .vg-country-menu {
-    left: 0;
-    right: auto;
-}
+html[dir="rtl"] .vg-country-menu { right: 0; left: auto; }
+html[dir="ltr"] .vg-country-menu { left: 0; right: auto; }
 
 .vg-country-menu form button {
     width: 100%;
@@ -77,9 +69,7 @@ html[dir="ltr"] .vg-country-menu {
     color: #000;
 }
 
-.vg-country-menu form button:hover {
-    background: #f5f5f5;
-}
+.vg-country-menu form button:hover { background: #f5f5f5; }
 
 .vg-country-menu img {
     width: 22px;
@@ -94,6 +84,7 @@ html[dir="ltr"] .vg-country-menu {
     padding: 4px 12px;
     border-radius: 4px;
 }
+
 
 /* ============================
    MAIN BAR
@@ -137,6 +128,7 @@ html[dir="ltr"] .vg-country-menu {
     outline: none;
 }
 
+
 /* ============================
    ICONS SPACING
 ============================ */
@@ -150,6 +142,7 @@ html[dir="ltr"] .vg-country-menu {
     width: 22px;
     cursor: pointer;
 }
+
 
 /* ==========================================================
    FULL SCREEN SEARCH OVERLAY
@@ -168,9 +161,7 @@ html[dir="ltr"] .vg-country-menu {
     justify-content: center;
 }
 
-.vg-search-overlay.show {
-    display: flex;
-}
+.vg-search-overlay.show { display: flex; }
 
 .vg-search-box {
     width: 70%;
@@ -178,7 +169,6 @@ html[dir="ltr"] .vg-country-menu {
     position: relative;
 }
 
-/* زر الإغلاق */
 .vg-search-close {
     position: absolute;
     top: -60px;
@@ -190,7 +180,6 @@ html[dir="ltr"] .vg-country-menu {
     cursor: pointer;
 }
 
-/* شريط البحث */
 .vg-search-form {
     display: flex;
     align-items: center;
@@ -214,7 +203,6 @@ html[dir="ltr"] .vg-country-menu {
     filter: brightness(0) invert(1);
 }
 
-/* زر البحث بصورة */
 .vg-search-by-image {
     margin-top: 40px;
     background: transparent;
@@ -236,12 +224,12 @@ html[dir="ltr"] .vg-country-menu {
 
 
 /* ==========================================
-   🎥 VIDEO BANNER — يحافظ على شكله
+   🎥 VIDEO BANNER
 =========================================== */
 .vg-banner-video {
     width: 100%;
     height: auto;
-    margin-top: 18px; 
+    margin-top: 18px;
     text-align: center;
 }
 
@@ -253,51 +241,54 @@ html[dir="ltr"] .vg-country-menu {
     background: #000;
 }
 
+
 /* ==========================================
-   رفع شبكة الأقسام تحت البنر
+   رفع شبكة الأقسام
 =========================================== */
-.vg-category-grid {
-    margin-top: -10px;
-}
+.vg-category-grid { margin-top: -10px; }
+
 
 /* ==========================================================
-   ⭐ شريط الماركات المتحرك – Boohoo Style
+   ⭐ شريط الماركات المتحرك — نسخة مطوّرة جداً
 ========================================================== */
 
 .vg-brands-wrapper {
     width: 100%;
     overflow: hidden;
     background: #fff;
-    padding: 25px 0;
+    padding: 30px 0;
     margin-top: 25px;
 }
 
+/* ⭐ أصبح أسرع — بدون مبالغة */
 .vg-brands-track {
     display: flex;
-    gap: 65px;
     align-items: center;
-    animation: vgScrollBrands 26s linear infinite;
+    gap: 90px;
+    animation: vgBrandsMove 16s linear infinite;
 }
 
+/* ⭐ تكبير صور الماركات */
 .vg-brands-track img {
-    height: 55px;
+    height: 95px;   /* كان 55 → الآن أوضح وأجمل */
     width: auto;
     opacity: 0.9;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
+/* تأثير عند المرور */
 .vg-brands-track a:hover img {
     opacity: 1;
-    transform: scale(1.07);
+    transform: scale(1.12);
 }
 
-/* إيقاف الحركة عند مرور الماوس */
+/* إيقاف عند مرور الماوس */
 .vg-brands-wrapper:hover .vg-brands-track {
     animation-play-state: paused;
 }
 
-/* حركة السحب */
-@keyframes vgScrollBrands {
+/* ⭐ حركة مستمرة 100% — بدون فراغ نهائي */
+@keyframes vgBrandsMove {
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
 }
